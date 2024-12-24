@@ -18,10 +18,17 @@ import (
 )
 
 // DIR
-const PATH = "./notion"
 const ITER_LOOPS = 10
 
 func main(){ 
+
+	if len(os.Args) < 2 {
+		fmt.Println("Please specify a path: go run main.go <path>")
+		return
+	}
+
+	// Ottieni il valore di PATH dagli argomenti
+	PATH := os.Args[1]
 
 	// So che questo potrebbe essere megliorato. Non c'e bisogna di fare una loop
 	// su un valore fisso quando potrei simplicemente calcolare la quantita di
