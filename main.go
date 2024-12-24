@@ -183,8 +183,6 @@ func getAllDirectoriesToRename(path string) ([]string, error) {
 			return nil
 		}
 
-	
-
 		// assicurarti che possa accessare il file 
 		if err != nil {
 			fmt.Printf("Errore nell'accesso al file %s: %v\n", path, err)
@@ -212,7 +210,7 @@ func getAllDirectoriesToRename(path string) ([]string, error) {
 
 		// Prepare a regex that will check for a unique ID of more than 12 chars 
 		// and with at least 3 numbers in it
-		rgx := regexp.MustCompile(`(?:\D*\d){4}`)
+		rgx := regexp.MustCompile(`\b[a-zA-Z0-9]*\.?[a-zA-Z0-9]{16,}\b`)
 		// is the last part of the file name a unique ID? 
 		isMatch := rgx.MatchString(lastFileNamePart)
 
