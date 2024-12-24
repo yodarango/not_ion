@@ -239,7 +239,7 @@ func getAllDirectoriesToRename(path string) ([]string, error) {
 }
 
 
-func getAllHTMLFiles(path string) []string{
+func getAllHTMLFilesInPath(path string) []string{
 
 	var htmlFiles = make([]string, 0)
 
@@ -263,11 +263,15 @@ func cleanNotionLinks(path string) error {
 	totalLinksFound := 0
 
     // Walk through all files in the workspace
-    err := filepath.Walk(path, 
-	func(path string, info os.FileInfo, err error) error {
-        if err != nil {
-            return err
-        }
+	for _, path := range getAllHTMLFilesInPath(path) {
+
+		fmt.Printf(
+		"=================================================\n" + 
+		"====Starting file: %s==== \n" + 
+		"================================================= \n",
+
+		path,
+	)
 
         // Skip if not an HTML file
         if !strings.HasSuffix(strings.ToLower(path), ".html") {
@@ -287,20 +291,18 @@ func cleanNotionLinks(path string) error {
             return fmt.Errorf("error parsing HTML in %s: %v", path, err)
         }
 
-	fmt.Printf(
-		"=================================================\n" + 
-		"====Starting file: %s==== \n" + 
-		"================================================= \n",
-		info.Name(),
-	)
-
         // Recursively process nodes and return  true if there were any changes that happened in
 	  // this file so we can rewrite it
         modified := processHtmlNode(doc, idDirPattern, idFilePattern)
-	  fmt.Println(modified)
+	
+	  if !modified{
+  		fmt.Println("❌", path, modified)
+	  }else {
+  		fmt.Println("✅", path, modified)
+	  }
 
         // If modifications were made, write the changes back to the file
-        if false {
+        if modified {
             // Create a temporary file
             tempFile, err := os.CreateTemp(filepath.Dir(path), "temp-*.html")
             if err != nil {
@@ -327,13 +329,11 @@ func cleanNotionLinks(path string) error {
 
             fmt.Printf("✅✨ File Processed: %s\n", path)
         }
-
-        return nil
-    })
-
-    if err != nil { 
-	return fmt.Errorf("****** ERR: %v", err)
     }
+
+//     if err != nil { 
+// 	return fmt.Errorf("****** ERR: %v", err)
+//     }
 
 	// how many links were found?
 	fmt.Printf("🔢 total links found: %d \n", totalLinksFound)
@@ -362,19 +362,27 @@ func processHtmlNode(n *html.Node, idDirPattern *regexp.Regexp, idFilePattern *r
 				var newNameParts = make([]string, 0)
 
 				// Check for an ID at the herf level by dir "/"
-				fmt.Printf("◉ All parts in href: %s \n", strings.Join(strings.Split(attr.Val, "/"), ", "))
+				// fmt.Printf("◉ All parts in href: %s \n", strings.Join(strings.Split(attr.Val, "/"), ", "))
 				
 				for _, part := range strings.Split(attr.Val, "/") {
-					fmt.Printf("  ◎ Processing part: %s \n", part)
+					// fmt.Printf("  ◎ Processing part: %s \n", part)
 					if idDirPattern.MatchString(part){
 						// If the directory has and ID, then check by word level " "
-						fmt.Printf("    ❌ %s part is dirty! Checking by space now \n", part)
+						// fmt.Printf("    ❌ %s part is dirty! Checking by space now \n", part)
 						
 						nameParts := make([]string, 0)
 						
-						fmt.Printf("      ◦ Parts by space: %s \n", strings.Join(strings.Split(part, " "), ", "))
-						for _, word := range strings.Split(part, " ") {
-							fmt.Printf("        ・Processing word: %s \n", word)
+						// fmt.Printf("      ◦ Parts by space: %s \n", strings.Join(strings.Split(part, " "), ", "))
+
+						partsSplitBySpace := make([]string, 0)
+
+						for _, part := range strings.Split(part, " "){
+							splitPart := strings.Split(part, "%20")
+							partsSplitBySpace = append(partsSplitBySpace, splitPart...)
+						}
+
+						for _, word := range partsSplitBySpace {
+							// fmt.Printf("        ・Processing word: %s \n", word)
 
 							// remove html from the string if this is a file file
 							wordWithoutExtension, hasExt := strings.CutSuffix(word, ".html")
@@ -404,7 +412,7 @@ func processHtmlNode(n *html.Node, idDirPattern *regexp.Regexp, idFilePattern *r
 						// add this name to the newNameParts 
 						newNameParts = append(newNameParts, newName)
 					} else {
-						fmt.Printf("    ✅ %s is clean! skipping... \n", part)
+						// fmt.Printf("    ✅ %s is clean! skipping... \n", part)
 						newNameParts = append(newNameParts, part)
 					}
 				}
@@ -413,13 +421,12 @@ func processHtmlNode(n *html.Node, idDirPattern *regexp.Regexp, idFilePattern *r
 				ogName = strings.Join(newNameParts, "/")
 				n.Attr[i].Val = ogName
 
-				fmt.Printf("📝 New name will be:  %s \n", ogName)
+				// fmt.Printf("📝 New name will be:  %s \n", ogName)
 			}
 
 			// Now change the displayable text to match the href. 
 			for c := n.FirstChild; c != nil; c = c.NextSibling {
 				if c.Type == html.TextNode{
-					fmt.Println("----", c.Data)
 					c.Data = ogName
 				}
 			}
@@ -429,7 +436,9 @@ func processHtmlNode(n *html.Node, idDirPattern *regexp.Regexp, idFilePattern *r
 
 	// Get into each node of the html
 	for c := n.FirstChild; c != nil; c = c.NextSibling {
-		processHtmlNode(c, idDirPattern, idFilePattern)
+		if processHtmlNode(c, idDirPattern, idFilePattern){
+			modified = true
+		}
 	}
 
 	return modified
