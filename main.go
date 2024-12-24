@@ -18,7 +18,7 @@ import (
 )
 
 // DIR
-const PATH = "./notion_12.22.24"
+const PATH = "./notion"
 const ITER_LOOPS = 10
 
 func main(){ 
@@ -27,20 +27,18 @@ func main(){
 	// su un valore fisso quando potrei simplicemente calcolare la quantita di
 	// loops essata derivata da getAllDirectoriesToRename(). Purtroppo, sono
 	// stanco e ho altri proggeti di fare. Fore lo faro nel futuro. 
-	// for index, _ := range [ITER_LOOPS]int{1:10} {
-	// 	if index < ITER_LOOPS {
-	// 		err := cleanPaths(PATH)
-	// 		fmt.Println(err)
-	// 	}
-	// }
-
-	err := cleanNotionLinks(PATH)
-
-	if err != nil {
-		fmt.Println("********", err)
+	for index, _ := range [ITER_LOOPS]int{1:10} {
+		if index < ITER_LOOPS {
+			err := cleanPaths(PATH)
+			fmt.Println(err)
+		}
 	}
 
-	// bkp.Bkp()
+	err := cleanIdsFromHTML(PATH)
+
+	if err != nil {
+		fmt.Println(err)
+	}
 }
 
 // limpia i nomi di tutti i file trovati al'interno di path
@@ -238,7 +236,7 @@ func getAllDirectoriesToRename(path string) ([]string, error) {
 	return paths, nil
 }
 
-
+// gets all the html files under a given dir
 func getAllHTMLFilesInPath(path string) []string{
 
 	var htmlFiles = make([]string, 0)
@@ -255,7 +253,8 @@ func getAllHTMLFilesInPath(path string) []string{
 	return htmlFiles
 }
 
-func cleanNotionLinks(path string) error {
+// this will recursively clean all IDs from html files 
+func cleanIdsFromHTML(path string) error {
     // Regular expression to match Notion's unique ID pattern
     // This matches strings that look like " 1234abcd" at the end of text
     	idDirPattern := regexp.MustCompile(`\b[a-zA-Z0-9]*\.?[a-zA-Z0-9]{16,}\b`)
