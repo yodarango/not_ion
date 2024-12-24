@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>1st response to Rizwan</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="6511a5c6-5271-46c2-a652-9b340d6d55c8" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">✉️</span></div><h1 class="page-title">1st response to Rizwan</h1><p class="page-description"></p></header><div class="page-body"><p id="19182d04-46b9-4d35-8dc1-37d407885cce" class="">A RESPONSE TO RIZWAN</p><p id="ab0d8304-89e2-464d-8e15-0fc692820205" class="">Hello, Rizwan! It is so good to hear from you again! I hope that you are enjoying your time at paradym. I am still workingon my own account, let&#x27;s if i can keep it going for good from now on haha!</p><p id="0225e332-bff9-4c0a-b666-42bbbb699073" class="">First of all I want to say thank you fr sending that eamil and for for reaching out, I really am thankful! Also, sorry that I delayed my response I actually read your email yesterday mornign but  I did not want to respond withou some serious prayer and fasting for wisdom from God. I know that you like to be very careful when sharing your faith and you make sure you say the right things in the right way, and so do I.</p><p id="6ea33f20-43c7-479d-8725-81bf50e3fec4" class="">I rekon that you are  very zealous individual about your faith, and I commned you for that. Because it is zealous people that I have seen God use the most and the greatest.</p><p id="eb44a4de-31b5-4c46-9c37-9044a13fe7be" class="">I know that when talking about the most important things in life, that is, where do I come from?  What am I here for? And Where am I going? are not light questions, as our eternal fate depends on what we decide to do with these.</p><p id="7b492155-a0ea-4d06-9c1d-80fcc23695e7" class="">I will attempt to explain in a few words. as you. I will make three points to keep it consice and hopefully easier to understand:</p><ol type="1" id="79de3aa9-6e48-4463-841a-f6349226d3d7" class="numbered-list" start="1"><li>How do I kow the God of the Bible is True</li></ol><ol type="1" id="54c9da25-a90c-4232-a750-62902f5b285c" class="numbered-list" start="2"><li>How do i know the Bible is the Word of God</li></ol><ol type="1" id="5d9cda7e-4335-4ecc-9875-c7f5928778d0" class="numbered-list" start="3"><li>How do i know Christianity is True</li></ol><p id="f7231465-73f0-48af-b3fa-1e6c85a9e741" class="">How do I kow the God of the Bible is True</p><p id="b68567bd-94b2-4337-b303-ccd76dc7dada" class="">Like I have said before, I have not always been a Christian. I have not always perhaps even believed in the right God. I tended to believe in a three gods. An older man, perhpas an oger you may say, who I associated with the Father and was waiting on me to do the wrong thing so that He could smash me like a bug, a younger adult, who didnt care if i lived a holy life or not, He could always forgive me and love me anyway. That is whom I belived the Son to be. And then a third figure with no hands nor feet, the Holy Spirit who I didnt even know who He was, I just knew that He was there kind of like the third person in heaven.</p><p id="4493aa33-e1a5-445b-b5ad-837ab9446346" class="">For the first 18 years of my life i lived like this. But you know, about that age i started falling into a depression that was growinf more and more everyday. I just felt purposeless. I didnt know what was i supposed to do in life. I had no plans, no goals, no motives to do anything. And that is when I decided that I would give a try to Christianity. All i did that one cool night of March was to get on my knees on next to my bed, and say &quot;God, if I am useful for anything I am available&quot; that was it.</p><p id="b3782b1f-b830-467c-b653-7c5decff12af" class="">I then, without noticing it, started having a hunger for reading the bible. So I began from Genesis to Revelation (First and Last books of the Bible). And a particular detail I started seeing each day more is that the three gods I believed in were not quite true. I started to see that in reality there were no three gods, but One God who communicates with His creation in three different ways, three different languages you may say.</p><p id="329743e1-b639-4e36-851f-600fa50ad9b1" class="">In the very first book, Genesis chapter 1 it&#x27;s read:</p><p id="ed3c5709-5e50-4fcd-9f1a-9d4ff8a67e65" class="">&quot;1: In the beginning God created the heaven and the earth...</p><p id="60bde1d2-01b6-4ca5-91b1-53a6730f1a75" class="">2: And God said, Let there be light...</p><p id="7525ae52-d36b-4582-b13e-283a23a9dd94" class="">6: And God said, Let there be a firmament...</p><p id="b3067b4a-0099-408d-88d9-2c173bc479a1" class="">9: And God said, Let the waters under the heaven be gathered together unto one place,   and let the dry land appear...</p><p id="ce34f55f-57ec-4143-aa45-d58164067866" class="">10:  And God said...</p><p id="6c071327-603f-4966-9c0e-3b1ea13048f7" class="">20: And God said...</p><p id="805bcee6-2c66-4a0c-9f1f-c323eeb138b5" class="">24: And God said...</p><p id="052c28ce-ca8b-4f33-8427-29fd74ec329f" class="">26: And God said...</p><p id="c51c6c31-1bd5-43cc-9ebf-72f3d2efeb50" class="">29: And God said...&quot;</p><p id="c5eabe39-8bf6-463c-8314-13c2fc611dcd" class="">And thus we see God as a creator of the whole universe. Not too long after that, we see in Genesis chapter 3 that the first couple He created, Adam and Eve, choose to sin. And thus, God has to cast them out of the Eden garden, but before He does, He pronounces a curse—the consequence of their sin—to each directly: the serpent, to the woman, and to the man.</p><p id="6c2bce2c-911b-4cd0-bfa7-55e9386684b0" class=""><strong>To the serpent, satan, He says:</strong> &quot;15: And I will put enmity between you and the woman, and between your offspring and hers; He shall crush your head, and you shalt strike His heel.&quot;</p><p id="2c4b1f6e-71c2-4b71-a80f-5a690e8317b2" class=""><strong>To the woman, He declares:</strong> &quot;16: With painful labor you shall give birth to Children&quot;</p><p id="7faf22f0-8faa-4a7f-b591-6f64947bdb74" class=""><strong>And finally to the man: &quot;17: </strong>Because you have listened unto the voice of your wife, and have eaten of the tree, of which I commanded you, saying, you shalt not eat of it: cursed is the ground for your sake; in sorrow shalt you eat of it all the days of your life;</p><p id="ee79a826-eb74-468b-9ed1-3de4635688c2" class="">18: Thorns also and thistles shall it bring forth to you&quot;</p><p id="0cdf7089-8b67-4dc1-9597-e2244f3eec7f" class="">Fast foward almost 3000 years from that, and God raises Moses, to deliver God&#x27;s people. When God calls Him Moses asks Him &quot;who shallI say has sent me&quot; (Exodus 3:13) and God says to Him od said to Moses, &quot;I AM WHO I AM. This is what you are to say to the Israelites: `I AM has sent me to you&quot; (Exodus 3:14).</p><p id="ada9c659-160c-4fdd-9b97-4756b4432241" class="">A few years before Moses died he says in Deuteronomy chapter 18:</p><p id="514366ba-1112-424c-9d86-eb8b76448255" class="">&quot;The Lord your God will raise up for you a prophet like me from among your own brothers. You must listen to him.&quot;</p><p id="5d4d996f-1462-47c1-aea0-10834f67e7db" class="">And after much writting by different prophets we see them all talking about this Prophet, or this Leader, who will be sent from God, the offspring if a woman who will crush satan&#x27;s head as God promised in Genesis. Some hundred years later, one of the major prophets, Isaiah, tells us about this Messenger from God. He talks about Him not only as the offsrping of a woman, but also as the Chosen Messenger.</p><p id="1aa95043-3f92-4ca2-ae0f-2b6dfcc32010" class="">Of Him he says in the book of Isaiah chapter 9 verse 6</p><p id="ee20af06-9d37-49da-896d-b4acac69079d" class="">&quot;For unto us a child is born, unto us a son is given: and the government shall be upon his shoulder: and his name shall be called Wonderful, Counsellor, The mighty God, The everlasting Father, The Prince of Peace.&quot;</p><p id="1b440368-373f-499f-b966-3654ef47f2ee" class="">Then, once he talks about his Man as a child as the offspring promised, he talks about Him as a messenger, the Prophet Moses talked about—a suffering Messenger in actuality—in chapter 53:</p><p id="2ebb4742-041f-449f-8f89-e6dcb6de94d7" class="">&quot;1 Who hath believed our report? and to whom is the arm of the Lord revealed?</p><p id="b5c73e19-4d7c-477e-bbf9-243a413773b2" class=""><strong>2 </strong>For he shall grow up before him as a tender plant, and as a root out of a dry ground: he hath no form nor comeliness; and when we shall see him, there is no beauty that we should desire him.</p><p id="351763b9-19e1-4194-9ced-529432bcf27a" class=""><strong>3 </strong>He is despised and rejected of men; a man of sorrows, and acquainted with grief: and we hid as it were our faces from him; he was despised, and we esteemed him not.</p><p id="63cf5603-df4d-4370-8832-8e8164ca2cca" class=""><strong>4 </strong>Surely he hath borne our griefs, and carried our sorrows: yet we did esteem him stricken, smitten of God, and afflicted.</p><p id="c3c3c9d0-95e5-4b78-a3c4-68e168ad823d" class=""><strong>5 </strong>But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed.</p><p id="6263aeff-4726-4cdf-b0fd-3aafea0ddb79" class=""><strong>6 </strong>All we like sheep have gone astray; we have turned every one to his own way; and the Lord hath laid on him the iniquity of us all.</p><p id="0979d09c-866f-42cd-b823-e79257dbbbba" class=""><strong>7 </strong>He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb, so he openeth not his mouth.</p><p id="12678217-3cc9-4abe-a624-c4b926e7e9d2" class=""><strong>8 </strong>He was taken from prison and from judgment: and who shall declare his generation? for he was cut off out of the land of the living: for the transgression of my people was he stricken.</p><p id="a149d4e8-b698-4318-9e9b-d65771824404" class=""><strong>9 </strong>And he made his grave with the wicked, and with the rich in his death; because he had done no violence, neither was any deceit in his mouth.</p><p id="f632a57c-1e56-40a8-8bd1-5f5262ba417b" class=""><strong>10 </strong>Yet it pleased the Lord to bruise him; he hath put him to grief: when thou shalt make his soul an offering for sin, he shall see his seed, he shall prolong his days, and the pleasure of the Lord shall prosper in his hand.</p><p id="562323eb-4caa-4bda-899e-56315dae4ee0" class=""><strong>11 </strong>He shall see of the travail of his soul, and shall be satisfied: by his knowledge shall my righteous servant justify many; for he shall bear their iniquities.</p><p id="7c84e88f-012d-40cd-818d-d07b36a91215" class="">12 Therefore will I divide him a portion with the great, and he shall divide the spoil with the strong; because he hath poured out his soul unto death: and he was numbered with the transgressors; and he bare the sin of many, and made intercession for the transgressors.&quot;</p><p id="b8606df6-0a11-402c-a97f-2433a4253ff4" class="">About 700 years after this prophecy that Child is born in Bethelem, [Matthew 2:1], born not of a man, but from a virgin, by the powe of God no man was involved in the creation of this Child [Luke1:35]. And it was ordered by God that His name was Ἰησοῦν<strong> </strong>(Jesus):</p><p id="7b6483e8-d83b-4406-b342-a0deafee6df2" class="">Matthew 1:21:</p><p id="fa5ceeea-5347-4f2e-85cf-cafd57f19cde" class="">&quot;She will give birth to a son, and you are to give him the name Jesus, because he will save his people from their sins.&quot;</p><p id="c5f9992e-410d-4da2-988a-8cdd90cd8c0f" class="">And, thus, in this verse we see the first half of the prophecy in Genesis 3:15 fulfilled. The other half of the prophesy gets fulfilled once He dies on a cross as a sacrifice for the sins of the world and resurrects bodily on the third day. The sins that began with Adam and Eve first. By shading His blood on a cross. For God says in Leviticus 17:11 &quot; for it is the blood that maketh an atonement for the soul.&quot; Therefore there cannot be any forgiveness of sins without blood, this is the reason why Israel for so many years sacrificed lambs, because God was pointing them to the fact  that one day He would send a perfect lamb to pay for all of our sins and for oce, which were the words of John the baptists when He saw Jesus:</p><p id="4ef12966-c34f-4d57-95e0-2c691c3865f8" class="">John 1:29</p><p id="68be58d5-d3e3-46d1-90e6-04c0bf11f78b" class="">&quot;The next day John saw Jesus coming toward him and said, &quot;Look, the Lamb of God, who takes away the sin of the world!&quot;</p><p id="b1842e50-8bbf-4ac6-aaca-f9636b98e1e0" class="">At the same time He fulfilled the the prophecy of Isaiah 53, the Man of sorrows, acquainted with the deepest of pains, and disfigured because of the tortures of the Romans to the point where you should not even tell if He was a person.</p><p id="cc5d2fe3-2ac1-489e-b8cb-264a65c16139" class="">This the Son that was given as Isaiah said in chapter 9:6, it is for that reason that John says in chapter 3:16</p><p id="811a2f0a-8390-4ad2-a502-223ea463880d" class="">&quot;For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.&quot;</p><p id="9a53a86d-58d0-4707-ab13-c3d2a12ca49f" class="">And as if that was not enough, remember what i just mentioned a few lines ago about Adam&#x27;s curse &quot;Because of your sin the soil will bring up thorns&quot;? Well Jesus goes to the cross not only as the sacrificed Lamb, but He goes there with a crown of thorns on His head</p><p id="f0576f28-cabf-4fdc-bc47-195bf6740cf4" class="">John 19:2</p><p id="870ad61e-e845-49ba-aef2-958b9ee47e43" class="">&quot;And the soldiers twisted together a crown of thorns and put it on His head, and put a purple robe on Him;&quot;</p><p id="52f94b23-91ee-40cf-93ee-19f2fd962ae6" class="">Therefore He goes to the cross basically saying, I will pay for what you did.</p><p id="0da526a7-e3c5-4aea-93b9-52cbcbc9403f" class="">However, you might still be wondering, how do we come to see that Jesus if God Himself in Flesh?</p><p id="55d78089-9a64-482c-9ddf-a18459e0af67" class="">Well there many many scriptures, but here area few only, lest I overwhelm you:</p><ol type="1" id="df8ca472-0410-403d-b6cd-243be3247036" class="numbered-list" start="1"><li>In Isaiah 43:11 &quot;I, even I, am the LORD, and apart from me there is no savior</li></ol><p id="489df72d-bd35-4258-bde0-58afb8b03def" class="">We have already seen that Isiah promised a Savior who would be called &quot;The Almighty God and Everlasting Father.&quot; Therefore, if there is no other God, and no other Saviour, Isaiah is talking about the same Person. As a matter of fact, we have seen that that is what the name Jesus means in the Hebrew &quot;God saves.&quot;</p><ol type="1" id="3742b4f0-05ca-4552-a1f7-9f65d9b834a2" class="numbered-list" start="1"><li>in Deuteronomy 13:1 Moses says:</li></ol><p id="8676c6f0-5862-455f-a0ef-3907088516b6" class="">&quot;Someday a prophet may come along who is able to perform miracles or tell what will happen in the future. Then the prophet may say, “Let’s start worshiping some new gods—some gods that we know nothing about.” 3 If the prophet says this, don’t listen! The Lord your God will be watching to find out whether or not you love him with all your heart and soul.&quot;</p><p id="5f401b6c-095b-43a3-bd5b-44b87a0a5f26" class="">However, Moses did say, as I mentioned</p><p id="48fa4775-8c91-4859-a710-58c0d837fcba" class="">&quot;The Lord your God will raise up for you a prophet like me from among your own brothers. You must listen to him.&quot;</p><p id="ed9b549d-2c0c-4f5b-b928-6152fbe2fe65" class="">Was Moses contradicting Himself? No, He was talking about the same God they worshipped, He was to come down himself to earth. That is not strange thing to see God come down to earth, after all He created it. We actually see Him pay a visit to Abraham in Genesis 18:1</p><p id="e1b49f68-cae8-4f2f-a80a-e238d6b70287" class="">&quot;<strong> </strong>The Lord appeared to Abraham near the large trees of Mamre. Abraham was sitting at the entrance to his tent. It was the hottest time of the day.&quot;</p><ol type="1" id="dcfa7e6f-d344-434e-a047-571ef20a9396" class="numbered-list" start="1"><li>My third Verse comes from John, in John 1:1, the very beggining of His book He says:</li></ol><p id="5167b4df-66a7-4f07-8172-923128368a3a" class="">&quot; In the beginning was the Word, and the Word was with God, and the Word was God. 2 He was with God in the beginning. 3 Through him all things were made; without him nothing was made that has been made. 4 In him was life, and that life was the light of all mankind...</p><p id="2db5d4ad-855d-46dc-9e49-30b1cd32f384" class="">10 He was in the world, and though the world was made through him, the world did not recognize him. 11 He came to that which was his own, but his own did not receive him...14 The Word became flesh and made his dwelling among us. We have seen his glory, the glory of the one and only Son, who came from the Father, full of grace and truth.&quot;</p><p id="86b26f00-55aa-45bb-9956-2a90e7022111" class="">One might ask and what Word is He talking about? Well, we have seen that &quot;in the beginning God said...God said...God said...&quot;</p><p id="99b7099d-52f2-4984-a548-f816f03ea71b" class="">That is the Word through which the world was created as John explains to us. God, the word, became flesh. He put on a suit of flesh and bones as the one He created for us and came to live and die for us. But most importantly, to rise from the death again. and this is what brings me to my last point on how I know Jesus is God.</p><ol type="1" id="0a43d9a1-5ab3-46a9-9992-074af742f06b" class="numbered-list" start="1"><li>Jesus was actually crucified because of that very claim, because He claimed to be God, here are a few claims:</li></ol><ul id="4d320de3-0aa5-4cef-bce2-33a087686e58" class="bulleted-list"><li style="list-style-type:disc">John 10:30 The Father and I are one.</li></ul><ul id="35521fe8-5701-4c18-a256-faa9530e0e83" class="bulleted-list"><li style="list-style-type:disc">John 1:18 No one has ever seen God, but the one and only Son, who is himself God and is in closest relationship with the Father, has made him known.</li></ul><ul id="f8826883-9db8-494f-b3e2-52b6d1f87c77" class="bulleted-list"><li style="list-style-type:disc">John 8:57-58The people said, “You aren’t even fifty years old. How can you say you have seen Abraham?” Jesus answered, “I tell you the truth, before Abraham was even born, I Am!”</li></ul><ul id="7e53f8e0-d90f-482a-8b65-70374130f851" class="bulleted-list"><li style="list-style-type:disc">John 13:18-19 “I am not referring to all of you; I know those I have chosen. But this is to fulfill this passage of Scripture: ‘He who shared my bread has turned against me.’ “I am telling you now before it happens, so that when it does happen you will believe that AM WHO I AM</li></ul><ul id="454d862b-0175-419d-a106-ab360aab29d1" class="bulleted-list"><li style="list-style-type:disc">John 10:33 &quot;We are not stoning you for any good work,” they replied, “but for blasphemy, because you, a mere man, claim to be God.”<ul id="38342c51-c951-42f8-ae94-c861557cd0da" class="bulleted-list"><li style="list-style-type:circle">(This last one is not a claim by Jesus but it is a claim by those who killed Him which is of equal importance since it tells us that they knew He was claiming to be God)</li></ul></li></ul><p id="18f08624-b235-423b-91f9-9662cdc4d561" class="">Most importantly He also claimed that He would bodily resurrect from the tomb again, these are some verses of the many:</p><ul id="c9ed751d-bd31-4d92-b0a4-4dd0ec86626a" class="bulleted-list"><li style="list-style-type:disc">John 10:17-18: Therefore my Father loves me, because I lay down my life that I may take it again. No one takes it from me, but I lay it down of myself. I have authority to lay it down, and I have authority to take it again</li></ul><ul id="a8be3dc8-70f0-483a-a870-99e2471141f9" class="bulleted-list"><li style="list-style-type:disc">Matthew 27:62 On the next day, which followed the Day of Preparation, the chief priests and Pharisees gathered together to Pilate saying, &#x27;Sir, we remember, while he was still alive, how that deceiver said, &quot;After three days I will rise.&quot;</li></ul><ul id="8283a326-ed16-4177-aaa1-50fa6cd01049" class="bulleted-list"><li style="list-style-type:disc">John 2:18-22&quot;So the Jews answered and said to him, &#x27;What sign do you show to us, since you do these things?&#x27; Jesus answered and said to them, &#x27;Destroy this temple, and in three days I will raise it up.&#x27; Then the Jews said, &#x27;It has taken forty-six years to build this temple, and will you raise it up in three days?&#x27; But he was speaking of the temple of his body. When therefore he was raised from the dead, his disciples remembered that he said this; and they believed the Scripture, and the word which Jesus had spoken&quot;</li></ul><p id="cee4e59a-ef8f-4fc4-bf84-93bf0337416d" class="">Now, what about the Holy Spirit? Any revelation has to com efrom the Spirit of God who is whom reveals His mysteries to us. That is the way the bible was written, through man that God used through His Spirit. And this vey Spirit is Jesus, God Himself living within us. He is the One who guides to do right and to live Holy live and the One who empowers us to believe that Jesus is God. Jesus promised that after His resurrection he would leave this gift to us, that is, to every individual who wants to accept Him.</p><ul id="29db0b71-7a7b-4cf1-9b2d-d3b45815b36c" class="bulleted-list"><li style="list-style-type:disc">John 14:15-17 And I will ask the Father, and he will give you another advocate to help you and be with you forever 17 the Spirit of truth. The world cannot accept him, because it neither sees him nor knows him. But you know him, for he lives with you and will be in you.</li></ul><ul id="5f4828b2-f08d-4c06-9f2a-75c310ad8dbc" class="bulleted-list"><li style="list-style-type:disc">I baptized you with water; but He [Jesus] will baptize you with the Holy Spirit.”</li></ul><ul id="f6738822-d2b3-46df-9635-13802bd5fb2a" class="bulleted-list"><li style="list-style-type:disc">Luke 11:13 If you then, being evil, know how to give good gifts unto your children, how much more shall your heavenly Father give the holy Spirit to them that ask Him?”</li></ul><p id="fdd9aca6-ea80-4c19-9796-d462034b57b7" class="">To conclude, we can see that although God is one, He speaks as the Father through His creation, He speaks to us in our humanity as a Man, the Son, and He speaks to us everyday in many forms and ways, by living in us and guiding us, as the Holy Spirit!</p><p id="b81dcd46-7a06-4aff-9530-bac552a09e66" class="">Therefore, since Jesus claimed to be God and claimed to be eternal and to be able to rise from the death, we can only put Him in two categories: Either He really was God or He was only a crazy man. He could not be just a prophet or teacher, for each prophet or teacher who claims to be God is firstly blaspheming and secondly we know they are lying. These are the only two choices we have when it comes to describing Jesus.</p><p id="034d5934-2313-47ee-8b08-5b7a425a7075" class="">I know the God of the bible is the True God because it makes the most sense to me Rizwan! I have analyzed other faiths, and I have studied other philosophies and I have come to see that in most religious systems it’s mankind the one who pursues God, it is mankind who is chasing and running after God and doing a multitude of righteous things and not doing a lot of other bad things with the hope that maybe, and just maybe, God will accept me. Not only that but God seems to be quite removed from humanity in most religious systems.</p><p id="85638450-23d4-4ba3-9cd7-92021c3ea457" class="">The peculiar thing about Christianity is that it worships a God who knows what pain and suffering is because He Himself chose to come down to suffer it. Therefore when I go to Him in prayer I am  not wondering whether He understands me or not, because i know He does, He also lived as a man, He also was rejected, mocked, poor, sad. He cried. As a matter of fact, that  is the shortest verse in the bible  &quot;Jesus Wept&quot; (John 11:35) And that is of great comfort to me. To serve a God who knows what tears are. Not only that but in Christianity it is God who has reached out to mankind first and I obey Him and serve Him not with the hopes He will take me in, but rather because He already has taken me in. In 1 John 4:19 it says &quot;We love because he first loved us.&quot;</p><p id="3056a9df-bf22-43da-8e3d-df33c5b79170" class="">You made a very good statement in your email &quot;For any message that comes from the Creator himself, it must be always accurate.&quot;</p><p id="95cae1c7-3e25-4087-8535-79b1cc06e406" class="">You know, that line right there is why I decided to listen to Jesus rather than to other men who have claimed to have revelation from God, because out of them all Jesus is the only one that has claimed to be the creator of the universe, and if I want to listen to someone who tells me how to scape eternal perdition I want that Man to be God Himself.</p><p id="dc53d363-8d7a-46f8-a8e5-7eb3721c96bd" class="">I just realized this is more of a book than an email and i didn’t even get to explain how i know the bible is True and why I am a Christian. But I would love to keep talking about it and if you would like schedule a meeting sometime soon, Rizwan?</p><p id="1957d574-073d-438e-8081-849dd4ba7ae1" class="">I dont have a schedule so I will leave up to you the date? lol</p><p id="ec529346-635d-4c06-9720-3f8650a83afb" class="">God blessyou Rizwan, and pardon the typos if there are any lol</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

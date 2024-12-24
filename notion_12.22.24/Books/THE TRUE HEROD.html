@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>THE TRUE HEROD</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e8a12467-c0e2-4a57-8468-80a5bc56e1f2" class="page sans"><header><img class="page-cover-image" src="THE%20TRUE%20HEROD%20e8a12467c0e24a57846880a5bc56e1f2/623CCC78-E92F-4500-AF9D-1B7EE8A78A6A.jpeg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🤴🏾</span></div><h1 class="page-title">THE TRUE HEROD</h1><p class="page-description"></p></header><div class="page-body"><ul id="233a8982-f7df-4d00-a4e7-824f205e7f4d" class="bulleted-list"><li style="list-style-type:disc">27: John, surnamed Hyrcanus, the last<br/> Maccabeus, took over the leadership from his assassinated father of being the defenders of Jewish identity and independence, they allowed Hellenism to creep in one way or another. Among other things, they all bore both Jewish and Greek names.&quot;<br/>The first six years of John were affected by the struggle to keep himself independent from foreign power during the successive Seleucid kings, Antiochus VIl, Alexander Zebinas, Antiochus VIII and Antiochus IX, but by 129 scE the Syrian supremacy came to an end. In consequence, Hyrcanus I felt free to extend his dominion.<br/></li></ul><ul id="a11b0196-8b07-457c-bc81-14711c820247" class="bulleted-list"><li style="list-style-type:disc">29: Finally, it should be reported that the conquest by Hyrcanus I of Idumaea was followed by the voluntary Judaization of the inhabitants, circumcision and adoption of the Jewish customs. The Idumaean Antipas or Antipater, Herod&#x27;s grandfather, was appointed governor of the province. His promotion constitutes the first join between Hasmonaean history and that of Herod the Great. From the time of John Hyrcanus I, the Idumaeans counted as Jews although, as we shall see, some of Herod&#x27;s critics could not quite stomach this idea.</li></ul><ul id="510fd301-e5e4-4b4e-a9fe-4c4ed0b9023b" class="bulleted-list"><li style="list-style-type:disc">31: To get the better of him, in 88 B.C. the Pharisees persuaded the Seleucid Demetrius III to invade Judaea. He defeated Jannaeus&#x27;s army of mercenaries and returned to Syria. Jannaeus managed to escape and sought revenge, capturing many antagonistic Pharisees and cruelly executing 800 of them by crucifixion.</li></ul><ul id="722cfbc2-6fe2-4d30-ad61-26f86caf322c" class="bulleted-list"><li style="list-style-type:disc">36: Antigonus saw to it that Hyrcanus would never regain the High Priesthood: he cut or bit off one of his ears, and thus made him unfit for the office according to Jewish law.</li></ul><ul id="8337209d-18f1-4b31-b975-4d8499e022f3" class="bulleted-list"><li style="list-style-type:disc">37: Having been appointed king by the Senate on the recommendation of Mark Antony and Octavian in 40 BCE</li></ul><ul id="85c68a77-05fe-4e58-971e-ee2417eff6ad" class="bulleted-list"><li style="list-style-type:disc">42: I As the renowned Josephus expert L. H.<br/>Feldman notes, &quot;There is no figure in antiquity about whom we have more detailed information than Herod? <br/></li></ul><ul id="d59ce8a4-d7b8-40e9-af55-bab0a5c1320f" class="bulleted-list"><li style="list-style-type:disc">42: Unfortunately we have no contemporary, or near-contemporary, representation of Josephus and the earliest available document is an amusing drawing contained in a ninth-century manuscript, sketching him as a Jewish priest as imagined by the anonymous artist.</li></ul><ul id="e3eec545-8e4e-4f3d-8cbd-f016f3049dcc" class="bulleted-list"><li style="list-style-type:disc">43: Flavius Josephus consecrated to Herod&#x27;s imposing figure most of Book I of the Jewish War, written in the late seventies, and Books XIV-XVII of the Jewish Antiquities, completed in the nineties of the first century cE. Josephus, who was born about forty years after the death of Herod, had good access to sources regarding the history of the Herodian age. His principal source was the Universal History of Nicolas of Damascus, a learned Greek philosopher and diplomat, who, after tutoring the children of Antony and Cleopatra in Egypt, joined before 14 BE the Herodian establishment as a court official. 19 He recorded the chronicle of the reign and acted also as the king&#x27;s adviser, teacher and ambassador.</li></ul><ul id="b46f03ef-656a-4ff7-bf27-d25b71c37944" class="bulleted-list"><li style="list-style-type:disc">45: His father, Antipater, married Cypros, a girl who came from an illustrious Nabataean family. The Nabataeans were an Arab tribe settled in southern Jordan and spoke an Aramaic dialect. Antipater and Cypros had five children:<br/>Phasael, Herod, Joseph, Pheroras and a daughter called Salome.&#x27; The parents and Herod bore Greek names, their other children, male and female, were given Semitic ones. As Herod was 25 years old in 47 BE, he must have been born in 73 or 72. He was pushing 70 when he died in the spring of 4 BcE, shortly before<br/></li></ul><ul id="25eecdbb-53c4-42b2-9099-13ddddc3b0bb" class="bulleted-list"><li style="list-style-type:disc">55: In the course of the struggle with Antigonus&#x27;s forces, Herod lost his brother Joseph, but true to himself he hastened to avenge his death on the enemy general Pappus, and sent the trophy of his severed head to his last surviving brother, Pheroras.</li></ul><ul id="8ee0b48a-10e8-44b7-a88a-43f8317ef19d" class="bulleted-list"><li style="list-style-type:disc">56: So, having dismissed his Nabataean wife, Doris, together with her son, Antipater, he took for spouse Mariamme, the beautiful granddaughter of the former High Priest and King/ethnarch, Hyrcanus II. She bore him three sons, Alexander and Aristobulus as well as a third son, who died young in Rome, and two daughters.</li></ul><ul id="d6c30dad-9fbf-4f68-8dd5-103795fecae4" class="bulleted-list"><li style="list-style-type:disc">58: However the loud and warm acclaim granted by the Jewish crowds in the Temple to Aristobulus, who was young and handsome as well as a true Hasmonaean, awakened Herod&#x27;s envy and suspicion. Immediately he saw him as a threat, and in 35 BE he engineered for him a swimming pool accident? What was made to appear as horseplay between the High Priest and his young friends resulted in the drowning of Aristobulus in Jericho.</li></ul><ul id="f6977c2b-4fac-4630-aaa0-670610f14d04" class="bulleted-list"><li style="list-style-type:disc">60: The killing of the woman whom he had madly loved completely unhinged Herod. His intellectual sanity appears to have gone. No diversion, such as parties, banquets, not even his favourite hunting expeditions, could keep Mariamme out of his mind. His mental imbalance - he kept on instructing servants to call her as though she were still alive - was followed by a severe illness, which Herod&#x27;s physicians after many attempts were unable to treat and at the end left him to his own devices, but his strong constitution triumphed and he regained his strength. </li></ul><ul id="ec42a405-ebe9-4e0f-b21c-f35858e7b339" class="bulleted-list"><li style="list-style-type:disc">62: I am come to rest my safety on my integrity ... I am not ashamed to declare my loyalty to Antony. But if you would disregard the individual concerned, and examine how I requite my benefactors, and how staunch a friend I prove, then you may know me by the test of my past actions. I hope that the subject of inquiry will be not whose friend, but how loyal a friend, I have been. </li></ul><ul id="fa851c62-1ebb-410e-b37f-f96c23728e50" class="bulleted-list"><li style="list-style-type:disc">62: Herod was thought to be Octavian&#x27;s second best friend immediately after Marcus Vipsanius Agrippa, and Agrippa&#x27;s second best friend preceded only by Caesar. </li></ul><ul id="cd9996af-6d86-4e74-8709-60b4094cb35e" class="bulleted-list"><li style="list-style-type:disc">71: The main sanctuary was speedily completed in eighteen months and was inaugurated with a grandiose ceremony at which Herod ordered the slaughter of 300 sacrificial oxen.</li></ul><ul id="03f88574-969e-41bf-8180-1e8aa357865d" class="bulleted-list"><li style="list-style-type:disc">79: A private royal palace, referred to also as the praetorium, was erected on a promontory into the Mediterranean not far from the theatre, equipped, as would be expected, with a swimming pool. According to the New Testament, St Paul spent some time as a prisoner in that same praetorium,187 and was summoned from his cell by the Roman procurator Porcius Festus to entertain in 60 CE Herod&#x27;s great-grandson King Agrippa II</li></ul><ul id="80f3dcde-0667-4c2d-aad6-dc29aae87948" class="bulleted-list"><li style="list-style-type:disc">90: The two young men naturally felt bitter towards Herod for killing their mother (and their uncle, Aristobulus, as well as their grandmother, Alexandra, and their great-grandfather, Hyrcanus)</li></ul><ul id="317de94c-dffc-419f-848d-6a2a2a5f46b5" class="bulleted-list"><li style="list-style-type:disc">91: Alexander wrote a long document of self-defence in which he named Pheroras and Salome as the real guilty parties. The aunt was even accused of entering Alexander&#x27;s bedroom and forcing him to have sex with her.</li></ul><ul id="a60c124f-795f-432d-831e-09b1c255569c" class="bulleted-list"><li style="list-style-type:disc">92: Herod, however, and all the other members of the council including one of the Roman dignitaries, voted for the death penalty. In Sebaste, where Herod married Mariamme thirty years earlier, their two sons were executed by strangulation in 7 BE. Their bodies were taken to Alexandrion, some 30 miles south-east of Samaria, to be buried next to their maternal grandfather Alexander, son of the High Priest Aristobulus II.</li></ul><ul id="0d0ac547-754a-477d-8464-b561a24575b8" class="bulleted-list"><li style="list-style-type:disc">92: Yet the fateful day of reckoning in its unpredictable way was fast approaching. The exiled Pheroras, Herod&#x27;s youngest brother, died, and it was reported to Herod that he was poisoned by a love potion administered to him by Doris, Antipater&#x27;s mother. So Doris again fell out of favour and was repudiated for a second time, and tortured servants of the palace confessed that the poison was not prepared for Pheroras, nor was it administered to him. On the contrary, it was Pheroras together with Antipater who acquired it and was actually meant for none other than Herod.</li></ul><ul id="c49d2ffa-742d-4777-947c-75371d268058" class="bulleted-list"><li style="list-style-type:disc">94: By then the king&#x27;s illness reached its final stage and Herod&#x27;s body began to disintegrate. He suffered from fever, skin disease, gangrene, inflammation, convulsions and asthma. This is how Josephus describes Herod&#x27;s final condition, a portrait that seems to be influenced to some extent by the literary cliche regarding the dreadful death of tyrants:<br/>He had a mild fever, showing little evidence of inflammation to the touch but accompanied by serious internal disorder, one of the symptoms being a desperate and compulsive urge to get relief by scratching himself. He suffered ulceration of his bowels, with acute intestinal pains, and an effusion of colourless fluid around the feet. He had a similar disorder of the abdomen, and what is more, a gangrene of the genitals that produced worms. <br/></li></ul><ul id="1535a6e5-424b-4b56-8f50-68068b67762c" class="bulleted-list"><li style="list-style-type:disc">95: Herod had only five more days left to live and died shortly before Passover in 4 B.C.</li></ul><ul id="71f66b95-8e46-4652-8bd5-536902ce9f85" class="bulleted-list"><li style="list-style-type:disc">97: In appearance Herod was a powerful and athletic man though he does not seem to have been particularly tall. He clearly did not match the height of his son Alexander, who felt obliged to stoop when they walked together so as to appear smaller than his father. It seems that he could not tolerate that anyone should exceed him in any way. He was an excellent rider and in hunting no one was, or was permitted to appear, his equal.<br/>One day he is said to have killed as many as forty stags, boars and wild asses.<br/></li></ul><ul id="78ba68fd-2950-40d4-bb06-f3cab5ccbcc3" class="bulleted-list"><li style="list-style-type:disc">99: However, during his last years, after witnessing his cruelty towards Mariamme&#x27;s children, Caesar Augustus saw through him and, snidely alluding to his well-known Jewish dietary habits, apparently declared:&#x27;It is better to be Herod&#x27;s pig than his son?</li></ul><ul id="9e0cc6d1-99a7-45c5-ae80-665c4690d672" class="bulleted-list"><li style="list-style-type:disc">102: Taking every precaution to be unobserved at night, like Hyrcanus before him, Herod entered the tomb of King David with some trusted companions on a treasure hunt. He was told that Hyrcanus had removed from the grave three thousand talents of silver. Herod did not have such luck, but he still discovered and had taken away a good many gold ornaments and other valuables.</li></ul><ul id="97073cdc-9cb4-4a85-96c6-4b40f7151e1e" class="bulleted-list"><li style="list-style-type:disc">102: Above all, the rebuilding of the Temple instilled a fresh life and a much increased attractiveness into Jewish worship and surely enlarged the number of the Jewish pilgrims and the non-Jewish tourists who visited Jerusalem throughout the years. The pilgrims came from the four corners of the ancient world, even from beyond the borders of the Roman Empire. According to the Acts of the Apostles, the Jewish crowds<br/>present in Jerusalem at the pilgrim-feast of Shabuot or Feast of Weeks, the first Christian Pentecost, who were addressed by St Peter, came from Parthia, Media, Elam, Mesopotamia, Cappadocia, Pontus, Asia, Phrygia, Pamphilia, Egypt, Cyrene, Rome, Crete and Arabia. The Jerusalem sanctuary was one of the marvels of the ancient world.<br/>According to a Jewish proverbial saying preserved in the Babylonian Talmud, &#x27;He who<br/>has not seen the Temple of Herod has not seen a beautiful building in his life? <br/></li></ul><ul id="c91616af-52c0-4269-bd78-a32c741859d9" class="bulleted-list"><li style="list-style-type:disc">123: Antipas, the second son of Herod the Great also by Malthace, is the most frequently mentioned Herodian personality in the New Testament. He had dealings with both Jesus and John the Baptist. His name appears no fewer than twenty-four times in the Synoptic Gospels and the Acts of the Apostles. He is referred to either as tetrarch or more incorrectly as king.”</li></ul><ul id="346d694c-2bd6-4d74-acb2-e8f21bd2c2ae" class="bulleted-list"><li style="list-style-type:disc">124: He was first married to the daughter of the Nabataean king Areas IV,32 but divorced her when he fell in love with Herodias, his sister-in-law, the wife of his half-brother Herod. She was the daughter of Aristobulus, Mariamme&#x27;s executed son, and the mother of the &#x27;dancing girl, Salome, who later became the wife of Philip, Antipas&#x27;s brother, and afterwards married King Aristobulus of Chalcis. The Herodians face us with truly amazing marital complexities.</li></ul><ul id="0a84bf05-3004-406d-8b96-9874fd5be696" class="bulleted-list"><li style="list-style-type:disc">131: Philip also reconstructed Paneas or Banias, at the sources of the Jordan and called it Caesarea in honour of Augustus. This is Philip&#x27;s Caesarea or Caesarea Philippi of the Gospels, distinguished from the port city of Palestine or Caesarea Maritima.</li></ul><ul id="6424d7e4-3955-4163-b89e-e7928c27a2a2" class="bulleted-list"><li style="list-style-type:disc">132: On his death, his domain was attached for a short while to the Roman province of Syria and was later transferred to Agrippa I in 37 B.C.</li></ul><ul id="77dcea8e-0bd8-4e64-8d27-4f8e96b1ae0c" class="bulleted-list"><li style="list-style-type:disc">133: The new Emperor [Caligula] released Agrippa from gaol and exchanged his chain of iron for one of the same weight in gold..</li></ul><ul id="03884952-65b7-4418-a765-2b15056c3e10" class="bulleted-list"><li style="list-style-type:disc">134: the grateful new emperor [Claudius] added Judea and Samaria to the territories of Agrippa. From 41-44 B. C. he ruled over a kingdom which was as large as that of Herod the Great and described himself as King Agrippa on his coins. </li></ul><ul id="9a03e385-89b1-4e4a-b19f-61eeb606c9d5" class="bulleted-list"><li style="list-style-type:disc">135: Agrippa personally performed the reading of the prescribed section of Deuteronomy at the ceremony of closure of the sabbatical year in 42 ce.</li></ul><ul id="bcf1e237-27d7-44c8-b3dd-9cf903236c5f" class="bulleted-list"><li style="list-style-type:disc">135: Agrippa personally performed the reading of the prescribed section of Deuteronomy at the ceremony of closure of the sabbatical year in 42 B. C. The Pharisees approved of Agrippa&#x27;s policies and, overlooking his Idumaean ancestry, they called him their brother.27</li></ul><ul id="092554ff-05eb-49ec-ae30-ba22ff10f674" class="bulleted-list"><li style="list-style-type:disc">141: He was in constant contact with Josephus and wrote to him sixty-two letters. In one of these, quoted by the historian, Agrippa showered praises on Josephus&#x27;s Jewish War, which he qualified to be the best among all the accounts of the conflict, and asked him for the remaining volumes.? Elsewhere Josephus reports that, instead of sending him complimentary copies, he sold the whole work to the most admirable King Agrippa.</li></ul><ul id="4473f5dd-c800-4ab6-965d-f341ef935cae" class="bulleted-list"><li style="list-style-type:disc">141: Before recounting the encounter of Agrippa and his sister with St Paul, a few words need to be written about Berenice. She was another of the femmes fatales of antiquity whose activities filled the gossip columns of the Roman world. She was three times married. Her first husband was Marcus Julius Alexander, the Romanized son of the famous Alexandrian Jewish financier, Alexander the Alabarch, who was the brother of the philosopher Philo of Alexandria. Marcus, in turn, was the brother of Tiberius Julius Alexander, the Roman procurator of Judaea from 46 to 48 ce and later chief of staff of the Roman army during the siege of Jerusalem. After her first husband&#x27;s untimely death, Berenice became the wife of her uncle, the earlier mentioned Herod of Chalcis, to whom she bore two sons. By 48 cE, when she was in her twenties, she was widowed again and joined the court of her brother Agrippa. Rumour had it both in Judaea and in Rome that they lived in an incestous relationship </li></ul><ul id="83f55d7b-fa38-4c03-85fb-d428bd3a7082" class="bulleted-list"><li style="list-style-type:disc">146: With the death of Titus&#x27;s friend, Agrippa II, in 92/3 or 100 ce, the Herodian dynasty came to an end. In 70 ck, after the destruction of the Temple of Jerusalem and the disappearance of the main institutions of Palestinian Judaism, the Sanhedrin and the High Priesthood, the time of the Herods ran out. They promptly vanished from history.<br/>If Herod the Great, dreaming of his and his country&#x27;s grandeur at home and in the Roman world, could have foreseen the future, he surely would have been struck down by a sudden heart attack.<br/></li></ul><p id="7988ee81-1602-4019-955b-6df7e10d0d64" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

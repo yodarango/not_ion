@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>The power of babel </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b2878cec-7240-4ce3-9285-64935de58fbb" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🗼</span></div><h1 class="page-title">The power of babel </h1><p class="page-description"></p></header><div class="page-body"><ul id="ca1b1a58-9b87-4c71-a007-f75deb6e6e6f" class="bulleted-list"><li style="list-style-type:disc">18: This kind of change [in language] entails the concurrent and interactive progression of a number of processes, which can be broken down into five principal ones. Before we take a look at them, it will help to break down the two sentences. The way linguists do this is to place the translations of individual words underneath: sound change, extension, expressiveness cycle, </li></ul><ul id="c6816e18-e8c5-4977-9296-01282f4a5da3" class="bulleted-list"><li style="list-style-type:disc">23: If this hadn&#x27;t happened, then the plural of book would be beek! Instead, only the strayest of remnants of things like this lurk in the language, such as mice and brethren.</li></ul><ul id="59e45bac-5493-438e-9978-239da3ddf32e" class="bulleted-list"><li style="list-style-type:disc">40: Language change is neither decay nor even evolution; rather, it is transformation-a term I have deliberately used in place of evolution, with its connotation of progress.</li></ul><ul id="88d7570a-bfc7-4284-8d64-e36bbcde2fd5" class="bulleted-list"><li style="list-style-type:disc">45: In fact, any language is most likely one of a litter of pups, and Latin itself was no exception. Latin began as one of several transformations of a language of which no records remain, but which we can deductively reconstruct from similarities between it and several dozen other languages in Europe, Iran, and India, collectively termed the Indo-European family.</li></ul><ul id="f94fe6ff-964c-4a16-bf06-50bcd4f422f2" class="bulleted-list"><li style="list-style-type:disc">49: In French, we are often taught that sortir means &quot;to leave.&quot; But more precisely it means what we mean by &quot;go out&quot;-&quot;When do you want to leave?&quot; is Quand veux-tu partir? and Quand veux-tu sortir? is &quot;When do you want to go out?&quot; Furthermore, the French can use sortir in an extended sense to mean &quot;to pull out,&quot; as in &quot;to make something go or come out&#x27;&quot;:<br/>Sors moi d&#x27;ici! &quot;Get me out of here!&quot; Thus French&#x27;s sortir occupies a semantic space that overlaps with, but does not coincide with, our leave. But there is nothing inherent to the French as a culture that led to their using the same word to describe both going out on a date and being pulled out of a hole. Nor is there anything inherently &quot;French&quot; about &quot;taking&quot; a beverage (je prends une bière &quot;I take a beer&quot; for &quot;I&#x27;m drinking a beer&quot;) instead of drinking it or inherently English about &quot;taking&quot; a nap, whereas the French &quot;make&quot; one (faire un petit somme).<br/></li></ul><ul id="7ddd7938-c672-43be-91ef-5d88f69eb408" class="bulleted-list"><li style="list-style-type:disc">64: But in fact standard dialects were generally only chosen for this role because they happened to be spoken by those who came into power as the nation coalesced into an administratively centralized political entity. What this means is that there is no logical conception of &quot;language&quot; as &quot;proper&quot; speech as distinguished from<br/>&quot;quaint,&quot; &quot;broken&quot; varieties best kept down on the farm or over on the other side of the tracks.<br/></li></ul><ul id="7a29419c-5186-4909-a60c-c40e81ead5d1" class="bulleted-list"><li style="list-style-type:disc">66: By the 1400s, London was the hub of manuscript copying and then printing. Because scribes and printers tended to come from the surrounding regions, features of dialects spoken in these areas made it onto the page more often than others, which in turn meant that people throughout England were more likely to see London dialect written than any other.<br/>Combine this with the cultural and commercial influence of Lon-don, and the result is a standard dialect perceived as the heart of &quot;English,&quot; a star relegating the other varieties to character parts.<br/>The shift in attitude toward local speech is visible in the record.<br/>About 1490, England&#x27;s first printer, William Caxton, depicted the differences between London and Kentish English as a matter of apples and oranges<br/></li></ul><ul id="f783515e-1303-4f54-9c5c-4479eb24174c" class="bulleted-list"><li style="list-style-type:disc">69: The Danes used to run what is now Sweden and Norway, and there was no such thing as &quot;Swedish&quot; until Sweden became independent in 1526. What is today &quot;Norwe-gian&quot; was just &quot;the way they speak Danish in Norway&quot; until Not-way broke with Denmark in 1814 and gradually began explicitly working out a standard form of what was an array of nonstandard local dialects.</li></ul><ul id="71d30086-de05-432c-a261-198ca6ebfdb1" class="bulleted-list"><li style="list-style-type:disc">68: Moldovan is not just &quot;close&quot; to the Romanian dialects in Romania proper: it is very much one of them, not differing from the standard dialect any more than any Romanian nonstandard one does. The only remotely salient difference between Moldovan and Standard Romanian is that a polite form of the pronoun he in the standard is used more informally in Moldovan. Otherwise, most of the differences are minor differences in vocabulary no more dramatic than the ones between American and British English. Within the Romanian-speaking orbit, then, Moldovan had been a &quot;quaint,&quot; &quot;rustic&quot; dialect. The Soviets, however,</li></ul><ul id="05e1f75b-fc61-4ea7-82f8-237a604c62af" class="bulleted-list"><li style="list-style-type:disc">69: Although one learns Hindi in different courses from those in which one learns Urdu, the two are dialects of the same language.<br/>Hindi, the indigenous lingua franca of India, has taken on a lot of Vocabulary from Sanskrit, its ancestor now enshrined in liturgical writings, and Urdu, spoken in Muslim-dominated Pakistan, has done the same from Islam&#x27;s vehicle, Arabic.<br/></li></ul><ul id="72774630-e110-43ae-9886-e908e810c417" class="bulleted-list"><li style="list-style-type:disc">85: Linguists are often asked, &quot;What&#x27;s the difference between language and dialect?&quot; Often, the answer they give is that it is a &quot;diffi-cult question,&quot; which depends as much on culture, history, and politics as on linguistic reality. This response, however, refers only to language and dialect as labels. The linguistic reality does not lend itself gracefully to any underlying conception of a language /dialect distinction.</li></ul><ul id="1f1aecbb-0775-4d2d-a086-e7360027c10d" class="bulleted-list"><li style="list-style-type:disc">99:  We English speakers, however, do not have this advantage with<br/>any language on earth. Our vocabulary is so shot through with foreign loanwords on all levels that there is no language whose basic vocabulary is mostly akin to ours.<br/></li></ul><ul id="0c00d4f3-00f7-4da4-a18c-457091bd77f8" class="bulleted-list"><li style="list-style-type:disc">105: Yiddish is, in the strictly taxonomic sense, a variety of German. It does not differ from Standard German appreciably more than do Swiss German, Bavarian, and such Austrian German dialects as Viennese, and if it were spoken within Germany by Germans rather than being the language of a culturally distinct group (Yiddish means &quot;Jewish,&quot; for example), it would simply be considered a German &quot;Mundart&quot; like those other dialects.</li></ul><ul id="d86f4690-95ff-4d7d-ae62-edf8cfb61c6f" class="bulleted-list"><li style="list-style-type:disc">106: The reason Romanian is the &quot;twisted sister&quot; in the Romance family is because it was spoken bilingually so often and for so long with other languages in our Balkan group, whose articles already happened to fall after rather than before their nouns (as is true of a great many languages in the world)</li></ul><ul id="ada6cda0-6a91-4167-b5b2-dff51baf9f26" class="bulleted-list"><li style="list-style-type:disc">115: One of the oddest languages on earth is Wutun, spoken in western China,<br/>which, roughly speaking, uses Mongolian grammar with<br/></li></ul><ul id="40d9d1d3-474b-49b1-8443-bac44058711e" class="bulleted-list"><li style="list-style-type:disc">150: similarly, there is no Italian creole. </li></ul><ul id="fcc26a30-afcc-4879-976c-e580e3957b66" class="bulleted-list"><li style="list-style-type:disc">151: Hawaii, for instance, is home to an English-derived creole. In the late 1800s, American business interests could not bring Africans to these islands to grow fruit for Dole and other compa-nies, and so they first imported Chinese laborers. After America&#x27;s Chinese Exclusion Act of 1882 virtually cut off all Chinese immi-gration, waves of Japanese were recruited in their place. After the Japanese were similarly banned by the Gentleman&#x27;s Agreement of 1908, Filipinos and some Koreans and Puerto Ricans were recruited, all mixed with native Hawaiians and the Portuguese imported as plantation foremen. Most of these people were technically signed on temporarily, but quite a few never earned enough money to go home or they found conditions in Hawaii more congenial than limited opportunities in their homelands.<br/>The pidginized English that this mixture of people naturally developed expanded into a creole at the beginning of the twentieth century, but tradition has maintained the language&#x27;s local name as &quot;Pidgin.&quot;<br/></li></ul><ul id="7dd5d5fd-4f82-42b8-9dfc-02ea833a5e8c" class="bulleted-list"><li style="list-style-type:disc">152: On the subject of we, we seems to be a pretty simple word to an English speaker, but the South Seas English creoles distinguish between two kinds of<br/>&quot;we-ness&quot; in ways that would never occur to most of us. We in the Solomon Islands variety is iumi-&quot;you-me&quot;-but only if it refers to the speaker and the people being spoken to; if the we refers to the speaker and some people not in the conversation, then it is mifala-rather like &quot;me and those fellows.&quot; But if the speaker is referring to himself and just one person not in the conversation, then we is mit-ufala-more or less &quot;me and that fellow, us two.&quot; Finally if the speaker is referring to himself and a single person he is speaking to, then we is imitufala &quot;you and me two fellows.&quot;<br/></li></ul><ul id="fa701265-4911-41b0-b92d-89aa683d380e" class="bulleted-list"><li style="list-style-type:disc">156: In many regional French varieties, they is not ils but eux-autres, literally &quot;them others&quot; (Spanish&#x27;s nosotros began similarly as nos otros &quot;we others&quot;).</li></ul><ul id="2a44b06d-5526-4433-a299-2db1d1eb73c2" class="bulleted-list"><li style="list-style-type:disc">158: But creoles are one piece of evidence that subject-verb-object order is indeed a &quot;default,&quot; in that creoles tend to have this order regardless of the word order of the languages spoken by their creators or the language that they borrowed the creole&#x27;s words from.</li></ul><ul id="a41a78af-67b3-46ef-b8f6-76dbbd49c9f4" class="bulleted-list"><li style="list-style-type:disc">160: First of all, people&#x27;s ability to completely acquire a language atrophies significantly after the early teens, as we see among, for example, the increasing numbers of Russian immigrants today.</li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

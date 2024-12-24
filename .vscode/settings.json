@@ -1,0 +1,4 @@
+{
+  // disable copilot
+  "github.copilot.editor.enableAutoCompletions": false
+}

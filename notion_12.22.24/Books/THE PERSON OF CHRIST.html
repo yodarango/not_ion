@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>THE PERSON OF CHRIST</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="df50645c-b83b-4a06-9d97-530bdc280b0f" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">👤</span></div><h1 class="page-title">THE PERSON OF CHRIST</h1><p class="page-description"></p></header><div class="page-body"><p id="b513e3cc-7548-46a8-ba4d-1d61ac9d0cbc" class=""> - Donald MaCleod</p><ul id="ba09c443-1303-4468-aa91-efd8544fb30f" class="bulleted-list"><li style="list-style-type:disc">168: we are to understand the ignorance [of Christ] in the most reverent sense, by attributing it to the manhood, and not to the Godhead.”</li></ul><ul id="a2e89b79-563e-4898-9d75-bb885eb87746" class="bulleted-list"><li style="list-style-type:disc">168: What it means is that the Father shared with him as much about the mystery of redemption as he needed to know. He received this knowledge in his capacity as the Great Prophet; he received it from the Father through the Spirit; and he received it not all at once but gradually, the progress of the revelation being determined by his own developing capacities and by the exigencies of the hour.</li></ul><ul id="d33f80b5-6b7c-4a77-9900-38374e57c268" class="bulleted-list"><li style="list-style-type:disc">176: Yet it was the climactic moment, and a moment of incredible. density; and it was so precisely because its agony was so compacted-so infinite-as to be well-nigh unsustainable. As an eighteenth-century Gaelic hymn expressed it, the whole entail of sin (pains and agonies it would have taken the world eternity to endure) were all poured on him in one horrific moment.<br/>What the emotional content of this forsakenness actually was, it is impossible for us to know. What is certain is that Golgotha was more awful than Jesus had envisaged in Gethsemane. He felt forsaken, and he was forsaken. This involved, among other things, Jesus experiencing the agony of unanswered prayer. In Psalm 22, this idea is expressed just beside the words quoted by Jesus on the cross:<br/>My God, my God, why hast thou forsaken me?..<br/>0 my God, I cry by day, but thou dost not answer; and by night, but find no rest.<br/></li></ul><ul id="4441c812-3066-4e8c-b172-71f60fd4b26e" class="bulleted-list"><li style="list-style-type:disc">179: Jesus had ordinary human desires, longings, preferences and aspirations. Just as truly, he had human aversions.<br/>Under these influences he made decisions and pursued options in the same way as we do ourselves.<br/>This is clearly indicated in the Scriptures, not least in the way they distinguish between the will of Jesus and the will of God. This appears in for example, John 6:38, &#x27;I have come down from heaven not to do ay will but to do the will of him who sent me.&#x27; Such language presupposes not only a metaphysical distinction between<br/></li></ul><ul id="d4fa25c7-5673-4dae-9a9a-ce26bdc07141" class="bulleted-list"><li style="list-style-type:disc">180: It was within these relationships that he lived his incarnate life, experiencing pain, poverty and temptation; witnessing squalor and brutality; hearing obscenities and profanities and the hopeless cry of the oppressed. He lived not in sublime detachment or in ascetic isolation, but &#x27;with us&#x27;, as the fellowman of all men&#x27;,<br/>,&quot; crowded, busy, harassed, stressed and molested [Not sure of this one here buddy]. No large estate gave him space, no financial capital guaranteed his daily bread, no personal staff protected him from interruptions and no power or influence protected him from injustice.<br/></li></ul><ul id="cdbd62ab-9e65-410f-ab12-8e5c9e11cd94" class="bulleted-list"><li style="list-style-type:disc">185: One of the factors clarified was the subject of the incarnation. Who, precisely, became flesh? It was not the godhead (the divine nature) itself. Neither was it God the Father, nor God the Holy Spirit. It was specifically God the Son. Cyril was both clear and emphatic on this: We do not mean that the nature of the Word was changed and made flesh or, on the other hand, that he was transformed into a complete man, but instead we affirm this; that the Word substantially (kath&#x27;hypostasin) united to himself flesh.&#x27;&quot; This is clearly in line with the classic New Testament utterance on the incarnation, &quot;The Word became lesh&#x27; (In. 1:14). It was a person, not a nature, who became flesh, and this itself is probably sufficient to preclude understanding the incamation as a conversion (of one nature into another).</li></ul><ul id="2745470f-c0ce-4b11-b951-379c79fe9370" class="bulleted-list"><li style="list-style-type:disc">189: &#x27;two whole, perfect, and distinct<br/>natures, the Godhead and the manhood, were inseparably joined together in one person, without conversion, composition, or confusion&#x27;. The term &#x27;hypostatic union&#x27; encapsulates three truths: that Christ is one person; that the union between his two natures arises from the fact that they both belong to one and the same person; and that this one person, the son of God, is the Agent behind all of the Lord&#x27;s actions, the Speaker of all his utterances and the Subject of all his experiences.<br/></li></ul><ul id="1e4e16d0-7613-4f86-ab5e-1e5f0678a412" class="bulleted-list"><li style="list-style-type:disc">190: Equally, the union between divine and human in Christ does not correspond to that between soul and body in a human being.</li></ul><ul id="713597e6-cc1b-4bc9-8a92-d7e132ad247e" class="bulleted-list"><li style="list-style-type:disc">191: There is, of course, continuity between Christ and the Christian disciple and this continuity includes the fact that he was the recipient of grace to the extent that his human obedience depended on the ministry of the Holy Spirit. But we cannot equate God was in Christ&#x27; with &#x27;Christ lives in me&#x27;.&quot; Even less could Christ say with respect to his deity, &#x27;By the grace of God I am what I am&#x27; (a statement Baillie quotes more than once in reference to this comparison). The real effect of this whole approach is to convey the impression that Christ differs from ordinary believers only in degree, as the one who receives a special measure of grace and a special filling with the Holy Spirit.</li></ul><ul id="5922c09e-3c8e-4bda-a751-895defb53501" class="bulleted-list"><li style="list-style-type:disc">203: We have already seen that the Logos cannot be identified with the godhead (ho theos , in Jn. 1:1). No more can Jesus be identified with the whole of humanity. Christ is true God. but he is not the whole godhead; and he is true man, but he is not the whole of humanity.</li></ul><ul id="1226d9bd-85c4-40fd-a919-4b1d1a527338" class="bulleted-list"><li style="list-style-type:disc">206: Thomasius&#x27; compatriot, Gess, went further, arguing that the kenosis was absolute, involving the abandonment of the essential as well as of the relative. attributes. This self-reduction affected even the internal relations of the trinity: during the earthly life of Christ both the eternal generation of the Son by the Father and the cosmic functions of the Son himself underwent a temporary interruption.</li></ul><ul id="bc8ccaf5-1703-4a75-9691-2453faf38b17" class="bulleted-list"><li style="list-style-type:disc">207:  Indeed, Gore&#x27;s guiding principle, so far as the content of the kenosis was concerned, was that Christ laid aside whatever was &#x27;incompatible with a truly human experience&#x27;.</li></ul><ul id="6e1e9a00-a3ac-4c74-be57-1741a542578f" class="bulleted-list"><li style="list-style-type:disc">209: It is difficult to evade the force of this. The New Testament makes clear that Christ is the One who sustains all things (Heb. 1:3) and the One in whom all things hold together (Col. 1:17). Apart from him, the universe has neither Preserver nor Governor; and apart from omniscience and omnipotence its preservation and government are beyond him. Any form of kenoticism which involves the idea of a depotentiated Logos (*one who had no power which a perfect, manhood could not mediate) would be fatal to the Lord&#x27;s competence to carry out his cosmic , functions.</li></ul><ul id="a6408ba0-6c68-4357-93b3-ae06e0c31c9a" class="bulleted-list"><li style="list-style-type:disc">213:  Lightfoot&#x27;s argument was based, as we have seen, on the use of morphe in the Greek philosophers. The range of occurrences surveyed was, however, very narrow; and in any case there is no guarantee that when Paul used the word morphe he used it in the same sense as Aristotle. After all, a modern Christian theologian may not mean by the word nature the same as it means in the work of A. N. Whitehead. An alternative approach, suggested by H. A. Kennedy? and developed more fully by R. P. Martin,&quot; is to focus on the use of morphe in the Septuagint. Although the data are scarce they seem to warrant three conclusions: first, that in the few passages where morphe is used it &#x27;denotes the form, appearance, look or likeness of some one, that by which those beholding him would judge him&#x27;; secondly, that eikön and   are used as interchangeable terms in the Greek Bible; and, thirdly, that eikon and doxa are also equivalent terms. Taking these facts together, it seems clear that morphe belongs to a group of words which describe God not as he is in himself but as he is to an observer. To an angel, for example, God has a form, an image, a Likeness and a glory. </li></ul><ul id="e9547e43-538b-47ac-a1d8-b1d441c22ec7" class="bulleted-list"><li style="list-style-type:disc">216: It is what Christ assumes that humbles and impoverishes him: hence the justice of Augustine&#x27;s comment that he emptied himself not by changing his own divinity but by assuming our changeableness [Phil. 2:7]</li></ul><ul id="60121545-756c-42f4-83b8-f87a07dd9a44" class="bulleted-list"><li style="list-style-type:disc">216: There was nothing in his appearance to distinguish him from anyone else. There was no halo, no glow, probably not even anything that made him particularly handsome or striking. Not a head would have turned as he walked. He looked utterly ordinary. He went towards death, choosing it and tasting it, deciding not to be its master but its victim, and accepting a destiny according to which it would be a sin for him not to die. The Son of Man must suffer. Death was obedience; not dying</li></ul><ul id="de635d1f-6273-434d-acad-1e3e5fed29c5" class="bulleted-list"><li style="list-style-type:disc">222: It was Edward Irving, a nineteenth-century Scottish theologian, who first began to give passionate expression to this point of view.? As a result, he was deposed from the ministry of the Church of Scotland in 1833…On the other hand, there can be no doubt that Irving used extremely provocative language. &quot;The flesh of Christ,&#x27; he declared, &quot;like my flesh, was in its proper nature mortal and corruptible.&#x27; It was liable to all forms of evil suggestion and temptation, through its participation in a fallen nature and a fallen world.&quot; That what he took was our fallen human nature was, according to Irving, &#x27;most manifest&#x27;, because there was no other in existence to take.? The fact that he did not commit actual sin was due, not to any intrinsic quality of his own person, but to the ministry of the Holy Spirit. This is what really set Christ apart: &#x27;no one was ever thus anointed with the Holy Ghost&#x27;&#x27; Without this restraint, the corruption of his fallen human substance would have erupted. I have the Holy Ghost manifested&#x27;, wrote Irving,<br/>&#x27;in subduing, restraining, conquering the evil propensities of the fallen manhood, and making it an apt organ for expressing the will of the Father.&quot;<br/></li></ul><ul id="475e3771-9cbe-4b53-ba4e-0921d6f5ae72" class="bulleted-list"><li style="list-style-type:disc">224: Leo, in his Tome, expressed it more epigrammatically: &#x27;Nature it was that was taken by the Lord from His mother, not defect. &#x27;</li></ul><ul id="50bfba44-5a36-47f5-a3bb-0f00d8b4d9e5" class="bulleted-list"><li style="list-style-type:disc">225: Does this mean that unless he were fallen he would not be human: that fallenness is part of the definition of human nature? Surely not! If it were, then the First Adam was not a man. Indeed, on these terms God did not create a man at all. What he created became a man only by falling.</li></ul><ul id="a339f4e6-ce89-4a35-8538-a86934dcbdd0" class="bulleted-list"><li style="list-style-type:disc">229: Finally, how are we to express the sinlessness of Christ? Is it enough to say that he was able not to sin or must we also say that he was not able to sin? The former is the truth about the First Adam. As created by God he was very good (Gn. 1:31). He had the freedom and power to do what was good, but he had it mutably. He could fall from it (Westminster Confession, IX.II). With regard to the Last Adam, however, we must take higher ground. He was not able to sin.</li></ul><ul id="2b3e34f8-36f1-4f75-86f3-ef2c10b43316" class="bulleted-list"><li style="list-style-type:disc">230: It would certainly be unwise to conclude that at every single point Jesus was in full possession of the whole truth about himself…To himself, engaging the devil on the road, the outcome may have been far from clear. Never once, as we observe him struggle with temptation, do we see him deriving comfort from the fact of his own impeccability. All that we see is his having recourse to the very same weapons as are available to ourselves: the company of his fellow-believers (Mk. 14:33), the word of God (Mt. 4:4) and prayer (Mk. 14:35).</li></ul><ul id="27652424-58f7-41b2-aa6a-e091e8bf4acf" class="bulleted-list"><li style="list-style-type:disc">232: John Knox asks: &#x27;Do we find it literally, word for word and phrase by phrase, credible or even intelligible? Must we not confess that we do not?&#x27; Don Cupitt dismisses it as simply obsolete: &#x27;The classical doctrine of the incarnation belongs, not to the essence of Christianity but only to a certain period of Church history</li></ul><ul id="ed977b42-5fdb-4aab-8474-24605a074cc6" class="bulleted-list"><li style="list-style-type:disc">236: Secondly, Hick&#x27;s account of the origin of the doctrine of the incarnation is itself highly mythical. It arose, he argues, because people found in Jesus one who answered their own spiritual needs.&quot; He evoked total discipleship because he had a &#x27;specially intimate awareness of God&#x27;, he exuded authority and he had the power to give new life. These qualities led to his being hailed as Messiah and, later, to his being deified</li></ul><ul id="cc985cf0-8de8-45c9-8d22-4ab466869d67" class="bulleted-list"><li style="list-style-type:disc">238: Hick objects that the idea of a God-man is as absurd as a square circle. But the comparison is inept. The real question is whether God has the right and the power to become man. Can he live in the form of the creature whom he deliberately created in his own image? Can he practise kenosis? Can he make himself poor? Can he go towards pain and even towards death? Or is there, on the contrary, something which his love will not and cannot do; and if so, is he really God?<br/>Not to me. God is that than which a greater cannot be conceived, and once I stumbled upon the concept of incarnation I could never venerate one who could not, or would not, become man.<br/></li></ul><ul id="710428d9-6086-4343-b7d9-a0a766f55210" class="bulleted-list"><li style="list-style-type:disc">239: that Jesus is the only way to God. Christianity has never believed that God reveals himself only through the New Testament or only through Jesus Christ. It has always believed in revelation through the Old Testament; and equally in revelation through creation (see particularly Rom. 1:18-32). The invisible things of God are revealed through the things that are made (Rom. 1:20). This explains the overlap between Christianity and world religions; and the even more significant overlap between Christianity on the one hand and Islam and Judaism on the other. Orthodox Christianity has no difficulty assimilating these facts. It believes that no man knows the Father except through the Son (Mt.<br/>11:27), but it also believes that the Old Testament is revelatory precisely because the Spirit of Christ spoke in the prophets (1 Pet.<br/>1:11); and that creation is revelatory precisely because the aeons were made through the divine Son (Heb.<br/></li></ul><ul id="cf5ba9e2-2990-4148-875f-f04b50ad24ee" class="bulleted-list"><li style="list-style-type:disc">240: Yet, when it comes to questions of fact, Christianity and those other faiths are in open collision. The central fact, of course, is Christ. If Jews and Muslims are correct in their estimate of him, Christianity collapses.<br/>If Christians are correct, then Christian exclusivism is fully justified. 26<br/>This is the crux of the matter. As Newbigin points out, we may be pluralists with regard to values, but we cannot be pluralists with regard to facts.? Consequently, it is only by stripping Christianity of its facts and focusing solely on its values that we can incorporate it into any kind of pluralism. To do so, however, is to destroy Christianity, which consists not in the statement of eternal truths but in the telling of a story.<br/>In Jesus Christ God took our nature. In Jesus Christ God lived an earthly historical existence. In Jesus Christ God made atonement for our sins. In Jesus Christ God tasted death and conquered death.<br/></li></ul><ul id="8249a7c1-7613-49fa-882c-2915ad94fcdc" class="bulleted-list"><li style="list-style-type:disc">246: For Robinson and Lampe, however, functionalism is an alternative to Chalcedon and its confession of the pre-existent deity of Christ. For the former, Jesus embodies &#x27;the divine initiative and saving presence&#x27; and reveals, through his self-surrender, &#x27;the glory of God as utterly gracious, self-giving love&#x27;S The latter declares: &#x27;I believe in the divinity of our Lord and Saviour Jesus Christ in the sense that the one God, the Creator and Saviour Spirit, revealed himself and acted decisively for us in Jesus…On the contrary, we can define revelation as the self-disclosure of God only if appearance and essence belong together: &#x27;the concept of God&#x27;s self-revelation contains the idea that the Revealer and what is revealed are identical.</li></ul><ul id="22701fca-8963-4b66-97e4-ebe008d4ddcc" class="bulleted-list"><li style="list-style-type:disc">249: The intervention, then, if intervention it is, is not that of an alien or outsider, but that of the Maker and Preserver who never let go of his creation. He comes to it as a Father coming to his children. In such a light, the incarnation is entirely appropriate.</li></ul><ul id="f18e910f-cfe0-48bf-9e27-6f835a14feca" class="bulleted-list"><li style="list-style-type:disc">254: On the other hand, Jesus did not refuse to associate with the rich and the powerful. He ate with tax-collectors as well as with sinners, made friends with Zacchaeus, availed himself of the hospitality of Lazarus&#x27; home in Bethany and numbered among his associates women of sufficient wealth to own expensive perfumes and afford spices to anoint his body (Mk. 16:1). He was admired by one member of the Sanhedrin, Nicodemus; and laid in the tomb of another, Joseph of Arimathea.</li></ul><ul id="94bd48c1-7593-4ff7-8423-47a736e3534e" class="bulleted-list"><li style="list-style-type:disc">256: The parables of the talents, the prodigal son, the labourers in the vineyard and even the good Samaritan presuppose a bourgeois background, where the key figures are individuals of wealth and substance. The same is true of many of Jesus&#x27; healings. Such beneficiaries as Jairus and the Centurion (Mt. 8:5) were hardly members of an underclass. The truth is not that Jesus was concerned only with the poor, but that he was completely indifferent to distinctions of class.</li></ul><ul id="0070d962-04b3-463a-9133-118578e6fdcc" class="bulleted-list"><li style="list-style-type:disc">259: It is easy to say, &#x27;Ah! But all that [coversion to Christ] refers only to individual sin and leaves the sinful structures unchallenged!&#x27; It remains true, nonetheless, that those so liberated are free, as Paul was free and Martin Luther was free. It is also true that those who are thus free become themselves an irresistible force for social change. They can never themselves become oppressors of others; or remain idle spectators of the oppression of others;</li></ul><p id="73f514a6-2e2a-4a59-ac75-9e7b0e609555" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

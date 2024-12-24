@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Mine </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="98f52c43-0224-43a5-83a1-0b5a88ced008" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1597392580482-798e53c7aa33?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🤔</span></div><h1 class="page-title">Mine </h1><p class="page-description"></p></header><div class="page-body"><p id="42298eb9-ea83-4849-b0ed-6275b3c23c1a" class="">A few short thoughts the Lord has enable me to conceive along the years </p><figure id="6a942e81-90fa-4adf-bac7-f76ee6e8933e" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Acknowledge%20Inexperience%206a942e8190fa4adfbac7f76ee6e8933e.html"><span class="icon">🆗</span>Acknowledge Inexperience  </a></figure><figure id="9c51bb7b-142c-428d-9ac6-f423964c982a" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Not%20worth%20the%20eraser%209c51bb7b142c428d9ac6f423964c982a.html"><span class="icon">✏️</span>Not worth the eraser</a></figure><figure id="2a8fed2c-c5ee-41a3-8044-88b366d9f77d" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Painless%20hell%20flames%202a8fed2cc5ee41a3804488b366d9f77d.html"><span class="icon">🔥</span>Painless hell flames</a></figure><figure id="0c069d65-6e55-41f0-860f-e37e87ad1147" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/non-resigned%20skeptics%200c069d656e5541f0860fe37e87ad1147.html"><span class="icon">❓</span>non-resigned skeptics</a></figure><figure id="e38a140e-547c-413f-93ba-4c339fe0332a" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/What%20God%20can%20do%20with%20two%20mites%20e38a140e547c413f93ba4c339fe0332a.html"><span class="icon">💰</span>What God can do with two mites</a></figure><figure id="ab8b376d-552e-4ba4-9445-8ed9c7237763" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20price%20of%20pride%20ab8b376d552e4ba494458ed9c7237763.html"><span class="icon">💲</span>The price of pride</a></figure><figure id="ae81b978-fdc3-42bb-b03f-a9e46ab08425" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Carry%20your%20cross%20not%20your%20past%20ae81b978fdc342bbb03fa9e46ab08425.html"><span class="icon">✝️</span>Carry your cross not your past</a></figure><figure id="c56d1635-48c8-4e20-8a2f-680adececa8d" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Worship%20is%20not%20an%20option%20c56d163548c84e208a2f680adececa8d.html"><span class="icon">🙇🏻‍♂️</span>Worship is not an option</a></figure><figure id="c968ecc7-541e-45ac-8ffd-cf967242c8b5" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Power%20tests%20the%20heart%20c968ecc7541e45ac8ffdcf967242c8b5.html"><span class="icon">🫀</span>Power tests the heart</a></figure><figure id="fd2e3609-3bf7-410f-b36a-308a28379887" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Getting%20old%20fd2e36093bf7410fb36a308a28379887.html"><span class="icon">👴🏻</span>Getting old</a></figure><figure id="53db63ac-25f0-4b99-8a47-feb5b8f97c22" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Character%20vs%20conviction%2053db63ac25f04b998a47feb5b8f97c22.html"><span class="icon">🙄</span>Character vs conviction</a></figure><figure id="0cfcf6a1-a419-4555-93f2-617fa852e0be" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Grace%20ain%E2%80%99t%20free%200cfcf6a1a419455593f2617fa852e0be.html"><span class="icon">🆓</span>Grace ain’t free</a></figure><figure id="76dcdd59-154b-4ac0-b778-c5782ffd3544" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Useful%20but%20not%20essential%2076dcdd59154b4ac0b778c5782ffd3544.html"><span class="icon">✨</span>Useful but not essential</a></figure><figure id="09b961cc-d2b2-4608-8ff4-41a2a44d9977" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Christianity%20vs%20religion%2009b961ccd2b246088ff441a2a44d9977.html"><span class="icon">🕌</span>Christianity vs religion</a></figure><figure id="3a5721de-8d55-43b2-a788-b3dd6ac89353" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Ba%20husband%20Ab%203a5721de8d5543b2a788b3dd6ac89353.html"><span class="icon">👰🏽</span>Ba husband Ab</a></figure><figure id="30843814-682d-4512-bdeb-d96582667845" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Lily%20not%20cactus%2030843814682d4512bdebd96582667845.html"><span class="icon">🌷</span>Lily not cactus</a></figure><figure id="a7996ad4-9678-4ce0-91b9-42522db036fe" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Opportunity%20to%20repent%20a7996ad496784ce091b942522db036fe.html"><span class="icon">🧎🏻‍♂️</span>Opportunity to repent</a></figure><figure id="35ba6491-d204-44c0-a557-7c58d08a136a" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Testing%20faith%2035ba6491d20444c0a5577c58d08a136a.html"><span class="icon">🧪</span>Testing faith</a></figure><figure id="17fa382d-4c08-48e5-90fb-6f8a938f8570" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/God%20is%20not%20small%2017fa382d4c0848e590fb6f8a938f8570.html"><span class="icon">🤏🏻</span>God is not small</a></figure><figure id="22ca0e71-39f8-4bb3-9f09-f85c27380d65" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Attitude%20vs%20action%2022ca0e7139f84bb39f09f85c27380d65.html"><span class="icon">🧬</span>Attitude vs action</a></figure><figure id="14a423c3-25eb-47f8-98aa-ea73428f3102" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Last%20name%20or%20last%20name%2014a423c325eb47f898aaea73428f3102.html"><span class="icon">💳</span>Last name or last name? </a></figure><figure id="ced88ba1-d244-4c54-b3ba-91e13434da3f" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Cause%20vs%20purpose%20ced88ba1d2444c54b3ba91e13434da3f.html"><span class="icon">🛣️</span>Cause vs purpose</a></figure><figure id="3f9b816a-323b-439b-a451-e0615b2eb149" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Crown%20vs%20posessions%203f9b816a323b439ba451e0615b2eb149.html"><span class="icon">👑</span>Crown vs posessions</a></figure><figure id="7afa01bb-90aa-4100-ba72-8ab84f593ff8" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Pursuing%20YOUR%20ministry%207afa01bb90aa4100ba728ab84f593ff8.html"><span class="icon">🚦</span>Pursuing YOUR ministry</a></figure><figure id="15e31b69-0e60-403d-8584-cdddb2454152" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Ministry%20that%20does%20not%20ministers%2015e31b690e60403d8584cdddb2454152.html"><span class="icon">🍽️</span>Ministry that does not ministers</a></figure><figure id="100a32e2-1ab5-42d8-9a08-559c20b94772" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Christ%20deserves%20love%20100a32e21ab542d89a08559c20b94772.html"><span class="icon">❣️</span>Christ deserves love</a></figure><figure id="b258b7df-60d6-41ec-b24a-dc71572e97e0" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/What%20about%E2%80%A6%20b258b7df60d641ecb24adc71572e97e0.html"><span class="icon">🏝️</span>What about…</a></figure><figure id="56945eaf-b696-4381-ba01-c78828f45f14" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Salvations%20is%20not%20cheap%2056945eafb6964381ba01c78828f45f14.html"><span class="icon">💸</span>Salvations is not cheap</a></figure><figure id="71a23e71-6a26-4255-a76a-cffcfea04248" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Disliking%20yourself%2071a23e716a264255a76acffcfea04248.html"><span class="icon">🤢</span>Disliking yourself</a></figure><figure id="ddfd291f-73b7-4328-b51c-bfadd5f30f0b" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/99%20Sheep%20ddfd291f73b74328b51cbfadd5f30f0b.html"><span class="icon">🐑</span>99 Sheep</a></figure><figure id="a1c0397f-c39c-4532-b420-2e66e31f0be6" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/God%20vs%20savior%20a1c0397fc39c4532b4202e66e31f0be6.html"><span class="icon">✝️</span>God vs savior</a></figure><figure id="b6ee4bac-f659-4c7a-97eb-d82a666157d1" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Open%20mind%20or%20close%20heart%20b6ee4bacf6594c7a97ebd82a666157d1.html"><span class="icon">🧠</span>Open mind or close heart?</a></figure><figure id="b6b314c9-eba9-424a-9955-3b93c3212249" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/John%20vs%20Herodias%20b6b314c9eba9424a99553b93c3212249.html"><span class="icon">🔪</span>John vs Herodias</a></figure><figure id="71d2ddcc-f892-4211-a0e0-a1c247152140" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Will%20vs%20will%2071d2ddccf8924211a0e0a1c247152140.html"><span class="icon">📡</span>Will vs will</a></figure><figure id="5327b6fd-9e31-45f1-b449-f30164dd4bf5" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Go%20or%20Jesus%205327b6fd9e3145f1b449f30164dd4bf5.html"><span class="icon">🌬️</span>Go or Jesus?</a></figure><figure id="2864ef95-b8b9-462a-b635-a5a7584b20d6" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Suicide%20and%20life%202864ef95b8b9462ab635a5a7584b20d6.html"><span class="icon">🧬</span>Suicide and life</a></figure><figure id="d617e550-7eec-468d-a013-a0717155876d" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/He%20crossed%20a%20river%20for%20me%20d617e5507eec468da013a0717155876d.html"><span class="icon">🌊</span>He crossed a river for me</a></figure><figure id="40d029eb-bdaa-4c7a-976f-9caecf2f9c99" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Blank%20check%2040d029ebbdaa4c7a976f9caecf2f9c99.html"><span class="icon">💳</span>Blank check</a></figure><figure id="2a12cad5-a764-4510-88af-8134a4aeddce" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/God%E2%80%99s%20present%202a12cad5a764451088af8134a4aeddce.html"><span class="icon">🎄</span>God’s present</a></figure><figure id="8e553c5d-0ee9-472b-a84a-6a1f7776a65e" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Fruitless%20Christians%208e553c5d0ee9472ba84a6a1f7776a65e.html"><span class="icon">🍇</span>Fruitless Christians</a></figure><figure id="ff90a4f2-8634-47fb-a770-c723c1454ebc" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Using%20vs%20being%20used%20ff90a4f2863447fba770c723c1454ebc.html"><span class="icon">🕊️</span>Using vs being used</a></figure><figure id="0a415554-9135-4053-82a8-d2831b476316" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Accepting%20God%200a4155549135405382a8d2831b476316.html"><span class="icon">👨🏻‍⚖️</span>Accepting God</a></figure><figure id="3e0810c4-752d-4440-b02d-df23ad872f9f" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Do%20you%20know%20Him%203e0810c4752d4440b02ddf23ad872f9f.html"><span class="icon">📚</span>Do you know Him?</a></figure><figure id="7171810c-c96d-4a50-96b5-a80a10a3b93c" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Justice%20&amp;%20mercy%207171810cc96d4a5096b5a80a10a3b93c.html"><span class="icon">👨🏻‍⚖️</span>Justice &amp; mercy</a></figure><figure id="0e86c348-d804-45fb-a8db-f84882cc798c" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/His%20work%20His%20way%200e86c348d80445fba8dbf84882cc798c.html"><span class="icon">📝</span>His work His way</a></figure><figure id="fc2b1e68-05c9-4e74-ab36-94c529197b56" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Face%20to%20feet%20fc2b1e6805c94e74ab3694c529197b56.html"><span class="icon">🙇🏻‍♂️</span>Face to feet</a></figure><figure id="ec0512da-a24d-40be-a9c1-1ff0cccb2201" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/A%20good%20preacher%20ec0512daa24d40bea9c11ff0cccb2201.html"><span class="icon">📣</span>A good preacher</a></figure><figure id="b0afb1bd-6e1b-4473-a1f3-9ce6c1eadc34" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Why%20is%20there%20so%20much%20good%20b0afb1bd6e1b4473a1f39ce6c1eadc34.html"><span class="icon">🌟</span>Why is there so much good</a></figure><figure id="ae62d189-5d22-4d0e-b5a0-846245d4f46c" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/True%20freedon%20ae62d1895d224d0eb5a0846245d4f46c.html"><span class="icon">🆓</span>True freedon</a></figure><figure id="8e3b4669-5f79-437d-9e0d-3cc9418a39a2" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Big%20bang%20or%20dig%20dung%208e3b46695f79437d9e0d3cc9418a39a2.html"><span class="icon">🌏</span>Big bang or dig dung?</a></figure><figure id="c3a413e0-158d-471d-8765-69e1301eb165" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Unrepentant%20sin%20c3a413e0158d471d876569e1301eb165.html"><span class="icon">😨</span>Unrepentant sin</a></figure><figure id="7ff1192a-23bb-4cd9-bf77-4668ead06e57" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20bible%20is%20fantasy%207ff1192a23bb4cd9bf774668ead06e57.html"><span class="icon">🔮</span>The bible is fantasy</a></figure><figure id="9e13be63-98be-4b3f-9479-7e80cc5c4dc9" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Smart%20phones%20and%20dumb%20minds%209e13be6398be4b3f94797e80cc5c4dc9.html"><span class="icon">📱</span>Smart phones and dumb minds</a></figure><figure id="34c1e4e6-db52-4744-82eb-1f2c507aac8d" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/You%E2%80%99re%20a%20square%2034c1e4e6db52474482eb1f2c507aac8d.html"><span class="icon">⬜</span>You’re a square</a></figure><figure id="d483cdc3-4562-4807-a4cb-f53bf0ef2467" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/God%20owes%20you%20no%20answer%20d483cdc345624807a4cbf53bf0ef2467.html"><span class="icon">⁉️</span>God owes you no answer</a></figure><figure id="639353a9-34e2-48e9-a592-97cda1b33a31" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Understanding%20God%20639353a934e248e9a59297cda1b33a31.html"><span class="icon">💭</span>Understanding God</a></figure><figure id="92a217e6-8bdb-4ed4-b265-7ec59bff8c9e" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Does%20good%20care%20for%20looks%2092a217e68bdb4ed4b2657ec59bff8c9e.html"><span class="icon">💇🏻</span>Does good care for looks?</a></figure><figure id="4a1b0771-3049-4f67-9bd5-7b2264ab1401" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/He%20choose%20Jacob%204a1b077130494f679bd57b2264ab1401.html"><span class="icon">🇮🇱</span>He choose Jacob</a></figure><figure id="baf462e0-39b5-47db-b1d9-598e52259eca" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Be%20psalms%201%20type%20of%20man%20baf462e039b547dbb1d9598e52259eca.html"><span class="icon">👨🏻</span>Be psalms 1 type of man</a></figure><figure id="28e8976b-6221-4883-a139-1aa26ace3f80" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Why%20would%20God%E2%80%A6%2028e8976b62214883a1391aa26ace3f80.html"><span class="icon">🤰🏻</span>Why would God…</a></figure><figure id="3dd347b6-ca3a-4f67-bef0-c9cbf423ed8e" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/God%20is%20not%20a%20calculator%203dd347b6ca3a4f67bef0c9cbf423ed8e.html"><span class="icon">🧮</span>God is not a calculator</a></figure><figure id="82ffe2bd-3538-44af-b74f-b81fef9b851b" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Identify%20yourself%2082ffe2bd353844afb74fb81fef9b851b.html"><span class="icon">🪖</span>Identify yourself</a></figure><figure id="8074177d-420b-4d1e-bafe-5c82e1eb3699" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Ecumenicals%20created%20their%20god%208074177d420b4d1ebafe5c82e1eb3699.html"><span class="icon">👨🏻‍🎨</span>Ecumenicals created their god</a></figure><figure id="546ee0c8-fddd-4941-89dc-52d4761b89d1" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Paranoia%20546ee0c8fddd494189dc52d4761b89d1.html"><span class="icon">🤒</span>Paranoia</a></figure><figure id="b3afb5d1-bc5e-430c-9225-0dfa130f532d" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/I%20is%20greater%20than%20you%20b3afb5d1bc5e430c92250dfa130f532d.html"><span class="icon">📙</span>I is greater than you</a></figure><figure id="74ea4ec8-701e-4712-a519-b1f13b2c36bd" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Way,%20Truth%20Life%2074ea4ec8701e4712a519b1f13b2c36bd.html"><span class="icon">🛣️</span>Way, Truth Life</a></figure><figure id="f8dcf1ec-5189-4936-9115-7fde542e4e13" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/God%20knows%20your%20way%20out%20f8dcf1ec5189493691157fde542e4e13.html"><span class="icon">📤</span>God knows your way out</a></figure><figure id="a55cacb6-98d2-4f48-a0a9-08bc0464d89b" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/If%20the%20Bible%20was%20all%20happiness%20a55cacb698d24f48a0a908bc0464d89b.html"><span class="icon">📖</span>If the Bible was all happiness</a></figure><figure id="fec479dd-4ccb-47d7-bb83-e2028eb75374" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Pride%20will%20get%20you%20fec479dd4ccb47d7bb83e2028eb75374.html"><span class="icon">🦹🏻‍♂️</span>Pride will get you</a></figure><figure id="4447c77d-6a96-476e-ba9f-ccf6d2385485" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Crown%20vs%20crown%204447c77d6a96476eba9fccf6d2385485.html"><span class="icon">👑</span>Crown vs crown</a></figure><figure id="1fd42924-b47b-45ed-baa2-a947d3d3f702" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20beauty%20of%20Christianity%201fd42924b47b45edbaa2a947d3d3f702.html"><span class="icon">🌱</span>The beauty of Christianity </a></figure><figure id="1b23cc08-3c7b-46ad-98be-a1a2c8ed7fdd" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/God%20speaks%20louder%20in%20silence%201b23cc083c7b46ad98bea1a2c8ed7fdd.html"><span class="icon">📣</span>God speaks louder in silence</a></figure><figure id="ab675a00-4a85-4245-b378-97aeeb4c7d97" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/If%20it%20does%20not%20make%20sense%20ab675a004a854245b37897aeeb4c7d97.html"><span class="icon">🤷🏻‍♂️</span>If it does not make sense</a></figure><figure id="7ef35ac6-d35e-4039-8285-b035ae0cf34c" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Callings%20not%20pushings%207ef35ac6d35e40398285b035ae0cf34c.html"><span class="icon">📲</span>Callings not pushings</a></figure><figure id="bec3808c-95ab-47bf-9a59-8de52c9ef583" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Called%20or%20ambtious%20bec3808c95ab47bf9a598de52c9ef583.html"><span class="icon">🥸</span>Called or ambtious</a></figure><figure id="84bb7bd1-583b-48a7-ab9f-1c1e7499247c" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/You%20can%20be%20the%20prodigal%2084bb7bd1583b48a7ab9f1c1e7499247c.html"><span class="icon">🚶🏻‍♂️</span>You can be the prodigal</a></figure><figure id="62d6da34-1182-42f7-a158-adc427b1948c" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Basis%20of%20obedience%2062d6da34118242f7a158adc427b1948c.html"><span class="icon">🚫</span>Basis of obedience</a></figure><figure id="4fff16c1-fecb-4731-8d4f-9f016459e508" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Understating%20his%20decisions%204fff16c1fecb47318d4f9f016459e508.html"><span class="icon">🪴</span>Understating his decisions</a></figure><figure id="517de59d-9bdc-4c2f-81ac-9b9a3b90ea73" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20brain%20is%20to%20the%20heart%20what%20plants%20are%20to%20the%20a%20517de59d9bdc4c2f81ac9b9a3b90ea73.html"><span class="icon">🌳</span>The brain is to the heart what plants are to the air</a></figure><figure id="8f0df236-d422-402a-90b8-127a7187b3c3" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Why%20you%20hate%20dictatorship%208f0df236d422402a90b8127a7187b3c3.html"><span class="icon">👺</span>Why you hate dictatorship</a></figure><figure id="8e29a1cb-4fb9-4223-ab17-603c6071b717" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20key%20of%20Christianity%208e29a1cb4fb94223ab17603c6071b717.html"><span class="icon">🔑</span>The key of Christianity</a></figure><figure id="b36450a4-1b2c-44a2-8407-1f529835f672" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Where%20faith%20rests%20b36450a41b2c44a284071f529835f672.html"><span class="icon">🛏️</span>Where faith rests</a></figure><figure id="a4696c1a-3c07-4c37-923e-74a66f62cd6d" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Role%20not%20rules%20a4696c1a3c074c37923e74a66f62cd6d.html"><span class="icon">📏</span>Role not rules</a></figure><figure id="735a1272-0769-48fc-9fbe-87a25b2b181d" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Science%20and%20life%20735a1272076948fc9fbe87a25b2b181d.html"><span class="icon">🔬</span>Science and life</a></figure><figure id="c617792b-6be0-4357-968b-e6b5fae4f394" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/When%20God%20says%20okay%20c617792b6be04357968be6b5fae4f394.html"><span class="icon">🆗</span>When God says okay</a></figure><figure id="4491a326-b3fd-423b-b621-e5783d34fca6" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Price%20but%20not%20value%204491a326b3fd423bb621e5783d34fca6.html"><span class="icon">💵</span>Price but not value</a></figure><figure id="5b92c17b-ceae-4e3b-9bed-46d2aa805f9a" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Unequally%20Yoked%205b92c17bceae4e3b9bed46d2aa805f9a.html"><span class="icon">🦬</span>Unequally Yoked </a></figure><figure id="413a7312-d843-40c0-8d5f-c0666efdeb33" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Worldview%20vs%20world%20views%20413a7312d84340c08d5fc0666efdeb33.html"><span class="icon">👁️</span>Worldview vs world views </a></figure><figure id="fdcd16b3-0b6a-4d66-8369-78abca50970d" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Build%20the%20Church%20fdcd16b30b6a4d66836978abca50970d.html"><span class="icon">🏗️</span>Build the Church </a></figure><figure id="421f524d-db4b-4ae3-807e-03e2cc85ff07" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Success%20of%20church%20421f524ddb4b4ae3807e03e2cc85ff07.html"><span class="icon">📈</span>Success of church</a></figure><figure id="eb742832-b6a2-4408-92e6-a1048122da60" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Wisdom%20&amp;%20Faith%20eb742832b6a2440892e6a1048122da60.html"><span class="icon">⚖️</span>Wisdom &amp; Faith</a></figure><figure id="bb08673d-a574-47de-a0f0-41a787f1b607" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Toying%20with%20sin%20bb08673da57447dea0f041a787f1b607.html"><span class="icon">🧸</span>Toying with sin </a></figure><figure id="2d614e62-285b-4b3b-a420-b1acde18891a" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/First%20in%20last%20out%202d614e62285b4b3ba420b1acde18891a.html"><span class="icon">☝️</span>First in last out </a></figure><figure id="946da47b-329f-44cc-9043-c6c5944396a8" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/God%E2%80%99s%20inevitable%20discipline%20946da47b329f44cc9043c6c5944396a8.html"><span class="icon">🪢</span>God’s inevitable discipline </a></figure><figure id="bcae335d-9655-48da-8a0e-6620d516a77d" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Christian%20walk%20and%20heart%20surgery%20bcae335d965548da8a0e6620d516a77d.html"><span class="icon">🫀</span>Christian walk and heart surgery</a></figure><figure id="3f27138b-4066-4baa-9393-73701f687417" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20balance%20of%20holiness%203f27138b40664baa939373701f687417.html"><span class="icon">⚖️</span>The balance of holiness </a></figure><figure id="a2eae85b-88a0-47f2-bae9-8da21271ff4b" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Leaders%20are%20made%20in%20solitude%20a2eae85b88a047f2bae98da21271ff4b.html"><span class="icon">🫖</span>Leaders are made in solitude</a></figure><figure id="7d7cf74c-bf9f-4eff-b054-d99c0a9acf52" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Confidence%207d7cf74cbf9f4effb054d99c0a9acf52.html"><span class="icon">🔰</span>Confidence</a></figure><figure id="bfe8c4a9-b204-461e-bd09-068753db23a0" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/What%20shapes%20your%20character%20bfe8c4a9b204461ebd09068753db23a0.html"><img class="icon" src="Mine%2098f52c43022443a583a10b5a88ced008/What%20shapes%20your%20character%20bfe8c4a9b204461ebd09068753db23a0/DALL_E_2023-11-17_07.22.27_-_A_2D_cartoon-style_image_of_a_Greek_statue__designed_without_outlines._The_statue__resembling_a_classic_Greek_sculpture_of_a_mythological_figure__is_r-removebg-preview.png"/>What shapes your character</a></figure><figure id="92d49f23-0d13-42d0-8539-75e74d3f3066" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Looking%20down%20on%20others%2092d49f230d1342d0853975e74d3f3066.html"><span class="icon">☁️</span>Looking down on others </a></figure><figure id="f4bbc026-16ac-4ce0-845e-944b2df16514" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/True%20humility%20f4bbc02616ac4ce0845e944b2df16514.html"><span class="icon">🧪</span>True humility </a></figure><figure id="1cfdf82a-45ae-4de2-b666-9ea0185c3ee7" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/How%20to%20remain%20standing%201cfdf82a45ae4de2b6669ea0185c3ee7.html"><img class="icon" src="Mine%2098f52c43022443a583a10b5a88ced008/How%20to%20remain%20standing%201cfdf82a45ae4de2b6669ea0185c3ee7/remain_standing.png"/>How to remain standing</a></figure><figure id="e4951bfc-8984-4cac-9394-4565e52a9c93" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20pride%20of%20humility%20e4951bfc89844cac93944565e52a9c93.html"><span class="icon">🙋</span>The pride of humility</a></figure><figure id="40935681-1d06-4a80-be09-1b8ef000b61b" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Win%20the%20battle%20at%20the%20mind%20409356811d064a80be091b8ef000b61b.html"><span class="icon">🤺</span>Win the battle at the mind </a></figure><figure id="f9863b58-0b87-47ab-878f-7de676375e31" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Peace%20or%20secrecy%20f9863b580b8747ab878f7de676375e31.html"><span class="icon">🤫</span>Peace or secrecy? </a></figure><figure id="e7722b39-bed8-4c9c-896d-3b7cb7c34600" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Thought,%20belief%20&amp;%20action%20e7722b39bed84c9c896d3b7cb7c34600.html"><span class="icon">🌉</span>Thought, belief &amp; action</a></figure><figure id="3eea1cd8-17cc-4677-8669-cebe12e5e214" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Do%20whatever%20makes%20you%20happy%203eea1cd817cc46778669cebe12e5e214.html"><img class="icon" src="Mine%2098f52c43022443a583a10b5a88ced008/Do%20whatever%20makes%20you%20happy%203eea1cd817cc46778669cebe12e5e214/pie.png"/>Do whatever makes you happy</a></figure><figure id="a7379842-51ea-4e67-af01-8a09f29575ba" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/At%20the%20end%20of%20pride%20a737984251ea4e67af018a09f29575ba.html"><span class="icon">🤪</span>At the end of pride</a></figure><figure id="353d0578-b2ed-4740-a00c-1f26e97d42b0" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/God%E2%80%99s%20Christmas%20present%20353d0578b2ed4740a00c1f26e97d42b0.html"><span class="icon">🎁</span>God’s Christmas present</a></figure><figure id="f465571c-4fe8-460c-8479-cca266cf602e" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Admit%20what%20you%20are%20f465571c4fe8460c8479cca266cf602e.html"><span class="icon">🍃</span>Admit what you are</a></figure><figure id="e03d29ec-a4af-4b22-9a93-dd1dcd036351" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/God%E2%80%99s%20sovereignty%20e03d29eca4af4b229a93dd1dcd036351.html"><span class="icon">🤴</span>God’s sovereignty</a></figure><figure id="a9639184-bf72-443c-9614-6f014bb59ddd" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Why%20would%20you%20bury%20the%20seed%20a9639184bf72443c96146f014bb59ddd.html"><span class="icon">🍇</span>Why would you bury the seed</a></figure><figure id="496ebdf4-59cf-45d0-9b15-afe2198e9e3c" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/God%E2%80%99s%20parenthood%20model%20496ebdf459cf45d09b15afe2198e9e3c.html"><span class="icon">👨‍👦</span>God’s parenthood model</a></figure><figure id="aa3c3e75-97e2-4982-a383-289eaaf7f8d3" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20worst%20for%20a%20nobody%20aa3c3e7597e24982a383289eaaf7f8d3.html"><span class="icon">🪪</span>The worst for a nobody </a></figure><figure id="0fdc0d01-524c-44e3-a8ab-0728c64015a2" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/When%20dreaming%20runs%20long%200fdc0d01524c44e3a8ab0728c64015a2.html"><span class="icon">💤</span>When dreaming runs long</a></figure><figure id="c3387b12-0961-483a-8d88-04b8fefae7f6" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Not%20feeling%20God%20when%20to%20preoccupy%20c3387b120961483a8d8804b8fefae7f6.html"><span class="icon">😟</span>Not feeling God: when to preoccupy </a></figure><figure id="ca76e6fb-e61e-48b0-80c6-a4599214aff3" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Entitlement%20vs%20faith%20ca76e6fbe61e48b080c6a4599214aff3.html"><span class="icon">💢</span>Entitlement vs faith</a></figure><figure id="84880b45-c73d-4594-a023-70f45332b7d9" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20biggest%20coward%2084880b45c73d4594a02370f45332b7d9.html"><span class="icon">😨</span>The biggest coward</a></figure><figure id="8273c94a-bb94-492a-a0a4-dca30af67c3f" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Losing%20hope%208273c94abb94492aa0a4dca30af67c3f.html"><span class="icon">🟩</span>Losing hope </a></figure><figure id="60f48b4e-eaf2-40d7-b599-726a6335e77c" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Do%20care%20what%20people%20say%2060f48b4eeaf240d7b599726a6335e77c.html"><span class="icon">💬</span>Do care what people say</a></figure><figure id="e5790e5d-492b-4f0e-897a-61895e1ba3ac" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20right%20job%20e5790e5d492b4f0e897a61895e1ba3ac.html"><span class="icon">💼</span>The right job</a></figure><figure id="2b6ba9ff-68e5-4165-939d-623d99013865" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Intellectual%20problem%20or%20modal%20problem%202b6ba9ff68e54165939d623d99013865.html"><span class="icon">🤯</span>Intellectual problem or modal problem</a></figure><figure id="e43c5e46-dd9e-497c-9151-88fca392941b" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20real%20problem%20of%20the%20atheist%20e43c5e46dd9e497c915188fca392941b.html"><span class="icon">🥕</span>The real problem of the atheist</a></figure><figure id="e2ff0d8c-484f-4aa5-aa73-388345f75712" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Don%E2%80%99t%20care%20don%E2%80%99t%20say%20e2ff0d8c484f4aa5aa73388345f75712.html"><span class="icon">🗣️</span>Don’t care don’t say</a></figure><figure id="331efcd9-0e4d-4e9e-9d13-8118f883b75b" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Where%20you%20came%20from%20331efcd90e4d4e9e9d138118f883b75b.html"><span class="icon">🛣️</span>Where you came from</a></figure><figure id="686af047-d186-450e-a273-43d35bcef7d0" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Stopping%20the%20love%20686af047d186450ea27343d35bcef7d0.html"><span class="icon">⛔</span>Stopping the love </a></figure><figure id="7c0747e8-7bb3-4443-a9fd-21f90875c55f" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Where%20do%20you%20come%20from%207c0747e87bb34443a9fd21f90875c55f.html"><span class="icon">🚗</span>Where do you come from</a></figure><figure id="90deb4dd-847c-46f5-8ffd-24c1c2243279" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20strength%20of%20a%20secret%2090deb4dd847c46f58ffd24c1c2243279.html"><span class="icon">🤫</span>The strength of a secret</a></figure><figure id="b125177c-9f1b-4951-bd48-96d81f3c0b43" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20narrow%20road%20b125177c9f1b4951bd4896d81f3c0b43.html"><span class="icon">🛣️</span>The narrow road</a></figure><figure id="2a07b48f-5aa3-436f-b1b0-0c3506fe1f91" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Narrow%20or%20small%202a07b48f5aa3436fb1b00c3506fe1f91.html"><span class="icon">🤏</span>Narrow or small?</a></figure><figure id="8bb48050-9d59-4045-b78f-214d4c4f83b2" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/look%20up%20to%20vs%20look%20down%20on%208bb480509d594045b78f214d4c4f83b2.html"><span class="icon">↕️</span>look up to vs look down on</a></figure><figure id="39d9c6a2-dce7-492c-beea-60fb0e15ac20" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Lives%20in%20you%20and%20you%20live%20out%2039d9c6a2dce7492cbeea60fb0e15ac20.html"><span class="icon">⛲</span>Lives in you and you live out </a></figure><figure id="9310bb80-6f6f-4769-af4a-5d2cce749c6f" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20breaking%20of%20trust%209310bb806f6f4769af4a5d2cce749c6f.html"><span class="icon">🏚️</span>The breaking of trust </a></figure><figure id="4564185c-1643-4d9e-a591-f3fd9419fde0" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Before%20trust%20is%20character%204564185c16434d9ea591f3fd9419fde0.html"><span class="icon">🗿</span>Before trust is character </a></figure><figure id="1a58faaa-7596-4f81-ad29-52ad69415540" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20true%20King%20descends%201a58faaa75964f81ad2952ad69415540.html"><span class="icon">👇</span>The true King descends</a></figure><figure id="afcdce6c-fd59-43be-ba7a-72251aa0416e" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Are%20you%20on%20the%20right%20side%20afcdce6cfd5943beba7a72251aa0416e.html"><span class="icon">🧱</span>Are you on the right side</a></figure><figure id="f95aa97d-982f-4f27-a394-faeca24e70ff" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Dreams%20of%20Joseph%20f95aa97d982f4f27a394faeca24e70ff.html"><span class="icon">👇</span>Dreams of Joseph</a></figure><figure id="8fa9b36b-4058-41ea-ab02-ddfd8185b6b3" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Judging%20others%20vision%208fa9b36b405841eaab02ddfd8185b6b3.html"><span class="icon">🛣️</span>Judging others vision</a></figure><figure id="96144fa5-79bf-47a2-84fd-fcb4010398f6" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/A%20Good%20Leader%2096144fa579bf47a284fdfcb4010398f6.html"><span class="icon">🎖️</span>A Good Leader</a></figure><figure id="3910190a-7988-43fb-a417-21755650d69c" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Envy%20among%20siblings%203910190a798843fba41721755650d69c.html"><img class="icon" src="Mine%2098f52c43022443a583a10b5a88ced008/Envy%20among%20siblings%203910190a798843fba41721755650d69c/broken_manequin_transparent.webp"/>Envy among siblings</a></figure><figure id="70be460d-71bb-4e57-b612-eba47082b78d" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Grace%20vs%20Legalism%2070be460d71bb4e57b612eba47082b78d.html"><span class="icon">🆚</span>Grace vs Legalism</a></figure><figure id="35da3e7f-6227-4316-968a-3e71efc09b63" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Completely%20complete%2035da3e7f62274316968a3e71efc09b63.html"><span class="icon">🍕</span>Completely complete </a></figure><figure id="fb812480-46b2-43a3-b981-b5346bb29db0" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Just%20a%20wrapper%20fb81248046b243a3b981b5346bb29db0.html"><img class="icon" src="Mine%2098f52c43022443a583a10b5a88ced008/Just%20a%20wrapper%20fb81248046b243a3b981b5346bb29db0/old_clay_vessel_with_jewels_inside-transparent.webp"/>Just a wrapper</a></figure><figure id="e3b319b8-945f-4ed4-bcf2-c6106e7403bb" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Big%20Church%20Small%20Character%20e3b319b8945f4ed4bcf2c6106e7403bb.html"><span class="icon">🤏</span>Big Church Small Character</a></figure><figure id="28dabcdf-3c46-41b4-833d-6c2b32507e8e" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Pride%20will%20drive%20you%20mad%2028dabcdf3c4641b4833d6c2b32507e8e.html"><span class="icon">🤪</span>Pride will drive you mad</a></figure><figure id="37d35bb4-911c-4fee-9515-0195a557723a" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Shackled%20king%2037d35bb4911c4fee95150195a557723a.html"><img class="icon" src="Mine%2098f52c43022443a583a10b5a88ced008/Shackled%20king%2037d35bb4911c4fee95150195a557723a/shakled_king_transp.png"/>Shackled king</a></figure><figure id="e6d663d3-1300-42f5-8bc5-8f942b538e2e" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Listen%20to%20the%20world%20e6d663d3130042f58bc58f942b538e2e.html"><span class="icon">👂</span>Listen to the world</a></figure><figure id="0395a2a9-aefb-4c11-aec0-e5b1dfd96034" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Give%20to%20keep%20receiving%200395a2a9aefb4c11aec0e5b1dfd96034.html"><span class="icon">🍏</span>Give to keep receiving</a></figure><figure id="217d4315-0da2-4788-8ade-09452ba43669" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Looking%20Down%20217d43150da247888ade09452ba43669.html"><span class="icon">🔽</span>Looking Down</a></figure><figure id="4b3a959d-2ced-4e85-806a-7f10e014e07c" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/You%20cannot%20live%20out%20pride%20forever%204b3a959d2ced4e85806a7f10e014e07c.html"><span class="icon">🔻</span>You cannot live out pride forever</a></figure><figure id="29d95743-e5f0-4668-b4c1-0471a19bd2ad" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20infinite%20monkey%20theorem%2029d95743e5f04668b4c10471a19bd2ad.html"><span class="icon">🐒</span>The infinite monkey theorem</a></figure><figure id="d336efcb-4d15-4500-a57e-cc638d7acff8" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Sin%20and%20empathy%20d336efcb4d154500a57ecc638d7acff8.html"><span class="icon">🪝</span>Sin and empathy </a></figure><figure id="8bf784be-8456-48d9-8f1d-bbfcc35928dc" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Love%20&amp;%20Knowledge%208bf784be845648d98f1dbbfcc35928dc.html"><span class="icon">👬</span>Love &amp; Knowledge</a></figure><figure id="f16cb714-55bb-4d53-9f37-f5d2b49047d1" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/True%20happiness%20f16cb71455bb4d539f37f5d2b49047d1.html"><span class="icon">🛍️</span>True happiness</a></figure><figure id="01932e68-ce72-4436-abd3-db5f27222211" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Not%20rich%20long%20enough%2001932e68ce724436abd3db5f27222211.html"><span class="icon">💹</span>Not rich long enough</a></figure><figure id="e8cef3c6-315d-46ff-82c5-5ea9b3c84177" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Love%20my%20job%20e8cef3c6315d46ff82c55ea9b3c84177.html"><span class="icon">💼</span>Love my job</a></figure><figure id="e9fd9130-99dd-4eec-bb85-ef456fc463d8" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/How%20to%20measure%20compassion%20e9fd913099dd4eecbb85ef456fc463d8.html"><span class="icon">📏</span>How to measure compassion </a></figure><figure id="72d70abd-e0a8-42a4-b9a2-7507749d2728" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20essence%20of%20love%2072d70abde0a842a4b9a27507749d2728.html"><span class="icon">⚛️</span>The essence of love</a></figure><figure id="0efd159c-054f-4619-ae7a-64d9cbcc51d3" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20problems%20of%20utilitarianism%200efd159c054f4619ae7a64d9cbcc51d3.html"><span class="icon">✖️</span>The problems of utilitarianism </a></figure><figure id="9be58217-17db-43d1-bfd3-083160d0dade" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/An%20effective%20teacher%209be5821717db43d1bfd3083160d0dade.html"><span class="icon">🪄</span>An effective teacher </a></figure><figure id="d4416323-33db-4c0e-895b-2c195cdc8468" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/No%20subject%20small%20enough%20d441632333db4c0e895b2c195cdc8468.html"><span class="icon">🐜</span>No subject small enough </a></figure><figure id="10299345-80b7-8061-a4d6-ebf532bff3f4" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/A%20person%20of%20faith%201029934580b78061a4d6ebf532bff3f4.html"><span class="icon">💦</span>A person of faith</a></figure><figure id="10599345-80b7-80ef-b814-cf7ee84ea59a" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Discipline%20at%20its%20best%201059934580b780efb814cf7ee84ea59a.html"><span class="icon">🔄</span>Discipline at its best</a></figure><figure id="10799345-80b7-8022-83a9-f71af06adfb2" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Lessons%20from%20the%20Samaritan%20Woman%201079934580b7802283a9f71af06adfb2.html"><span class="icon">🪣</span>Lessons from the Samaritan Woman</a></figure><figure id="f4d165ae-6d6e-4122-8ef9-0c46709a6e49" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Regarding%20the%20resurrection%20f4d165ae6d6e41228ef90c46709a6e49.html"><span class="icon">🧿</span>Regarding the resurrection  </a></figure><figure id="10b99345-80b7-8087-a84c-c88bd85c7711" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Brainwashed%2010b9934580b78087a84cc88bd85c7711.html"><span class="icon">🧼</span>Brainwashed</a></figure><figure id="11099345-80b7-80cc-a8c2-f358a243d5bb" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/How%20do%20I%20know%20they%20know%201109934580b780cca8c2f358a243d5bb.html"><span class="icon">🫵</span>How do I know they  know</a></figure><figure id="11d99345-80b7-803b-bd51-eca451915427" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/The%20brain%20and%20the%205%20senses%2011d9934580b7803bbd51eca451915427.html"><span class="icon">✋</span>The brain and the 5 senses</a></figure><figure id="12999345-80b7-80e8-8e10-e7061f24e933" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Actions%20without%20words%20are%20mute%201299934580b780e88e10e7061f24e933.html"><span class="icon">🔇</span>Actions without words are mute</a></figure><figure id="12c99345-80b7-8066-86a3-e9df68cfae8f" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/Know%20where%20you%20are%20going%2012c9934580b7806686a3e9df68cfae8f.html"><span class="icon">🚶‍♂️</span>Know where you are going</a></figure><figure id="14d99345-80b7-80e8-a416-d16572caf486" class="link-to-page"><a href="Mine%2098f52c43022443a583a10b5a88ced008/A%20good%20sermon%2014d9934580b780e8a416d16572caf486.html"><span class="icon">🌅</span>A good sermon</a></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

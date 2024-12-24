@@ -1,0 +1,686 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Introduction to Linguistics</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="14c99345-80b7-80fc-8acd-ea9da4558cfc" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🏎️</span></div><h1 class="page-title">Introduction to Linguistics</h1><p class="page-description"></p></header><div class="page-body"><h2 id="15699345-80b7-805a-aaa6-d1a2af1d7526" class="">Introduction</h2><p id="14c99345-80b7-8034-a270-e1bdb04d1c4c" class="">The primary five components of Linguistics are:</p><ol type="1" id="14c99345-80b7-8060-951b-dd109115d7b0" class="numbered-list" start="1"><li>Syntax</li></ol><ol type="1" id="14c99345-80b7-80c8-ae54-c8118c05a184" class="numbered-list" start="2"><li>Semantics</li></ol><ol type="1" id="14c99345-80b7-809f-9d56-f85304b665c9" class="numbered-list" start="3"><li>Morphology</li></ol><ol type="1" id="14c99345-80b7-802e-b744-c76945eea7d1" class="numbered-list" start="4"><li>Phonetics</li></ol><ol type="1" id="14c99345-80b7-808b-b106-ded5f3bf83b8" class="numbered-list" start="5"><li>Phonology</li></ol><h3 id="14c99345-80b7-806d-9b5b-c9d35510026b" class="">Syntax</h3><p id="14c99345-80b7-8097-a31a-c972ac58e633" class="">Syntax studies the structure of a language. That is, how the different components of speech like nouns, verbs, and adjectives, should come together to render a standard text.  One example in the English language is how we use the sequence Subject Verb Object (SVO) in a sentence to deliver a message. </p><p id="14c99345-80b7-80c5-82d0-f8e0728a3064" class=""><mark class="highlight-blue">Example: Jesus (subject) threw  (verb) the tables (object)</mark></p><h3 id="14c99345-80b7-8029-a66c-c0e3057b34a1" class="">Semantics </h3><p id="14c99345-80b7-8095-963d-febd6931e65b" class="">Semantics studies the meaning behind a text. In other words, it could be said that semantics studies the meaning of message formatted by the syntax. Or even simpler yet, semantics studies the meaning behind the syntax. </p><p id="14c99345-80b7-8006-9b6f-c2099e5afcbb" class=""><mark class="highlight-blue">Example: My red door stole a justice above sad</mark></p><p id="14c99345-80b7-80e0-822d-e38deddb5c91" class="">The sentence above is grammatically, and therefore syntactically correct, but it makes no sense. Therefore, though it would pass the syntax test, it would fail the semantics check. We know that the sentence above is grammatically and syntactically correct because the format <mark class="highlight-blue">subject + verb object + preposition +  indirect object</mark> works if we only input the proper words.</p><h3 id="14c99345-80b7-80f8-bed2-e44dc430fe3c" class="">Morphology </h3><p id="14c99345-80b7-8027-8f15-ef061c7cf648" class="">It is concerned with the transformation of a word. </p><p id="14c99345-80b7-802c-9ee3-c8e7d2a53fd0" class=""><mark class="highlight-blue">Example: How we may form play-er, play-ing, play-ed, play-ful, etc., from the root word “play.”</mark></p><h3 id="14c99345-80b7-80b1-8f84-ff282af13173" class="">Phonetics </h3><p id="14c99345-80b7-807f-a8af-e53a9735e8b6" class="">Examines the different sounds necessary to speak a language.</p><p id="14c99345-80b7-80bf-8058-c41f812ef7cf" class=""><mark class="highlight-blue">Example: The different sounds of each letter in the English alphabet</mark></p><h3 id="14c99345-80b7-8059-8f89-fde18c153756" class="">Phonology</h3><p id="14c99345-80b7-80b9-8c22-ce47c9d8d0fe" class="">It analyzes the different categories of sounds in a language and how they relate to each other. </p><p id="14c99345-80b7-809c-ba2f-d52ba962d314" class=""><mark class="highlight-blue">Example: Why the &quot;t&quot; in &quot;top&quot; is closer to the &quot;d&quot; in &quot;dog&quot; than to the &quot;t&quot; in &quot;stop.”</mark></p><h2 id="14c99345-80b7-80ae-a4fb-f758e3c4e91c" class="">Syntax</h2><h3 id="15699345-80b7-80b9-948d-f0ee8bba20d5" class="">Words Order, Grammar, and Structure</h3><p id="15699345-80b7-8061-a8fc-fac8b7b40240" class="">There are at least three elements of syntax:</p><ol type="1" id="15699345-80b7-80ce-b92a-d17c85b3c150" class="numbered-list" start="1"><li>The order of words in a text</li></ol><ol type="1" id="15699345-80b7-80cf-b4ef-d260e005f90c" class="numbered-list" start="2"><li>The grammar of a text<ol type="a" id="15699345-80b7-80f3-983a-e7ebb4a55340" class="numbered-list" start="1"><li>There are two types of grammar, descriptive and prescriptive. <ol type="i" id="15699345-80b7-807f-b7fb-fcfaf69834dc" class="numbered-list" start="1"><li>Descriptive: The grammar used by the common people. Perhaps sometimes labeled as “informal” but nonetheless correct (most times).<p id="15699345-80b7-8093-a598-d3a1b66d0aeb" class="">Descriptive grammar is not concerned with whether a text makes sense or not. That is the job of semantics. Grammar just tells us that a sentence like <mark class="highlight-blue">“my blue tortoise deceives time’s chocolate” </mark><mark class="highlight-default">is correct, because it follows the rules. </mark></p><ol type="1" id="15699345-80b7-80c7-a57b-df182a967e09" class="numbered-list" start="1"><li><mark class="highlight-blue">Example: “They gave this money to you and me”  vs “They gave this money to you and I” (the 1st is correct)</mark></li></ol></li></ol><ol type="i" id="15699345-80b7-803d-8439-d2d2af6e81e9" class="numbered-list" start="2"><li>Prescriptive: The grammar inculcated by our schools. Typically labeled as “formal.”</li></ol></li></ol></li></ol><ol type="1" id="15699345-80b7-80b9-91ea-d83700d3e024" class="numbered-list" start="3"><li>Rules of structure. That is, what makes a phrase a phrase. There are a least four types:<ol type="a" id="15699345-80b7-8018-a907-ee0b75b4e08e" class="numbered-list" start="1"><li>NP → Noun phrases</li></ol><ol type="a" id="15699345-80b7-801c-a90a-ea78e07dbe41" class="numbered-list" start="2"><li>VP → Verb phrases</li></ol><ol type="a" id="15699345-80b7-8013-8fcc-d7283490a493" class="numbered-list" start="3"><li>ADJ → Adjective phrases</li></ol><ol type="a" id="15699345-80b7-8034-a664-f45c7d39c8e1" class="numbered-list" start="4"><li>PP → Preposition phrase</li></ol><p id="15699345-80b7-80df-b791-cb2c02553b61" class="">This element of syntax is the most difficult to grasp. </p></li></ol><h3 id="15699345-80b7-8007-92f2-ddadcb064fee" class="">Constituency and Word Clauses</h3><p id="15699345-80b7-8026-81e8-d39d83130094" class="">There are at least three types of verb phrases: </p><ol type="1" id="15699345-80b7-8076-a465-eae7041b999c" class="numbered-list" start="1"><li><strong>Intransitive.</strong> they have only one argument:<ul id="15699345-80b7-809e-ae40-ff8a4e227af0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue">Example: (1)He jumped</mark></li></ul></li></ol><ol type="1" id="15699345-80b7-8060-a1e6-d3154301c867" class="numbered-list" start="2"><li><strong>Transitive.</strong> they have two arguments:<ul id="b286d3fa-92cd-4e67-97e2-ff964797d346" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue">Example: (1) She hugged (2)Matt</mark></li></ul></li></ol><ol type="1" id="15699345-80b7-80ec-9256-fe3bf59a607b" class="numbered-list" start="3"><li><strong>Ditransitive.</strong> they have three arguments:<ul id="e4e6e0da-f0ae-4cf8-a5d2-61573f86b0af" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue">Example: (1) They gave (2)the gift (3) to Rebecca</mark><ol type="1" id="15699345-80b7-8040-8861-d1cb737a5fc3" class="numbered-list" start="1"><li>There are some verbs that are by nature of the their meaning ditransitive, like “to send” which requires a direct and indirect object. </li></ol></li></ul></li></ol><h3 id="15699345-80b7-8083-a964-cf5168266691" class="">Adjuncts, Complements, Specifiers, and Trees</h3><p id="15699345-80b7-80ce-8550-d949bfa7348d" class="">There are three types of Specifiers:</p><ol type="1" id="15699345-80b7-80bb-827d-c90a32dd2183" class="numbered-list" start="1"><li>Noun specifiers: Specified by the articles “a” and “the.”</li></ol><ol type="1" id="15699345-80b7-801a-9775-dea2f773b07a" class="numbered-list" start="2"><li>Adjective specifiers: Specified by words of intensity like “very” and “quite”</li></ol><ol type="1" id="15699345-80b7-80fe-84d4-d6e94213707e" class="numbered-list" start="3"><li>Verb specifiers: Specified by qualifiers of time like “never,” “always,” and “sometimes.”</li></ol><h2 id="15699345-80b7-808f-a940-f4ff6fc9e98f" class="">Semantics</h2><h3 id="15699345-80b7-8088-8a35-fcc32fb0a960" class="">Ambiguity</h3><p id="15699345-80b7-80fe-ab54-d7672353a9df" class="">Every language has ambiguity in its words. Two of them are:</p><ol type="1" id="15699345-80b7-80f4-a95e-f164b1f7b1a1" class="numbered-list" start="1"><li>homophone: words that sound alike<ul id="15699345-80b7-8063-9a85-e79ddebd3e5b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue">Example: flower → flour, bare → bear</mark></li></ul></li></ol><ol type="1" id="15699345-80b7-80fe-98c3-e3665de69b9c" class="numbered-list" start="2"><li>homonym: words written identically<ul id="15699345-80b7-8076-9a60-ef9f9e3d0481" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue">Example: bat (an animal) → bat (used in sports), back (preposition) → back (part of the body)</mark></li></ul></li></ol><p id="15699345-80b7-8021-b5b7-c16264100dd1" class="">Every language also has ambiguity in its structure. For example, am I saying that I shot an elephant <strong>while</strong> <strong>wearing</strong> my pajamas? or that I shot an elephant <strong>printed</strong> on my pajamas? </p><p id="15699345-80b7-8080-9af2-d98d40fb91d7" class=""><mark class="highlight-blue">I shot a deer in my boots</mark></p><p id="15699345-80b7-80ef-b86f-cf3941ccc88b" class="">In this given scenario context would be the key. If there is a deer dead on the side of the road but I look fine, the mind of the listener will tilt towards the first option, if on the other hand, there is no deer and I am leaping, then the second one is the most probable.</p><p id="15699345-80b7-80d6-984f-fe46a3931d1c" class=""><em><mark class="highlight-red">Side note: God’s wisdom is revealed in His choice of languages like the Greek which do not allow this level of ambiguity. </mark></em></p><h3 id="15699345-80b7-80fb-902e-f769d6eced0c" class="">Entailment</h3><p id="15699345-80b7-80e8-a468-f3efb50c4241" class="">The truth of one phrase must entail the truth of the second</p><ul id="15699345-80b7-8064-a218-c3954b55300b" class="bulleted-list"><li style="list-style-type:disc">Example: <mark class="highlight-blue">I love to eat → at some point I have had the ability to eat</mark></li></ul><ul id="15699345-80b7-80f8-9a61-d520a0baad3a" class="bulleted-list"><li style="list-style-type:disc">Example: <mark class="highlight-blue">My car is fast → I have a car </mark><mark class="highlight-blue"><strong>and</strong></mark><mark class="highlight-blue"> it works</mark></li></ul><h3 id="15699345-80b7-80c4-b60c-f4688fc0b874" class="">Paraphrase </h3><p id="15699345-80b7-808f-8e96-f563d4486bd8" class="">Two phrases or more that have the same meaning:</p><p id="15699345-80b7-8066-b270-cb42675b52b8" class=""><mark class="highlight-blue">Example: I can’t eat fly → it is not possible for humans to naturally fly</mark></p><h3 id="15699345-80b7-80ce-a2c3-d3a2786bc0cd" class="">Contradictions</h3><p id="15699345-80b7-8066-ac9a-dee529cf1f00" class="">Only one phrase can be true. (logical contradiction)</p><p id="15699345-80b7-80e2-a45e-cac4ebd6a9b5" class=""><mark class="highlight-blue">Example: This is a squared circle (impossible)</mark></p><h3 id="15699345-80b7-80d6-819c-c8de2bf265cc" class="">Gricean Maxisms</h3><p id="15699345-80b7-80a7-a12e-d40d6e01578b" class="">They explain the asossiation between a phrase and its meaning. They offer the “principles for cooperation.” In other words, how one should talk, semantically speaking. This could be said to be <strong>the grammar of semantics. </strong>It tells us how to make sense of communication. Below are four Gricean Maxisms: </p><ol type="1" id="15899345-80b7-8071-a46a-ffa705e78d7b" class="numbered-list" start="1"><li>Maxisim of quality: Be truthful</li></ol><ol type="1" id="15899345-80b7-8047-a7ff-f2bcb36fcb07" class="numbered-list" start="2"><li>Maxisim of quantity: Do not use more words than needed</li></ol><ol type="1" id="15899345-80b7-8043-8e97-ea0ca12b16e1" class="numbered-list" start="3"><li>Maxisim of relevance: Maintain the context in your conversations</li></ol><ol type="1" id="15899345-80b7-80c4-9911-d4d3d3e78d90" class="numbered-list" start="4"><li>Maxisim of Manner: Be clear, brief, orderly, and avoid ambuiguity</li></ol><h3 id="15899345-80b7-801c-8294-c553adfe7a65" class="">Implicature</h3><p id="15899345-80b7-80ca-b811-eba97cf42363" class="">Implicature is found in Phrases with hidden meanings. </p><p id="15899345-80b7-80a9-9ed7-f7de8b97bcf3" class=""><mark class="highlight-blue">Example: You must not have running water at home → you have not taken a shower </mark></p><h3 id="15899345-80b7-8008-a95d-dd947c6c27a4" class="">Presupposition</h3><p id="15899345-80b7-80ef-b9d4-de9a8f14a845" class="">A phrase that implies knowledge about a certain piece of information </p><p id="15899345-80b7-80ac-98ee-cbbd002ad000" class=""><mark class="highlight-blue">Example: Would you do it </mark><mark class="highlight-blue"><strong>again?</strong></mark><mark class="highlight-blue"> → I know you have done action X before</mark></p><p id="15899345-80b7-809d-bed1-d3635366f417" class="">Very cleverly used in the court system. </p><h3 id="15899345-80b7-80b7-9391-f6ac5cfd2640" class="">Thematic Rules</h3><p id="15899345-80b7-8074-b66b-f663ed04650e" class="">There are in grammar at least 9 “roles” or “literals.” </p><p id="15899345-80b7-8035-acbe-f70c3a4bcddb" class="">The three most popular are:</p><ol type="1" id="15899345-80b7-80f1-83c5-da6ccc02b94e" class="numbered-list" start="1"><li><strong>Agent:</strong> Initiates an event</li></ol><ul id="15899345-80b7-80d3-a961-c41f027c463e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue">Example: Rodger punched Paul → Rodger is the agent (initiator)</mark></li></ul><ol type="1" id="15899345-80b7-8084-9517-c49967ceed76" class="numbered-list" start="2"><li><strong>Experiencer: </strong>The entity experiencing an event.</li></ol><ul id="15899345-80b7-809d-bfd4-e75c00ccbc0c" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue">Example: Mina tasted an orange → Mina experienced the tasting</mark></li></ul><ol type="1" id="15899345-80b7-802f-8442-ccd7bfedb129" class="numbered-list" start="3"><li><strong>Theme or patient: </strong>The entity subject to the action</li></ol><ul id="15899345-80b7-8064-96ce-cfd11a754bd4" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue">Example: Marghetetta was ran over by a chicken → Marghetetta is the one suffering the action </mark></li></ul><ul id="15899345-80b7-8060-8d83-e0876f2f8f7a" class="bulleted-list"><li style="list-style-type:disc"></li></ul><p id="15899345-80b7-80ac-9e9f-cb7fd982ec9d" class="">The second three most important:</p><ol type="1" id="15899345-80b7-80dd-90b7-e3cb3337bb78" class="numbered-list" start="1"><li><strong>Goal:</strong> Point towards a specific entity approaches </li></ol><ul id="15899345-80b7-8077-955f-e18a0c9deb60" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue">Example: I am going to the store → The store is the final point (my goal)</mark></li></ul><ol type="1" id="15899345-80b7-807a-b2d0-da81a6287ec5" class="numbered-list" start="2"><li><strong>Recipient: </strong>Receiver of an action. Similar to goal</li></ol><ul id="15899345-80b7-80dd-a348-edd25675bbe1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue">Example: The mom nurses the baby → the baby is receiving the action of nursing</mark></li></ul><ol type="1" id="15899345-80b7-809f-abaf-de210d956b72" class="numbered-list" start="3"><li><strong>Source: </strong>This is the opposite of goal</li></ol><ul id="15899345-80b7-8040-8ef1-ffdfe17a0f4b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue">Example:The mom nurses the baby → The Mom is the one giving the action</mark></li></ul><p id="15899345-80b7-806a-9d61-fd999fc1137d" class="">
+</p><p id="15899345-80b7-802d-b57f-f7c091964f4b" class="">The last three and the least important:</p><ol type="1" id="15899345-80b7-8080-81a6-c50f5b144543" class="numbered-list" start="1"><li><strong>Location:</strong> Place where the action occurs</li></ol><ul id="15899345-80b7-803b-9dc8-ff7ce3a3f08a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue">Example: I am checking my email on my phone → My phone is the location where the email is being checked</mark></li></ul><ol type="1" id="15899345-80b7-80de-befe-c5ff5a570b20" class="numbered-list" start="2"><li><strong>Recipient: </strong>Receiver of an action. Similar to goal</li></ol><ul id="15899345-80b7-8076-9a07-c25e04b42363" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue">Example: I am going to measure the room with a ruler → the ruler is the instrument</mark></li></ul><ol type="1" id="15899345-80b7-80a7-a704-d77c95287b14" class="numbered-list" start="3"><li><strong>Source: </strong>This is the opposite of goal</li></ol><ul id="15899345-80b7-80f3-b82e-d42ba299df91" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue">Example: I made a favor to Sue → Sue is being benefited by my action</mark></li></ul><p id="15899345-80b7-8036-bb97-c99538a42232" class="">This last one is tricky, but generally is given away by the use of the preposition “for” </p><p id="15899345-80b7-8006-9190-db0bb232260c" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

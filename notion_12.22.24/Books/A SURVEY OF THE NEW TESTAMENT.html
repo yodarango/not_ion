@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>A SURVEY OF THE NEW TESTAMENT</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="30f1ba67-faf3-4c3f-bc13-5c669e47ed32" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1604745990737-cc91e4bf6a37?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">📜</span></div><h1 class="page-title"><strong>A SURVEY OF THE NEW TESTAMENT</strong></h1><p class="page-description"></p></header><div class="page-body"><h3 id="d54cbe61-b888-4942-b82d-acc3c2dadb78" class="">Robert H Gundry</h3><ul id="7758c3a9-1a6d-4354-8e32-33172d9b53d6" class="bulleted-list"><li style="list-style-type:disc">26: The Ptolemaic empire centered in Egypt. Alexandria was its capital. The Seleucid empire centered in Syria. Antioch was its capital.</li></ul><ul id="1ff06c6a-1ba7-4b0b-8754-ea158f8d3b38" class="bulleted-list"><li style="list-style-type:disc">26: When the Roman general Pompey made Dyria a Roman province in 64 B.C. the Seleucid Empire came to an end.</li></ul><ul id="7c920cf3-46af-4d09-8151-5fcc021dc6ae" class="bulleted-list"><li style="list-style-type:disc">26: AT first the ptolemites dominated Palestine for 122 years (320 - 198 B. C.).</li></ul><ul id="f496000c-09fb-4b49-9ba0-a5509af0bb6e" class="bulleted-list"><li style="list-style-type:disc">26: Early tradition says that under Ptolemy Philadelphus (285–246 BC) 72 Jewish scholars began to translate the Hebrew Old Testament into a Greek version called the Septuagint.</li></ul><ul id="06fa96ae-b212-4b42-a3b6-dec29a4b3b61" class="bulleted-list"><li style="list-style-type:disc">29: Jewish resistance came quickly. In the village of Modein (or Modin, as it is also spelled) a royal agent of Antiochus urged an elderly priest named ¿Mattathias to set an example for the villagers by offering a pagan sacrifice. Mattathias refused. When another Jew stepped forward to comply, Mattathias killed him, killed the royal agent, demolished the altar, and fled to the mountains with his five sons and other sympathizers. Thus the Maccabean Revolt began in 167 B.C. under the leadership of Mattathias&#x27;s family. We call this family the Hasmoneans, after Hasmon, great-grandfather of Mattathias, or the Maccabees, from the nickname &quot;Maccabeus&quot; (&quot;the Hammer&quot;) given to Judas, one of Mattathias&#x27;s sons.</li></ul><ul id="1ddefe6c-a259-4905-b61c-b49c466a9c2a" class="bulleted-list"><li style="list-style-type:disc">30: The subsequent history of the Hasmonean dynasty (142-37 B.c.) tells a sad tale of internal strife caused by ambition for power. The political aims and intrigues of the Hasmoneans alienated many of their former supporters, the religiously minded Hasideans, who split into the Pharisees and the Essenes. Some of the Essenes produced the Dead Sea Scrolls from Qumran (see pages 83, 88-90). The aristocratic and politically minded supporters of the Hasmonean priest-kings became the Sadducees. Finally, the Roman general Pompey subjugated Palestine (63 B.C.). Throughout New Testament history, then, Roman Empire dominated Palestine.</li></ul><ul id="33cb32e3-cc87-435d-a378-6f11d4b3fa43" class="bulleted-list"><li style="list-style-type:disc">31: ROMAN ADMINISTRATION: Augustus set up a provincial system of government designed to keep proconsuls from administering foreign territories for their own aggrandizement. There were two kinds of provinces: senatorial and imperial. Proconsuls answered to the Roman senate, which appointed them over the senatorial provinces, usually for terms of only one year. Along- side the proconsuls stood procurators, appointed by the emperor, usually over financial matters. Propraetors governed the imperial provinces. Also appointed by the emperor, the propraetors answered to him and exercised their civil and military authority by means of standing armies.</li></ul><ul id="349314ba-93a5-416e-ac88-53f95d4e9a65" class="bulleted-list"><li style="list-style-type:disc">32: The Romans allowed natives of Palestine to rule the country under them. One was Herod the Great, who ruled from 37 to 4 B.C. His father Antipater, having risen to power and favor with the Romans, had thrust him into a military and political career. The Roman senate approved the kingship of Herod, but he had to gain control of Palestine by force of arms. Because of his Idumean ancestry, the Jews resented him. (An Idumean was an Edomite, a descendant of -Esau, the elder brother and rival of Jacob, who was also called Israel, the father of the twelve sons from whom the twelve tribes of Israel descended and took their names.) Scheming, jealous, and cruel, Herod killed one of his own wives and at least three of his own sons. So because Herod did not eat pork (presumably he wanted to avoid offending his Jewish subjects), Augustus said that it was better to be Herod&#x27;s pig than his son.</li></ul><ul id="addfbedd-12dd-4bc0-b165-2a721f9e0123" class="bulleted-list"><li style="list-style-type:disc">51: Branches laid across rafters and plastered with mud formed the flat roofs. Rain caused leakage; so after each rain the mud had to be rolled to seal the holes.<ul id="b80d4800-9ef4-431e-83cf-899ffa59f7b4" class="bulleted-list"><li style="list-style-type:circle">A Mud-Plastered Roof &quot;And since they could not bring him to Jesus because of the crowd, they made an opening in the roof above lesus and, after digging through it, lowered the mat that the paralyzed man was lying on&quot; (Mark 2:4).</li></ul><ul id="e9c881c6-3f81-40ab-90ad-258593f66724" class="bulleted-list"><li style="list-style-type:circle">A Tiled Roof “And not finding any way to bring him in because of the crowd, going up on the roof they lowered him with his mat through the tiles into the middle of the crowd, in front of Jesus&quot; (Luke 5:19).</li></ul></li></ul><ul id="0f6242b2-f331-4425-97b5-682a92c09008" class="bulleted-list"><li style="list-style-type:disc">56: Skeletal remains from the Roman period in Greece show an adult longevity of about forty years for men, thirty-four years for women.</li></ul><ul id="1a835fd6-3108-4b5c-bd3d-bb367d8d70dc" class="bulleted-list"><li style="list-style-type:disc">57: Divorce was easy, frequent, and acceptable. In fact, divorce documents are among the most numerous of papyrus remains. Murder was common. Gentile parents often &quot;exposed&quot; their infant daughters, that is, abandoned them in the city forum, on a hillside, or in an alley. One letter from a husband to his wife reads, &quot;If by chance you bear a child, if it is male, let it live. If it is female, throw it out&quot; (Oxyrhynchus Papyrus 744).</li></ul><ul id="eb0740ff-8585-4975-8e80-80bc7bf461be" class="bulleted-list"><li style="list-style-type:disc">60: Private companies carried on banking much as it is done today with borrowing, lending, discounting of notes, exchanging of foreign currency, and issuing of letters of credit. The ordinary interest rate varied from 4 to 12 percent.</li></ul><ul id="d50bdd9c-fc54-4a19-9a46-40b22ae72fd6" class="bulleted-list"><li style="list-style-type:disc">60: Though Jews had little interest in science during the New Testament period, science had already made a beginning. In the third century B.C., for example, Eratosthenes, librarian at Alexandria, taught that the earth is spherical and calculated its size at 24,000 miles in circumference (only 800 miles short of the modern estimate) and the earth&#x27;s distance from the sun at 92 million miles (the modern estimate is 93 million miles). He also conjectured the existence of the American continent.</li></ul><figure id="f10ae222-06f5-47d7-b181-5c9c6aea683f" class="image"><a href="A%20SURVEY%20OF%20THE%20NEW%20TESTAMENT%2030f1ba67faf34c3fbc135c669e47ed32/Image.jpeg"><img style="width:4032px" src="A%20SURVEY%20OF%20THE%20NEW%20TESTAMENT%2030f1ba67faf34c3fbc135c669e47ed32/Image.jpeg"/></a></figure><ul id="aa473d7b-8b09-40e7-92db-ff69e8895553" class="bulleted-list"><li style="list-style-type:disc">80: Closely related to worship in the temple were religious festivals and holy days. The Jewish civil year began approximately in September- October, the Jewish religious year approximately in March-April (see the Jewish religious calendar on page 81).</li></ul><figure id="33dd9cd9-2227-488d-8ee4-7ed01c331d7a" class="image"><a href="A%20SURVEY%20OF%20THE%20NEW%20TESTAMENT%2030f1ba67faf34c3fbc135c669e47ed32/THE_JEWISH_RELIGIOUS_CALENDAR.jpeg"><img style="width:4032px" src="A%20SURVEY%20OF%20THE%20NEW%20TESTAMENT%2030f1ba67faf34c3fbc135c669e47ed32/THE_JEWISH_RELIGIOUS_CALENDAR.jpeg"/></a></figure><ul id="b3de1b37-4013-4816-893b-80cbdf5ba1b9" class="bulleted-list"><li style="list-style-type:disc">83: Roman Catholics call the pseudepigrapha the Apocrypha, and they accept what Protestants call the Apocrypha into their Scripture as deuterocanonical books. Others call the pseudepigrapha the Outside Books. The Eastern Orthodox and Ethiopic Scriptures include some of the pseudepigrapha as well as the Apocrypha.</li></ul><ul id="dfed3814-8e2c-48f0-83d4-723a8e70da05" class="bulleted-list"><li style="list-style-type:disc">106: As the church grew richer and increasingly regarded the text of the New Testament as sacred, more durable writing materials, such as vellum (treated calfskin) and parchment (treated sheepskin), came into use. Earlier manuscripts were usually written all in capital (buncial, or majuscule) letters, later manuscripts in cursive, small (minuscule) letters.</li></ul><figure id="f9ef5949-32ff-410d-9245-7c1af63f7b20" class="image"><a href="A%20SURVEY%20OF%20THE%20NEW%20TESTAMENT%2030f1ba67faf34c3fbc135c669e47ed32/Then_as_the.jpeg"><img style="width:4032px" src="A%20SURVEY%20OF%20THE%20NEW%20TESTAMENT%2030f1ba67faf34c3fbc135c669e47ed32/Then_as_the.jpeg"/></a></figure><ul id="7ebfc104-aa6c-4682-8401-30d637f85de5" class="bulleted-list"><li style="list-style-type:disc">123: The single generation between Jesus and the writing of the Gospels did not allow enough time for extensive fabrication of myths concerning him. Mythology does not normally develop in less than half a century. Yet the early Christians were proclaiming Jesus as a risen and exalted Savior-God almost immediately after his death. Moreover, during the first decades of church history the hope of Jesus&#x27; soon return burned brightly, so that the early Christians would not have felt very much need to fabricate more information about him than was already available.</li></ul><ul id="7fe3b0d3-7788-4220-a52d-03d1a9811e16" class="bulleted-list"><li style="list-style-type:disc">138: The Last Supper, a Passover meal, took place the following Thursday evening. The Passover liturgy included a blessing; the passing of several cups of wine around the table; a recital of the exodus story by the host; an eating of the roasted lamb, unleavened bread, and bitter herbs; and the singing of psalms.</li></ul><ul id="953e61b4-3a70-41d9-82a5-8c5e0b7225ad" class="bulleted-list"><li style="list-style-type:disc">173: the season for figs (June for early figs, the August - October) has not yet arrived but fig trees in leaf at Passovertide (March-April) might well be expected to have edible buds, eaten by Palestinians even in modern times. Hence Jesus&#x27; cursing of the fig tree: no buds now, no fruit in June or ever after.</li></ul><ul id="bc1f0874-5aa7-4da0-b882-b11c57a3d7f2" class="bulleted-list"><li style="list-style-type:disc">196: These fourteens put a triple emphasis on David as prototype of the messianic king, Jesus, because David appears in fourteenth place on the genealogical list and because the numerical values of the Hebrew consonants in his name add up to fourteen: d(4) + v (6) + d (4) D[a]vi]d (14).</li></ul><ul id="83a3328a-2908-40c4-b5b5-846fd14145b1" class="bulleted-list"><li style="list-style-type:disc">196: The unusual appearance of four women on the list prior to Mary supplements its Jewishness with a Gentile element, for three of them were Gentiles (Tamar, Rahab, and Ruth) and the fourth the wife of a Gentile (therefore called &quot;the wife of Uriah&quot; rather than by her Jewish name, ¿Bathsheba). This Gentile element points forward to the discipling of all nations at the end of Matthew (28:18-20).</li></ul><ul id="b5a84001-ad9a-4ebb-8614-508117b8895b" class="bulleted-list"><li style="list-style-type:disc">198: The residence of the holy family in Nazareth fulfills various prophecies that call the Messiah a branch, the Hebrew word for which is knetzer, which sounds something like &quot;Nazareth&quot; (Isaiah 11:1; also Jeremiah 23:5; 33:15; Zechariah 3:8; 6:12, where a Hebrew synonym is similarly used).</li></ul><ul id="ded8507c-e71a-4333-be37-e73ffdb3e150" class="bulleted-list"><li style="list-style-type:disc">217: just as the employer is not being unfair to those who worked all day (they receive a full wage according to contract), but only generous to the latecomers in order that they may receive a livable wage (any less would fall below subsistence), so God grants his grace to the undeserving out of sheer munificence.</li></ul><ul id="c363535d-d0e3-47e8-8b9a-4d8beb3a70ae" class="bulleted-list"><li style="list-style-type:disc">223: Since it is Jesus who sends the prophets, sages, and scribes in 23:34, they must be his disciples portrayed as such. &quot;From the blood of righteous Abel to the blood of Zechariah&quot; means &quot;from the first martyr in the Old Testament to the last,&quot; because the Hebrew Bible starts with Genesis, which speaks of Abel&#x27;s martyrdom, but ends with 2 Chronicles, which speaks of Zechariah&#x27;s martyrdom (24:20-22).</li></ul><ul id="008591fa-e737-4839-8824-19f59f203839" class="bulleted-list"><li style="list-style-type:disc">247: (The sixth-century Christian monk Dionysius Exiguus miscalculated the year of Jesus&#x27; birth when setting up the system of dating B.C. and A.D., in which Jesus is supposed to have been born on December 25, 1 BC., and circumcised eight days later on January 1, A.D. 1, there being no year zero.)</li></ul><ul id="c25bf1cb-58c3-4ac5-8e7b-826903e2ded7" class="bulleted-list"><li style="list-style-type:disc">248: Since Jewish boys assumed adult responsibilities in Judaism at the age of thirteen, this visit to the temple may have had the purpose of preparing Jesus for those responsibilities.</li></ul><ul id="bee827bb-8135-46de-a5c9-ddb80d69ec70" class="bulleted-list"><li style="list-style-type:disc">264: The last who will be first are Gentiles, the first who will be last are Jews. Final firstness means salvation, final lastness means damnation.</li></ul><ul id="760375ee-79a9-41ec-82c3-e697afbd1f26" class="bulleted-list"><li style="list-style-type:disc">266: COIN As part of the dowry given them at marriage, Palestinian wives often wore a headdress bedecked with coins. The lost coin may have belonged to such a headdress. When jews ask Him where is your Father? (John 8:19), they are not only challenging Jesu to present His Father as a Witness, They are also insinuating that He was born out of wed lock</li></ul><ul id="17966b8f-7e47-4910-b4a7-601b0a2a6b49" class="bulleted-list"><li style="list-style-type:disc">311: The raising of Lazarus proves all the more remarkable in that the Jews believe how deceased person is. Hovers over the corpse for three days and then leaves despairing of a resuscitation where is Lazarus has been there for four days one day beyond help as evidence from the stretch that has developed</li></ul><figure id="33120d0a-c2aa-481f-bb62-0ba5d0fd4c6c" class="image"><a href="A%20SURVEY%20OF%20THE%20NEW%20TESTAMENT%2030f1ba67faf34c3fbc135c669e47ed32/The_Gospels.png"><img style="width:1554px" src="A%20SURVEY%20OF%20THE%20NEW%20TESTAMENT%2030f1ba67faf34c3fbc135c669e47ed32/The_Gospels.png"/></a></figure><ul id="1a3d7a39-3c7d-4d1d-8fa4-527acec3953b" class="bulleted-list"><li style="list-style-type:disc">345: The attempt by Simon to buy authority for bestowing the Spirit has turned his name into the nouns simony and simonism, the crime of buying or selling ecclesiastical preferment. Some early Christian tradition traces the heretical movement of Gnosticism to Simon.</li></ul><ul id="696ac4bd-9bed-4fab-814e-6e3411b4680e" class="bulleted-list"><li style="list-style-type:disc">366: Notably, each of the spectacular bestowals of the Holy Spirit in Acts has to do with the entrance of a different group into the church:<ul id="76789063-0fe6-4a00-8cad-1fc097106a42" class="bulleted-list"><li style="list-style-type:circle">The original Jewish believers (chapter 2)</li></ul><ul id="76742e0f-86be-4ffa-9b9c-de66b26157e0" class="bulleted-list"><li style="list-style-type:circle">Samaritans (chapter 8)</li></ul><ul id="c52a8afd-f1da-4e80-bdd8-e08de63d2250" class="bulleted-list"><li style="list-style-type:circle">Gentiles (chapter 10)</li></ul><ul id="c7e699cb-b058-41f9-9914-eeac417d2f07" class="bulleted-list"><li style="list-style-type:circle">Baptists (chapter 19)</li></ul></li></ul><ul id="f094cab5-3db7-4959-99af-e106c92b9ce1" class="bulleted-list"><li style="list-style-type:disc">This special evidence of God&#x27;s approval contributes further to Luke&#x27;s emphasis on universality.</li></ul><ul id="423ac4cc-afeb-438f-a9ed-4a78f04d99de" class="bulleted-list"><li style="list-style-type:disc">414: Archaeologists have discovered numerous drinking vessels in these liquor lockers; some bear inscriptions, such as &quot;Health,&quot; &quot;Security,&quot; &quot;Love,&quot; and the names of gods. It is natural that a church set in such extreme paganism should bristle with problems.</li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>THE WISE MEN</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="80ede26c-358f-4b66-8335-332d647dbd53" class="page sans"><header><img class="page-cover-image" src="THE%20WISE%20MEN%2080ede26c358f4b668335332d647dbd53/6E0D34E7-41BB-4D7E-8E2F-6F4A7B69F01B.jpeg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🐫</span></div><h1 class="page-title">THE WISE MEN</h1><p class="page-description"></p></header><div class="page-body"><p id="aeb38e71-e163-4c62-b010-71dce4496814" class="">2:  Their title introduces them as Persians of the sacred<br/>order of Persia<br/></p><p id="c8356cd8-5365-4739-a161-208c11a32d18" class="">3:  The Magi,then, were really the sacerdotal order in Persia from the fall<br/>of its Empire (B. C. 331) onward to and after the Christian era.<br/></p><p id="cd0aec2d-d6a0-4a88-88ee-385b0fc50ba1" class="">5:  the Roman World it was the common opinion,<br/>that, in very ancient times, magic originated with the priests of the Persians; and in the Roman World, those who practised magic assumed the name of Magi ;<br/></p><p id="290b2f03-c813-4f9f-af0d-ebadb94767f3" class="">10:  St. Luke applies the term; but, as if aware that the word might have a national sense, he adds, the man was a Jew, and,as if aware thatit might have an honor<br/>able sense,that he was a false prophet.<br/></p><p id="09bd2a6f-ea84-4373-9144-92eaa7073f2c" class="">11: The Parthian jealousy of strangers did not exclude from Persia the Jews,settled there beforetheirrulebegan, —- of whom were the Parthians and Medes,who came<br/>to the Pentecost.<br/></p><p id="fd37b649-ccab-4026-993c-c9ef571889ca" class="">14:  Philo, called Judæus,wasalearnedJew,ofanoblefamily,who livedat<br/>Alexandria in Egypt , one of the great seats of Jewish learning. He was the chief of an embassy, sent by his countrymen inJudea to the Emperor Caligula,at Rome ; and his son married Berenice,a daughter of<br/>KingAgrippa.<br/></p><p id="91984bba-d99f-4edb-bd16-b794c6883ffb" class="">16: and they say, among that people, no one can possibly succeed to the kingdom , if he had not been previously initiated into the mysteries of the Magi.&quot;</p><p id="9ac55a0e-4318-4cca-a3a0-87566d7ad5d3" class="">20: That St. Matthew did know the country of the pilgrims, is certain from his last words about them,— &quot;they did not return to Herod, but departed into their own country another way :&quot; not the usual road to Persia through Damascus, but probably some southern way<br/>from the not far distant city of Petra.<br/></p><p id="8cb76532-2b92-4ed8-9c94-3bcc1fc3b9ce" class="">28: They say, the Star was seen by them when they were in the East. Now, they could not have forgotten where they first saw the Star, and it is not possible to give any reason why they should have wished to conceal this in vague language. In what particular city, or town, or village they’ were , when the Star first shone, was of no consequence. If they stated this, it may not have reached their historian, or might not reappear in his condensed statement; but the name they gave to the country where they were when they saw it assuredly, this was a definite name.</p><p id="0a039b79-4e6b-4e7d-9d72-28e0518172fd" class="">33: Eastward of us, then, there are three well defined regions- the Desert, the Southern Plain of the two rivers, and Persia. So little of the world beyond these was known to the Hebrews, that we have only these three to consider in determining what region they called the East, and what the Far East</p><p id="154c3195-0e66-4fea-9472-520261ee6797" class="">35: Abraham sent the sons of his concubines eastward into the east country ;&quot; (Genesis 25:6)  that is, far into the desert. The East was, then, the country of wandering Arabs</p><p id="44f5fd69-6fd4-4900-be2d-54c55e892b3d" class="">36: The country of wandering tribes being then the East, with them the phrase, at times, crossed the Euphrates. Hence the kinsmen of Abraham, who seem<br/>to have dwelt permanently on the farther side of that river in tents , are called &quot;children of the East .&quot; (Genesis 29:1)<br/>The use in Jacob&#x27;s family of the East, for the desert, continued in the land of Egypt, because the Arabian desert, that bordered Canaan on the east and on the south, also bordered Egypt on the east. Thus the<br/>Israelites carried down with them into Egypt the name of the East for the desert, kept it while there, and<br/>brought it back with them. Alike in Goshen, and in Canaan, this name for the desert answered to various conditions in which phrases taken from the quarters of the horizon are used geographically.<br/></p><p id="46e8b648-56d5-48cc-80fd-f9a315bdb7c0" class="">38: When looked at as a whole , it seems to lie to the south of Palestine in St. Matthew&#x27;s Gospel, the Queen of Sheba is the Queen of the South (Matthew 12:42) and this complete view of it for bade calling part of it the East .</p><p id="830afc8c-493a-4669-9008-579bd1f8b471" class="">40: As the exile drew nigh, Assyria became &quot;the North,&quot; and upon this Babylonia ,<br/>would very naturally become &quot;the East.”<br/></p><p id="4dbef190-6cc3-4ea5-a54e-623be108616f" class="">43: Thus, as the roll of “ancient Scripture was closing, Babylon &quot;of the Chaldees,&quot; (Isaiah 13:19) &quot; that bitter and hasty nation...their horses swifter than the leopards, and more <br/>fierce than the evening wolves,&quot; (Habakkuk 1:6,8)- became the terror of the world; and the East, ceasing to be the name for the Desert, came to mean the new and terrible Dominion beyond the &quot;Great River.&quot; Ezekiel, prophesying the ruin of the Ammonites,in more ancient Scripture them selves &quot;the children of the East,&quot; says they shall be destroyed by &quot;the children of the East &quot; meaning the (Ezekiel 25:3-5,10) Chaldeans. Isaiah ,referring to the superstitions and sins of Babylonish heathenism, reproaches &quot;the house of Jacob&quot; with being full of the sorceries of &quot;the East” Isaiah 2:6<br/></p><p id="750010e0-b02f-4438-a499-5d11c2cc5401" class="">47: h e n his dominion passed away,the noble city of Seleucia,at a distance of only forty-five miles from the site of Babylon , rose in its stead. It was one of the thirty-five great cities built by Seleucus, who became, after Alexander, the Greek lord of Central Asia,and also ruled over Palestine;</p><p id="1f9d99be-5cbf-4b8e-b227-8995737cfc42" class="">53: This term, the East, then, is not general or vague. It means that country which in the common speech of man , will be ever known as Babylonia ;</p><p id="a6380670-cb7b-4112-920e-f61f64be1e7f" class="">54: But the question here comes up,Why did not St.<br/>Matthew use the proper geographical name , and say<br/>Magi from Persia? No geographical name would have<br/>pointed out to those for whom he wrote, the &quot;coun<br/>t r y o f t h e M a g i ,&quot; m o r e c l e a r l y t h a n h i s f a m i l i a r n a m e ,<br/>the Far E a s t - especially as here used in connection w i t h t h e E a s t ; a n d it w a s t h e b e s t n a m e h e c o u l d u s e .<br/></p><p id="6b749632-0437-486d-971d-297bad775a1b" class="">57: In the Hebrew Scriptures the Far East twice means Persia. There, Cyrusis &quot;the Man from the Fa rEast,&quot; a n d t h e P e r s i a n E a g l e is &quot; t h e e a g l e f r o m t h e F a r E a s t .&quot; (Isaiah 41:2; 46:11)</p><p id="cdeac58c-f508-4040-8eed-d11f032c316a" class="">64:  The law of the Medes and Persians altered not. Their ancient religion sometimes attracted and allied thoughts and usages of other n a tions, yet ever kept its own.</p><p id="0fb688f6-2405-4844-b081-8eccb15703ac" class="">66:  The historic period of Persia began in the seventh― centurybefore Christ (B. C. 658),when Achæmenes a leader whose name the Persian monarchs loved to re call - led an emigration into a narrow territory, along the northern shore ofthe Persian Gulf. There he founded a k i n g d o m .; a n d t h e r e w e r e t h e a n c i e n t P e r s i a n c a p i t a l s ,Pasargada and Persepolis. W h e n the Persians thus<br/>came into Persia Proper,their kinsmen,the Medes,<br/>who appearearlierin history,dwelt inthe region ad<br/>joining it on the north. A century later,these kin<br/>dred tribes,coming under one government,ruled from<br/>the highlands east of the Tigris to the highlands west<br/>of the Indus, and from the Caspian Sea and the River<br/>Oxus to the Persian Gulf. The Persian Empire,thus<br/>founded in the sixth century before Christ (B. C. 558)<br/>by Cyrus the Great,besides Persia or Iran,embraced,<br/>at one time or another, Assyria, Syria, Asia Minor,<br/>islands of the Ægean , Egypt, parts of Arabia, of<br/>Scythia, and of India. In the fourth century before<br/>Christ (B. C. 331) Persia was conquered by the<br/>Greeks. In the third century before Christ the Parthians a tribe that had been subject to the Persiansrose up against the successors of Alexander,and at length founded the Parthian Empire. In the third century after Christ (A. D. 226)<br/>the Persians reestablished their own kingdom.<br/>In the seventh century (A. D. 651) the Arabs converted the Persians<br/>to Mohammedanism by the sword.<br/></p><p id="90200ebc-58c3-4bc6-9086-2996f7131fad" class="">67: The Zend,the sacred language of Persia, and the most ancient dialect of the Sanscrit, the sacred language of India, are the same language.</p><p id="f9e6b490-c117-4761-816c-1b89db031e6b" class="">69: the languages of the Arabs,the Syrians, the Phoenicians,and the Hebrews are called Shemitic languages .In a time,then,far beyond the reach of the  usual appliances of human history,in a region somewhere in the heart of Asia , there appears the early vision of a familyfrom which go forth,towards the cast, the lords of India, and towards the west, the successive races That peopled Europe,and are now spreading over<br/>the Americas, and the expectant islands of the deep<br/></p><p id="bd056731-a5a2-410e-91d1-d6397c0ff70e" class="">71: This sage,whom Iran revered as her prophet,in the<br/>Zendavesta is styled Zarathrustra, a word changed<br/>by the Romans into Zoroaster.2 The Greeks and<br/>Romans took this for a proper name. It was the title of the High Priest of Iran. The Zoroaster of world-wide<br/>fame is distinguished in the Zendavesta by his family<br/>name,Spitama<br/></p><p id="4cf785fd-2850-45dc-aa42-e3b7e2f31274" class="">72: Theybelievedinaself-existent<br/>Creatorofallgood. Hisnamewas-Ahura-Mazda, thought tomean the Living Creator ofall a name, in<br/>iater Persian, contracted into Ormazd. The Persians<br/>conceived of another being,also self-existent,who was the creator of evil. His name was Angromainyuɛ,<br/>inlaterPersian,Ahriman. Suchacreed,strictlycon strued, held to two eternal powers ; but, happily, it was inconsistent with its first principles. The good beingwas mightierthantheevilbeing,and,intheend, was to destroy him.<br/></p><p id="b79b01a4-b81b-47f6-8e0d-eeaece7473be" class="">80: These words prove Schlegel&#x27;s assertion, that in the Bible the Persians are not classed with heathen nations. ForCyrusiscalledtheLord&#x27;s&quot;shepherd&quot;and the Lord&#x27;s &quot; anointed,&quot; which is evidence that he was a w o r s h i p p e r o f G o d ; a n d t h i s is c e r t a i n , w h e n it is s a i d the Lord will strengthen the right hand of his anointed<br/> to subdue the &quot; nations ; for the term rendered n a<br/>tions&quot; means the heathen, or worshippers of idols,in strict opposition to the Israelites.<br/></p><p id="72241ecb-bb41-48f9-b51a-b02afff1a27b" class="">80:  Yet the Lord said to Cyrus,&quot;Thou hast not known me ;&quot; from which it is to be inferred,that although Cyrus was no idol-worshipper,his idea of God was i m perfect, erroneous, or contradictory ; and as the words<br/>following &quot;IamtheLord,andthereisnoneelse;<br/>thereisnoGodbesideme,&quot; arenaturallytakenas referringtothosethatprecede,thereisinthem evidence ofthedivinityofAhriman inthePersiancreed. When this is said again,it is followed by words manifestly pointed against this doctrine of the Persian religion : &quot;I form the light, and create the darkness. I make peace, and create evil. I, the Lord, do all these things .&quot; The fact so strongly inferred from Scripture,that the P e r s i a n r e l i g i o n h e l d t o t w o C r e a t o r s , is c l e a r l y p r o v e d bythefirsttwoofthefive small collections ofhymns in the Zendavesta,called Gathas.<br/></p><p id="cabe64c2-fac3-4cf0-8170-5bc4d26c1e9a" class="">92:  In the Zendavesta there is a fragment of a very old epic song , in<br/>which it is foretold to Ahriman ,that for the destruction<br/>of idol-worshippers, Sosiosh shall be born out of the waterKacoya,intheeastcountry. This seems together a reference to one well known ,rather than an announcement of one unheard of before. In another place it is said, this &quot; hero will arise out of the number of the prophets; a mighty brightness,&quot; peculiar to Iranian worthies of oldest time, &quot; will shine around him ,&quot;a mighty brightness, created by Ahura-Mazda in the beginning,and the instrument by which Sosiosh would accomplish his mission. This mission would be to make &quot;Life everlasting, undecaying, imperishable, in corruptible, forever existing, forever vigorous, at the time when thereafter shall rise again.&quot; Then,itissaiù, &quot;imperishablenessoflifewillexist;and all the world will remain for eternity in a state of purity.&quot; The germ of the religion of the Lord Jesus Christ is the promise his mercy gave to the mother of all human kind.<br/></p><p id="c5059326-a6eb-4331-bca4-97e6648c445c" class="">98: The learned heads of the order had the charge of the edu cation of the monarch.2 They were judges and coun sellors of state. The Magi were diviners,astrologers.<br/>and interpreters of dreams. They searched into the secrets of future time.<br/></p><p id="1a040af2-d9c1-484b-bf64-c2cb61a268a9" class="">97: The name Magi comes from a word found in one of &quot;Kava the most ancient hymns of the Zendavesta. Vistaspa&quot; the royal friend of Zoroaster- &quot;obtained, through the possession of the spiritual power (Maga),</p><p id="db9e9e70-3e0c-4941-90cd-a95f64256025" class="">101:  Pliny says, &quot; Beyond all doubt in Persia, from Zoroaster, as all authors agree, arose magic -fraudulentissima artium―the most delusive of arts.&quot;</p><p id="cab51319-96f2-4124-85f5-00964d1cc874" class="">116: The king of Babylon made a Hebrew,the President of the Chaldeans. The Chaldee passed, the Persian came. The Magi took the place of the Chaldeans,as the imperial order ; the new monarch raised the same Hebrew to a rank above both ; and these learned and religious orders were brought together,in the metropolis of the world under the same illustrious foreigner. Then to the Magi ,who brought with them the traditions<br/>ofBactria,farintheEast,werebroughtthe traditions of Judea,far in the West ; and, at this epoch in its history, this order embodied the wisdom of the East Bactrian,Median,Persian,Chaldean,Aramean,and Hebraic<br/></p><p id="c9aa6233-5e00-4096-9570-022f0041d584" class="">119: In the historic cycles of the ancient world,wherever the centre of power is,there the Hebrew is sure to be, and sure to draw to himself the chief interest</p><p id="069f71ff-b8fd-4d5c-b374-1efe22951fab" class="">120: ,therecouldnomorebe a city without walls than without people ; and the time of the building of the wall was the date of the renewal of Jerusalem. Not,therefore,from the decree for the rebuilding of the Temple, but from the time of the decree for the rebuilding of the Wall ,through which Jerusalem became once more a capital, and the Jews a nation,the &quot;seven and three score and two weeks &quot; of the Great Prophecy measured to &quot;the Messiah, the Prince.</p><p id="ce888faf-e43c-4d8f-a0b8-0a92b46e8a12" class="">124: for,one ofthereve lations to him is dated in that king&#x27;s third year ; and,<br/>again, at the close of the chapter describing his deliver ancefromthelions,itisadded,&quot;thisDaniel prospered in the reign of Darius and of Cyrus the Persian.” N o w , it was in that first year of his reign that Cyrus sent forth his decree to rebuild the Temple.<br/></p><p id="bcf25631-54fb-40bc-876e-00a6c73a632f" class=""><mark class="highlight-yellow_background">128: The oracle of Balaam was such a prophecy — and he must have made this use of it,not only for the general r e a s o n t h a t it w a s n o t a H e b r e w p r o p h e c y , b u t f o r t h e particular reason that Balaam was of Mesopotamia. This was a more interesting fact to Chaldeans than to Magians;butintheirrelationswithDaniel,thelearned</mark><br/>in Babylon were one class; and the fame of Balaam was great enough to transcend national lines. If his fame did not,the remoteness of his age would<br/></p><p id="c6343a83-57c1-49b5-98fa-ddeb6fce194e" class="">131:  The second question is,How could revelations of Daniel to the Magi have been remembered five hundred years and more ? This would be a great difficulty if they were entrusted to tradition. Even then their memory might have thus lasted,and could,at any time, have been reinvigorated from the sacred books of the Hebrews, who, from the time of Cyrus onwards, dwelt<br/>in considerable numbers inthe capitals of the Persians, or of the Parthians.<br/></p><p id="39fdb026-649a-450a-b53a-801badee36e6" class="">149: Supposing the Magi to have seen the first of these conjunctions,they saw it actually &#x27;in the East;&#x27;for,on the 29th ofMay,itwould risethree andahalfhoursbeforesunrise. Iftheythentooktheir journey, and arrived at Jerusalem in a little more than five months (the journey from Babylon took Ezra four months ; see Ezra vii. 9)</p><p id="e1386200-7d7c-4774-b5b2-728118bc18f2" class="">152: Scripturerevealsscientifictruths,but never uses scientific language</p><p id="5f5cad60-ae3c-4cda-a7ee-9cd9f9a33d3f" class="">153: ThosewhoholdthattheStaroftheMagiwas acon<br/>junction ofthe planets,have to do away with the miracle ofitsguiding. Thisitisnotpossibletodo.<br/></p><p id="ac5f7a98-5deb-4cfb-99cf-fbb7c3f6f3f3" class="">161: T h e N e w S t a r o f t h e A n n u s D o m i n i is w i t n e s s e d t o b y astronomers of yesterday, as the N e w Star of 1604 is<br/>witnessed to by Kepler and other astronomers of to-day. These late astronomers also attest, that, near the time of our Lord&#x27;s Birth,there were four conjunctions<br/>of planets,believed by astrologers to be significant of great events in Judea. This scientific fact, taken in connection with the other, is a sufficient answer to those who , for the reason assigned, have decried this Pilgrimage as a thing incredible ; is sufficient to e xplain what Infidelity has challenged the Church to tell―how,from a Star,the Magi knewtheBirthof the King of the Jews.<br/></p><p id="c3d3bbc4-5533-4ffc-9039-82ae6b4a376d" class="">164: T h e N e w S t a r o f t h e A n n u s D o m i n i is w i t n e s s e d t o b y astronomers of yesterday, as the N e w Star of 1604 is<br/>witnessed to by Kepler and other astronomers of to-day. These late astronomers also attest, that, near the<br/>time of our Lord&#x27;s Birth,there were four conjunctions<br/>of planets,believed by astrologers to be significant of great events in Judea. This scientific fact, taken in<br/>connection with the other, is a sufficient answer to<br/>those who , for the reason assigned, have decried this<br/>Pilgrimage as a thing incredible ; is sufficient to e x<br/>plain what Infidelity has challenged the Church to tell<br/>―how,from a Star,the Magi knewtheBirthof the King of the Jews.<br/></p><p id="52b10f72-72ce-48df-9c83-af26cd04a37a" class="">171: InlittleBethlehemtheyfoundonlyamaiden<br/>mother tending an infant; yet,with undaunted Faith,<br/>Or when they saw the Young Child and His mother,<br/>theyfelldownandworshippedHim;&quot; and,settingforth truths greater than they knew,they offered,tothe Son ofMan and Son ofGod,myrrh,hinting attheresur rection of the dead ; the royal gold ; and frankincense<br/>ee thatbreathesofprayer,― myrrhtoamortal,goldto<br/>a k i n g , f r a n k i n c e n s e t o G o d .&quot; <br/></p><p id="29e82b7e-5373-4ea2-af44-f061c997e653" class="">189: It has<br/>been seen that the Magi believed that theGod ofHeaven<br/>intervened inthe affairs of men,and that <br/><mark class="highlight-teal_background"><strong>Ormazd</strong></mark>, in his appointed times,would send on earth prophets,who would work wonders for the Kingdom of Light,and the last and greatest of w h o m would utterly destroy the Kingdom of Darkness.</p><p id="6e467a31-75d0-4ac3-91c5-6e84aa3c73af" class="">200: A s to this Relation ,there have been three conjectures :<br/>first,that Zoroaster was taught by Hebrew Prophets ; second, that several Leading Ideas of the Religion of the Hebrews, which have since become Christian<br/>doctrines, had their origin with the Persians ; third,<br/>that neither religion was in any way affected by the other.<br/></p><p id="0e628e42-9b64-446f-9584-7d9fe203f357" class="">202: He was the Reformer, not the Author of their faith. He was one of a succession of priests,who,likehim,ministered before a flame of fire; and he speaks of ancient customs and words. These facts come out clearly in the few words that are indis<br/>putably his; and from them, and from the age in which he lived, it is certain that his religion can be traced back to within a few centuries of the Floo<br/></p><p id="b11f87d2-9db9-4694-80fc-b6a877d08947" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

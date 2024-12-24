@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Chapter 6</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="57a77852-1361-4868-9076-2ceda23cfe7a" class="page sans"><header><h1 class="page-title">Chapter 6</h1><p class="page-description"></p></header><div class="page-body"><p id="d3effd99-49c6-454b-a1f3-9c6b894e4145" class="">Chapter 6</p><p id="8060b8f8-58b3-46ca-b73b-b1d9317db1a2" class="">1: the only high we can say is ÒGlory, HallelujahÓ my brethren!! #BL<br/>#JVM 2: Paul is not advocating that a believer cannot sin, he is simply<br/>saying that anyone who is a genuine believer cannot live in it. This is<br/>how you can differentiate a saint from an aint. Just as in the<br/>paramedical world bodies are examined for vital signs by a quick check<br/>of their pulse, body temperature, or breath, so in the spiritual world<br/>we can examine who has truly died to the old self by checking their<br/>spiritual vitals. Anyone who claims to be a believer but whoÕs heart is<br/>still clearly beating for the things of the world has not died yet. If<br/>he/ she breathes the whatever the prince of the air produces [Ephesians<br/>2:2], eats from the table of demons [1 Corinthians 10:21], and sleeps<br/>during the night [1 Thessalonians 5:7], that is not a corpse. That is a<br/>living creature. Corpses donÕt need oxygen, nourishment, nor rest. There<br/>is a clear difference between sinning and living in sin. #GRN #DR 5:<br/>Whether baptism is essential for salvation or not has been one of the<br/>great debates of Christendom. I will not go into the same argument<br/>trying to explain and justify my stand on the matter. However, the<br/>importance of the ritual is made very clear by Paul. Anyone who wants to<br/>live with Christ must therefore also die with Christ. I dont understand<br/>people sitting in a pew for years hearing the Word of God; the beauty of<br/>the Lord Jesus, His eternal rewards, the sweet hope of heaven, and His<br/>precious work at the cross and still ask the question whether someone<br/>needs to be baptized to be saved. My friend, if you truly are a<br/>Christian and love the Lord Jesus you will do whatever it takes to spend<br/>eternity with Him. You would get baptized even if that meant being<br/>submerged in sulfuric acid. Anyone who questions whether they have to do<br/>this or that in order to be saved truly has not understood the gospel<br/>and what salvation is all about and it is is a neon sign they donÕt love<br/>the Lord Jesus. #BL #DR 7: Here lays one of the key principles of living<br/>under Grace. Grace has allowed us to live lives free from sin, not lives<br/>free to sin. Not being able to discern between these two is what has<br/>caused so much damage to the church today and as a result, ecumenical<br/>Christianity. Grace is not a license that allows us to sin, but rather a<br/>proclamation of independence that sets us free from sinÕs authority.<br/>Using grace as a license to get tattooed, drink alcohol, smoke, or<br/>consume profane media through the vehicle of sound or pixels is<br/>undermining its purpose. The beauty of grace does not lie in the fact<br/>that you can do x, y, or z, but rather in the fact that you donÕt have<br/>to do any of them anymore. My father was a sever alcoholic for 7 years<br/>straight. He was at the border of death because of the abuse of alcohol.<br/>25 years later, he has been freed from alcoholism and he is now follower<br/>of Christ and a man of prayer. I havenÕt asked him this specific<br/>question, but I highly doubt that if you asked him to define the freedom<br/>provided by grace in relation to alcohol he will reply with something<br/>like ÒIt means that I can drink it.Ó #RD #GRN #DR 7 You have to die in<br/>order to truly live. #YLW #DR 8: If you donÕt feel the assurance of the<br/>hope of living in eternity with Christ, ask yourself if you have truly<br/>died. For once we have truly died to ourselves and surrendered our lives<br/>to Him, is the work of the Holy Spirit to seal us with that assurance in<br/>our hearts [Romans 8:16, Hebrews 10:15]. #GRN #DR 11: Dying to sin does<br/>not mean preserving that state. Dying to sin means living in<br/>righteousness. See, we never stop living, we only changes lives. We can<br/>either live for sin or we can live for righteousness, they are both<br/>mutually exclusive. When you die to sin consequentially you start living<br/>for God. And when we live for God we should be as active, if not way<br/>more active to do that which is good than what we were to do that which<br/>was evil when we lived in sin. It is sad to to see people who have been<br/>saved from the grasp of hell just to come warm up a pew. My friend this<br/>is war. God does not want corpses. He wants living people. Corpses are<br/>purposeless. They dont work, dont talk, dont eat, dont walk and after<br/>not too long they start stinking. No, if you are alive in Christ you<br/>will do those things that signal you are alive. You will do the works of<br/>righteousness, you will tell others about His grace, you will crave<br/>spiritual food, His word. And you will help this gospel walk the whole<br/>globe by donating your resources. #GRN #DR 13: Offer ALL your parts to<br/>good. That includes even your intimate parts so that He can keep you<br/>pure and guard you for what he approves of: safe sex. 16: There are only<br/>two masters and I donÕt care who you are, you are serving one of them at<br/>this present moment. There is no such thing as middle ground. This idea<br/>that ÒI am my own bossÓ is foolishness. Truth is youÕre nothing but a<br/>poor slave. All humanity has been subjected to slavery from the<br/>beggining [Romans 8:20]. We donÕt get to choose whether we are slaves or<br/>not; however, we do get to choose who are master is. Is it Jesus Christ<br/>the Master of your life? Or is it satan? Who are you obeying today? #BL<br/>#DR 16: Obedience DoesnÕt lead to life. Only Christ leads to life. You<br/>cannot be safe through your good behavior and your acts of piety amount<br/>to nothing when talking abouteternal life as a reward. Obedience leads<br/>to righteusness, but righteousness is only a proof that we have indeed<br/>being transformed by the power of the Holy Spirit, not the rewarder of<br/>our salvation. #GRN #DR 17: When you are a slave of sin there were many<br/>habits, actions, and reactions that you did but that you did not want to<br/>do. You wanted to break loose but you did not know how. You hated<br/>hurting yourself and hurting those you loved, and it did not matter how<br/>hard you attempted to change, You were never successful. It seemed like<br/>the more you tried the worse you became. this is the difference between<br/>being a slave of satan and being a slave of Christ. The things you do<br/>for Christ you do them out of love. Your love for Him is so great that<br/>obedience becomes only an expression of your love for Him. Christ does<br/>not force you to do anything you do not want to do. See, He is a<br/>gentlement; He knocks and waits outside the door until you let Him in<br/>[Revelations 3:20]. He does not break in like a murder, thief, or<br/>destroyer [John10:10] #RD #DR 19: God puts the cookies in the bottom<br/>shelf Where the kiddies can get them. This is how simple the gospel has<br/>been made for our sake. He has not given to humanity a message that<br/>requires a PhD in order to be understood. #CYN #DR 22: Imagine you have<br/>been invited to the presidential house of your country. The president,<br/>however, has requested that you wear certain attire if you want to go<br/>in. When you go you are trusting that he will let you in because you<br/>have been trust his word, not because you are wearing certain attire.<br/>You wear the attire simply because you are excited to go in, but you do<br/>hot put the trust in it. Is the thing with holiness. Holiness is just<br/>the uniform that you wear because you know your king is worthy of your<br/>best attire, and because without it you can’t come in to see Him. but<br/>your trust, however, is not in your attire, rather in the promise of<br/>your King [Matthew 22:1-14] . #BL #DR 23: Two key points can be drawn<br/>from the last verse of this chapter which in themselves encapsulated and<br/>a summarized way the entire chapter:<br/></p><ol type="1" id="7bd6b165-ec1d-4f96-a3dd-7a675167c7f2" class="numbered-list" start="1"><li>the wages of sin are death. Oh donÕt you worry about working for<br/>free. If you are a slave of satan donÕt worry, he does not let his<br/>slaves work for free, I assure you. Yes he will work you sun up to sun<br/>down. He will demand that you give him your mind, your time, your body,<br/>your family, your possessions and your relationships so that he can do<br/>with them as he pleases. He will demand from you actions that will<br/>destroy your life, hurt your family, detriment your family, ruin your<br/>finances, and corrupt your mind. he will push you to do more and more.<br/>he will never be satisfied nor pleased with your results no matter how<br/>hard you try. he will ask you to break your back working until you sweat<br/>to death and then he will tell you your good for nothing, that what you<br/>did is not good enough that you shouldnÕt even exists. the sad part is<br/>that he never stops there, the next move is to ask for your children if<br/>you have any. he will ask that they be given to him so that he can do<br/>the same to them. And finally, at the end of that day, when your journey<br/>is over, is time to pay. And here is how he sign the check to his<br/>employees. He signs a big fat check with the words ÒEarned entry to an<br/>eternal trip to HellÓ at the end of the journey. I know such statement<br/>sounds crude and harsh, but thatÕs who he is. he is a crude individual.<br/>Everything you do for him as a reward, it does not go unnoticed. This is<br/>the only kind of payment you an expect to him. The idea that you somehow<br/>will get down to hell and Òrule that placeÓ as say is dreadful and<br/>foolish. One because he has no kingdom of his own. He is not but a<br/>puppet in GodÕs hands, and two because even if he had a kingdom he will<br/>not share it with you.<br/></li></ol><ol type="1" id="96ea174a-7723-4080-ad67-9a25ae47e853" class="numbered-list" start="2"><li>The gift of God is eternal life. And here is one of the main<br/>differences between the two masters. One only pays a miserable wage,<br/>where the other One freely gives abounding riches. When you work for God<br/>you work not for what you will be paid for your service, but for what He<br/>has already freely given to you before you even started working. Its a<br/>difference kind of service, you see. This King will never push you or<br/>rush you. This Master leads you by the hand, and when you get tired,<br/>guess what? He picks you up and carries you. he does not demand, He<br/>asks. He does not have paid employees. He only have voluntary workers.<br/>Oh does ask for your heart but only so that He can mend it; He asks for<br/>your family but only so that He can restore it and unite it; He asks for<br/>your mind but only so that He can give it peace; He does asks for your<br/>possessions, but only so that He can bless them; He does asks for your<br/>time but only so that you can know Him more, He asks for your body but<br/>only so that He can use to tell others about Him. When you serve this<br/>king you serve for free. Because everything He has already given you and<br/>done for you. You dont earn His gift of life. It cannot be purchased,<br/>only given.<br/></li></ol><p id="9b51ca13-a5ff-4af8-a7d6-78ff5798b2c5" class="">25: Serving God starts with our mind. The mind will dictate if we<br/>ultimately serve God with out member or not. The sing Paul has in mind<br/>here is the spontaneous sin committed without premeditation nor<br/>intention. This is why he means when he says the his mind was not<br/>participating in the affair. Thus, none can cover behind this excuse<br/>when they finally bring to execution a fantasy that their mind has been<br/>nourishing for a given time. This kind of sin is a sin of rebellion,<br/>whose offense is worse than the offense of witchcraft (1 Sam. 15:23).<br/>This is the kind of sin that if a person does not end with high urgency,<br/>will lead us to spiritual death (1 Jn. 5:16-17) and as its last course,<br/>a terrible expectation of judgement in fire that will never quench (Her.<br/>10:27)<br/></p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Chapter 4</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="08c350cf-935d-4555-9d52-20589ecb2dbf" class="page sans"><header><h1 class="page-title">Chapter 4</h1><p class="page-description"></p></header><div class="page-body"><p id="8ea1fed2-30e2-41fe-89bd-80277f877788" class="">Chapter 4</p><p id="2a32c90e-b1cf-4482-8093-03bea6519bfb" class="">Jesus goes from the house (Israel) to the Waters (the world) to<br/>teach. This is a representation of how far His word would reach #DB #JVM<br/>11: Why were the secrets Shared to them ? is it because God did not love<br/>those whom He was speaking to? Absolutely No! the fact that He was<br/>talking to them reflects the fact that He did want them to know, however<br/>the secret was revealed to those who came to Him and asked Him for<br/>understanding. Those who were willing to seek found as said in [Matthew<br/>7:7]. Just like in those days, Jesus speaks to the world through the<br/>greatest parable, His Word. However, only those whom have decided to<br/>follow Him and are close to Him understand what He is saying, the rest<br/>just misinterpret it. #LB #DR 12: Do not say they were not averted about<br/>it! For the problem is not whether God will forgive you or not. The<br/>problem is can you even repent? He will always forgive you but He will<br/>not always soften your heart to repentance. [Psalms 81:12, Romans 1:24,<br/>Jeremiah 13:16] #BR #DR 13: Every person who genuinely repents will be<br/>forgiven, no question about that! However, it is my opinion based on<br/>biblical scripture that not everyone can repent. I certainly believe<br/>there is a point of no return for a person once they have willingly been<br/>blind and deaf after God has called them to repentance time and time<br/>again. These people that Jesus was talking about were people that had<br/>grown quoting scriptures. They knew the law of God. They knew what had<br/>happened to the people that disobeyed God in the past, but yet, chose to<br/>ignore it. Thus, I do think that due to continuous sin and disobedience<br/>a person will come to the point where they will listen to the preacher<br/>but wonÕt understand the sermon. They will read the word but wonÕt<br/>decipher the meaning. They are blind and deaf. #GR #DR 15, 16, 18: Some<br/>people are like a path: First of all, a path has to be created, it is<br/>not something that just shows up on the surface of the earth all of a<br/>sudden. A path is the result of continuous transportation through a<br/>specific soil area.It is soil that has been pressurized by trampling. A<br/>path is to the soil what a callous is to the hand. Therefore, I think<br/>that Jesus here is talking about those who have, for a long time,<br/>listened to the Word and rejected. This who have sat in a pew most of<br/>their lives and refuse to obey God. Thus they callus their hearts and<br/>the Word can never enter, thus it is easy fo the devil to remove it from<br/>their hearts.<br/></p><p id="86ec41cf-37b3-4238-8ff1-af505cecd91c" class="">Others are like rocky places: In a rocky soil there are spots where<br/>seed can be planted, however many are the obstacles, being the rocks,<br/>that will limit the area that can be used to plant that seed. And even<br/>once a small area has been found to sow the seed, the rock below will<br/>keep it from going down. And that is those who put resistance to the the<br/>Word. They donÕt have a problem accepting that God is good, merciful and<br/>love; that is the small area of soil where the seed can be planted.<br/>However, the struggle accepting that God is Holy and hates sin. Their<br/>pride makes them spend their life questioning God why this and why that,<br/>which signifies the rocks. They thing they are deserving of noting but<br/>blessing s and good things. Therefore when trouble comes to their lives<br/>they canÕt stand it. Not necessarily persecution physically, but<br/>spiritually as well, for through Paul Jesus tells us that everyone who<br/>wants to live godly lives will be persecuted [2 Timothy 3:12] so when<br/>Stan starts attacking their health, their family, their finances, or<br/>when they commence to be ridiculed for their faith they fall.<br/></p><p id="d0d1c382-cd43-45ba-940f-c5fa86a2f45e" class="">Others are like thorny soil: Thorns in soil represent lack of cleaning,<br/>a negligence to clean up a surface. as we know thorns always represent<br/>sin, therefore this is those individuals who never take care of their<br/>sin in their lives, they want the flowers that the Word offers but they<br/>dont want to get rid of the thorns offered by the world. They want to<br/>serve God, but hey also want to serve money, sports, power, fame,<br/>health, education, prominence, etc. In other words, they want to serve<br/>two masters, God and their dirty idol, but when the time comes to choose<br/>only one, because the time sooner or later will come, the thorns, that<br/>is their middle, will overcome because they always feared going in<br/>deeper with God for the fear that it would mean leave their god. [The 3<br/>Kinds of Soil] #BR #DR #STI<br/></p><p id="64cbe43e-dce9-47e5-8c68-bede339aabb4" class="">22: Why do you worry about the people dying out of starvation, all<br/>the children getting abused, the people innocently killed, and all the<br/>hard questions about life?! God has not called you to decipher those,<br/>neither is He bidding them forever, He is bringing them to light. We<br/>will know the why if things eventually. Stop questioning Him and simply<br/>serve Him. #LB #DR 28: Dear brother and sister, if youÕre a mature<br/>Christian donÕt expect to see the fruits of the Holy Spirit in those new<br/>converts whom are barely beginning to flourish. DonÕt commence to<br/>criticize them and judge them when you yourself went through the same<br/>process. Just as the tree does not bear fruit right after it has sprout<br/>out neither a new born again will be at the same level as you. Rather<br/>help them grow by watering them with the word. #GR #DR 28: I am not an<br/>expertise in botanic by any means. As a matter of fact, my botanical<br/>knowledge is quite basic, however I do know that:<br/></p><ol type="1" id="66adf496-2a32-4598-8cb0-5ffeda913b9e" class="numbered-list" start="1"><li>The leave appears first: the leave of a plant is were photosynthesis<br/>takes place that is where it receives light and life, thus the first<br/>sign of a believer is hunger for the Light and Life. They will study the<br/>scriptures and desire to be closer to God which will keep produce the<br/>new Life.<br/></li></ol><ol type="1" id="49ee233b-14e0-49f7-8aca-1bee4653c766" class="numbered-list" start="2"><li>Then the tassel will appear: Which is the one in charge of passing<br/>on the genes. The second sign of a growing believer after he has<br/>received the Light and is leaving the new Life will be their desire to<br/>share their knowledge about Christ to others.<br/></li></ol><ol type="1" id="986adf6d-5b88-46b7-a836-06fd80988cc1" class="numbered-list" start="3"><li>The grain matures at last: at this point the plant has reach its<br/>full growth, the believer has fought the good fright and its fruit is<br/>ready to be harvested and put into the Celestial Barn whether by death<br/>or by rapture. #LB #DR<br/></li></ol><p id="4edf4acd-386c-48fc-bb56-80a973c950f5" class="">34: ThatÕs what the world thinks about the Bible. That It is a fairy<br/>tail; a parable. However only to true believers is the meaning of it<br/>revealed. #DB #DR 35: He said ÒLet USÓ go, not, ÒYOU goÓ He will never<br/>send you where He doesnÕt go. Remember, you are the follower not the<br/>leader. l know, you might be going through one of the roughests sea<br/>storms of your life right now, but if you are there due to your<br/>obedience to the voice of God, why do you fear my friend? #GR #DR 36:<br/>This is where true dicipleship Is proven. Notice how the crowd does not<br/>go with Him, why? Because the crowd is not willing to follow Him when<br/>they see what it will take. Yes they like to hear little nice<br/>sermonettes and follow Him as long as He feeds them. But the moment He<br/>asks them to cross the storm with Him they’ll rather stay. Only true<br/>believers will be willing to go with Him even if they know It might cost<br/>then their life. The crowd is too coward to do that. #GR #DR 36: Just as<br/>in the rapture, the crowd Is left behind in this scene. God only called<br/>His diciples not the crowd, just as He will call only the church not the<br/>world. He called the diciples because He knew only the diciples would be<br/>willing to go anyway. The crowd was far too coward to obey such command,<br/>for it is my personal believe that before they got in the boat they<br/>could already perceive the signs of a horrific storm, but they went<br/>anyway. The crowd, even if called would not have been able to obey the<br/>command. That is why the kingdom of Heaven Is only for the brave and not<br/>for the coward. [Matthew 11:12, Revelations 21:8] #GR #DR 37: keep in<br/>mind that they are on this Journey to see a demon possesed man. I think<br/>that the Lord purposely allowed this storm to Show them that saving<br/>souls, taking the gospel to the world, Is not easy thing. The moment You<br/>step into the field of the enemy trying to steal his property You better<br/>be ready to face Some wild storms. #GR #DR 38: I know you havent felt<br/>God in a while, perhaps It has been months, perhaps years. Perhaps He<br/>has been asleep to your prayers, you probably don’t even remember when<br/>was the last time you had a prayer answered. perhaps you are at the same<br/>point as the diciples asking Him If He does not care about you! But it<br/>is all part of the process, my friend. I can assure you that You are<br/>still on a much better spot than the crowds who got left behind. Your<br/>storm and struggle is the obvious batch that you are a dielple of Jesus<br/>and that If He cared enough to Choose you from among the crowds, He will<br/>care enough to see you through the storm. Remember that He does not<br/>start something He can’t finish [Hebrews 12:2] #GR #DR 41: And at that<br/>moment, once seeing the magnitude of His power, They were even more<br/>terrified than they were at the hands of the storm #DB #JM 41: ThatÕs<br/>why He could talk to the waters and make them stop! The poor and minute<br/>storm had to stop at the terrible voice of Father Storm, the One Who<br/>created it. The waves had to show respect and obey Dad when He said<br/>Òstop playing.Ó And thatÕs why the disciples were even more terrified<br/>after they saw that. Because they were now being witnesses of a much<br/>greater storm! [Revelations 1:15] #DB #DR<br/></p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

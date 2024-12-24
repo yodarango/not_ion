@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>2nd response to Rizwan</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="525fc947-559a-4210-83c1-1371cd38a030" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">✉️</span></div><h1 class="page-title">2nd response to Rizwan</h1><p class="page-description"></p></header><div class="page-body"><p id="b9a01a15-0347-4ecc-9999-2995c586beb3" class="">MY SECOND RESPONSE TO RIZWAN</p><p id="b1209613-bddf-4333-ba6d-c33a115e5772" class="">Hi Rizwan! once again, thank you for taking the time to respond and secondly i am sorry for the time that it took me to respond back, and also sorry for the typos that you will probably see as you know i have very fat fingers haha!</p><p id="adadaf4d-798a-4f91-bfda-f8a56bff9652" class="">I hope that you honor the many hours of research and prayer that went into this email by reading it all in an unbiased manner .  I know that you said I did not have to answer to the things you typed in those paragraphs, but I will be breve as I do feel my responsibility as a Christian to explain these things, therefore I will take them point by point as you mentioned them.</p><p id="ab5366df-971c-4078-884f-4fa88e26b5a5" class="">I want to show you that most of the verses you sent me were made as a question, but the bible gives answers for all of them before the Quran was ever written, because the Bible does not ask a question that can&#x27;t answer. There is not a single scientific fact that the Quran mentions that the bible had not already mentioned.</p><p id="cc5d5d4d-7e36-49cf-9584-dd9ca538cc39" class=""><strong>Point 1:  Changes in the Quran</strong></p><p id="7fbfde9c-f487-4fbc-937e-ed7f0f0f552b" class="">The Quran has indeed changed throughout time.</p><p id="6322c647-1037-4d5a-af22-9f1e010bee28" class=""><strong>Example One (The satanic verse)</strong></p><p id="808ac9f9-c728-4ced-be1b-d7814b0cfc08" class="">According to Ibn Ishaq, the earliest source on the life of Muhammad, there was an additional verse in Surah an-Najm that Muhammad later removed, saying that Satan had tricked him into believing it was from God. The verse is commonly referred to as verse 20.5, because it was supposed to fit between 20 and 21. It is also knowns as the &quot;Satanic Verse&quot; The verse went like this:</p><p id="c0f15344-ad23-448c-8721-ea1cebb22a6e" class="">19: Have ye thought upon Al-Lat and Al-‘Uzzá</p><p id="3cbe3a2a-2aa5-4eb6-9f04-41d321adc411" class="">20:  and Manāt, the third, the other?</p><p id="cce90d19-6a61-4abb-a4fd-77ccdc600781" class="">20.5:  These are the exalted gharāniq, whose intercession is hoped for.</p><p id="c5db01e0-e57d-439c-970f-8be3b321b160" class="">if Satan was abke to tricked Muhammad into believing that this verse was from God, then how can we be certain that all the other verses of the Quran are from God?</p><p id="367a5580-9738-4306-8bb6-3a18cab8d002" class=""><strong>Example Two (The burnt manupscripts)</strong></p><p id="5f5c5f76-e6f5-4e94-8bf4-5bdd7cd7c6b1" class="">According to the traditional Islamic narrative, the Quran was standardized into a single, authoritative text for the first time by Caliph Uthman about 30 years after Muhammad died. The way this was done was that Uthman collected all manuscripts of the Quran that had been written down by various people across the Empire, he then selected the &quot;authentic&quot; ones and burned all variant readings.</p><p id="7b330bda-6299-4b97-8fb3-01ae30e0ccb0" class=""><em><strong>Bukhari: vol. 6, hadith 510, pp. 478-479; book 61</strong></em></p><p id="1f1fafc5-9aef-4e48-9d45-26b7e5683cfe" class="">Narrated Anas bin Malik:</p><p id="e0ace875-66c4-439e-865c-ee225c46c159" class="">Hudhaifa bin Al-Yaman came to Uthman at the time when the people of Sham and the people of Iraq were Waging war to conquer Arminya and Adharbijan. Hudhaifa was afraid of their (the people of Sham and Iraq) differences in the recitation of the Qur&#x27;an, so he said to &#x27;Uthman, &quot;O chief of the Believers! Save this nation before they differ about the Book (Quran) as Jews and the Christians did before.&quot; So &#x27;Uthman sent a message to Hafsa saying, &quot;Send us the manuscripts of the Qur&#x27;an so that we may compile the Qur&#x27;anic materials in perfect copies and return the manuscripts to you.&quot; Hafsa sent it to &#x27;Uthman. &#x27;Uthman then ordered Zaid bin Thabit, &#x27;Abdullah bin AzZubair, Said bin Al-As and &#x27;AbdurRahman bin Harith bin Hisham to rewrite the manuscripts in perfect copies. &#x27;Uthman said to the three Quraishi men, &quot;In case you disagree with Zaid bin Thabit on any point in the Qur&#x27;an, then write it in the dialect of Quraish, the Qur&#x27;an was revealed in their tongue.&quot; They did so, and when they had written many copies, &#x27;Uthman returned the original manuscripts to Hafsa. <strong>&#x27;Uthman sent to every Muslim province one copy of what they had copied, and ordered that all the other Qur&#x27;anic materials, whether written in fragmentary manuscripts or whole copies, be burnt. </strong>Said bin Thabit added, &quot;A Verse from Surat Ahzab was missed by me when we copied the Qur&#x27;an and I used to hear Allah&#x27;s Apostle reciting it. So we searched for it and found it with Khuzaima bin Thabit Al-Ansari. (That Verse was): &#x27;Among the Believers are men who have been true in their covenant with Allah.&#x27; (33.23)</p><p id="819f183c-5e15-4957-9248-74fe535538f9" class="">In total there were seven different versions of the Quran according to <em><strong>tAl-Muwatta Hadith  Hadith 15.5:</strong></em></p><p id="ab4c4b3a-ec89-40a3-b5e2-dc695fbfd467" class="">Yahya related to me from Malik from Ibn Shihab from Urwa ibn az-Zubayr that Abd ar-Rahman ibn Abd al-Qari said that he had heard Umar ibn al-Khattab say, &quot;I heard Hisham ibn Hakim ibn Hizam reciting Surat al-Furqan (Sura 25) differently from me, and it was the Messenger of Allah, may Allah bless him and grant him peace, who had recited it to me. I was about to rush up to him but I granted him a respite until he had finished his prayer. Then I grabbed him by his cloak and took him to the Messenger of Allah, may Allah bless him and grant him peace, and said, &#x27;Messenger of Allah, I heard this man reciting Surat al-Furqan differently from the way you recited it to me.&#x27;  The Messenger of Allah, may Allah bless him and grant him peace, said, &#x27;Let him go.&#x27;  Then he said, &#x27;Recite, Hisham,&#x27; and Hisham recited as I had heard him recite. The Messenger of Allah, may Allah bless him and grant him peace, said, &#x27;It was sent down like that.&#x27;  Then he said to me, &#x27;Recite&#x27; and I recited the sura, and he said, &#x27;It was sent down like that. <strong>This Qur&#x27;an was sent down in seven (different) ways, so recite from it whatever is easy for you .&#x27;</strong></p><p id="28e3761e-07b3-43ae-8c43-0f5393618a68" class=""><strong>The Quran in existance for 1400 years</strong></p><p id="6e2fc610-47e2-4594-a6d8-8779788c1275" class="">Although a 1400 is a lot of time and it is incredible that the majority of the book has remained unchanged it is even more incredible that the bible started to appear twice longer than that (about 3400 years since the first book was written)</p><p id="0ca8eec1-2e75-41fd-aaed-2e110fdfdbaa" class="">Not only has it been around for more than twice the length, but it also was written by more than 35, (perhpas 40) individuals who only very few of them were contemporanoeous. It is already hard enough to agree between two conteporaneous persons, let alone 40 who lived hundreds of years apart during a span of over one thousand years.</p><p id="4c2ac69c-129a-4c1a-ada9-6539428c3633" class="">Tho this day there are thousands of translations of the bible making it easier to understandand adapting it to modern language. As you know, every month there are words being created as new things come into development and new deseases are found and some words cease to be used an othes commence to be used. The University of Oxford actually has a dictionary on their website that gices you the new wors added each month. Ususally around 5-10 per month are added. However, the central message and the original manuscriopts remain intact and never denied.</p><p id="41a8ef21-55bb-4764-b4d5-ddaab831f5c1" class="">There have been many translations but not any new revelations neither a single verse from it has been removed. Any bible which has been modified you will see it is not supported by the United Bible Societies who oversees the integrity of the Bible.</p><p id="dc7cefc2-415d-405f-9021-7c34463bcdae" class="">Not only was the bible written by a variety of different men, but it has united more than 240 countries and territories and still remains intact. That is nothing short of a miracle. Not only that, but the bible has the most prints ever by nay book.</p><p id="93a182b8-2257-4ac7-822e-024616636414" class="">If the Bible is only the past word of God for its due time that it was written, is He failing to update the new Word then? Seems like He is a little behind getting His true word out if the bible is not it. The fact that bible remains to be the most aboundant and book and the one with the most translations is got to tell us something. If the Quran is the true word of God, seems like He is not doing a good job at getting out to the world.</p><p id="157326d9-e03a-48f9-8237-ee98b91acb0b" class="">The problem with the Quran is that it claims something that is not new. Something that other major religons as The Book of Mormon or the Watchtower Bible (Jehova Witnesses).Both of these manuscripts to be antoher revelation from God given by an angel to one single prophet. The only thing in common among these three, the Quran, the Book of Mormon and the Watchman Bible is that they both negate Jesus Christ as Savior and God. That to me makes sense, why? Because we kneo the devil is a smart being, and is there is one single truth that he wants to keep from humans is that Jesus is Lord. People dont make copies of $1 dollar bills they make copies of $100 dollar bills because there is no value in making an imitation of something unless it is valuable. That is why we have &quot;new&quot; reveltaions of the word of God.</p><p id="8dc28035-df15-4cf7-82b1-3148337fc64f" class="">However the bible says:</p><p id="36817561-90c0-49fd-a35c-07a0b5a47cdf" class=""><em><strong>Isaiah 40:8 &quot;The grass withers and the flowers fall, but the word of our God endures forever.&quot;</strong></em></p><p id="b2fe1717-1e89-4ba3-ad7b-e2480e89c233" class=""><em><strong>Revelations 22:19 says &quot;And if anyone takes words away from this scroll of prophecy, God will take away from that person any share in the tree of life and in the Holy City, which are described in this scroll.&quot;</strong></em></p><p id="c9e34f76-ea4e-438a-9e96-2dff8b796a21" class=""><em><strong>Galatians 1:8-9 &quot;But even if we or an angel from heaven should preach a gospel other than the one we preached to you let them be under God’s curse! As we have already said, so now I say again: If anybody is preaching to you a gospel other than what you accepted, let them be under God’s curse!&quot;</strong></em></p><p id="7fca99da-0b31-42f8-bac5-c58ed9ff508d" class=""><strong>Point 2: Everything made from water</strong></p><p id="f2fa749c-0d1d-492a-9eaf-46614379037a" class="">Hundreds of years before that scripture was penned in the Quran the Bible had already made that statement in</p><p id="9395c473-e497-4305-abf2-e7626aa6ded0" class=""><em><strong>1 Peter 3:5</strong></em></p><p id="85453f78-5c04-4b43-b34f-06849d818faa" class=""><em><strong>&quot;But they deliberately forget that long ago by God&#x27;s word the heavens came into being and the earth was formed out of water and by water.&quot;</strong></em></p><p id="233d29df-8d9c-4f51-9522-2b14047401b7" class="">In the Quran muhammed is asking a question, in the Bible God is stating a fact.</p><p id="63770cfb-7667-4666-9727-36efa2a74fea" class="">Not only that, but thousands of years before sciense discovered the chemical composition of the body after the chemical revolution in the 18th century the bible had already stated that the 4 major Chemical elements found in soil: oxygen, carbon, hydrogen and nitrogen are actually 96% of the human body when it says in Genesis</p><p id="82801c56-848b-4d87-b67c-82146f7dfb77" class=""><strong>Genesis 2:7</strong></p><p id="91bc8cb1-8329-4a8f-8a71-3754aae22df0" class=""><strong>Then the LORD God formed a man from the dust of the ground and breathed into his nostrils the breath of life, and the man became a living being.</strong></p><p id="172845e5-8891-4890-ac21-0d9f98691788" class=""><strong>Point 3: Earth as one mass</strong></p><p id="3e9040cc-fb46-44d5-beaf-7ded79cded66" class="">This was also stated by the bible in Genesis 1 much long before the Quran appeared.</p><p id="89d3cc68-ddd0-4692-a6a0-2ff1f73d2676" class=""><em><strong>Genesis 1:6</strong></em></p><p id="aa2f1e7b-63e5-47d3-bd3f-5d70b4b78823" class=""><em><strong>And God said, “Let there be a vault between the waters to separate water from water</strong></em></p><p id="dc48f513-72e7-47c9-9b69-0a732634b30d" class=""><em><strong>Genesis 1:9</strong></em></p><p id="b87ed320-f738-4aaa-a2ab-3666a1fe6d68" class=""><em><strong>And God said, “Let the water under the sky be gathered to one place, and let dry ground appear.” And it was so</strong></em></p><p id="63fbbde1-177c-43b2-bb89-9f3e0cba396b" class="">Muhammed asks if the heavens were once one mass, but in the Bible God says, I separated them.</p><p id="1699f4cd-d95b-48a7-99f1-ac9c34965a3d" class=""><strong>Point 4: The settings of the Stars</strong></p><p id="5654204d-d383-4244-ab45-3f258c889af5" class="">This verse is saying &quot;if you new [the setting of the stars]&quot; but the bible in actuality lets us know not only about the creation of the stars but actually about the setting and name of some of the most famous constellations way before science discovered them.</p><p id="8b440aa7-e194-4d6a-a7f9-8621dc6f0cbb" class="">About their origin the bible says:</p><p id="6f967ff6-c119-4bdf-b749-365d6cd29235" class=""><em><strong>Psalm 14:74</strong></em></p><p id="297ad1c8-ceaf-4f49-8368-aadf4ccf410b" class=""><em><strong>He determines the number of the stars; he gives to all of them their names.</strong></em></p><p id="a62dfb55-2316-48b1-8873-d5d181ba1bf0" class="">About their setting the bible says:</p><p id="2b70503e-6189-4057-8c77-798319bbbe91" class=""><em><strong>Psalm 8:3</strong></em></p><p id="0be266e9-11d4-44c0-a25e-1d5448037f8d" class=""><em><strong>When I look at your heavens, the work of your fingers, the moon and the stars, which you have set in place,</strong></em></p><p id="0274f894-f34e-46bb-b976-fdea9b9c97ab" class="">In addition, the Bible gives us additional information about four specific constellations, three of them discovered by man: Pleiades, Orion and Arcturus, and Mazzaroth (atill unknown to us). This is in the book of Job, a book categorized by scholars and historians either as old as Genesis, the first book, or even older, which puts it not younger than 3,500 years old. God is questioning Job about this things becuased Job was asking God for explanations about his life.</p><p id="1c0067c7-f691-4b5f-9fde-907e2d315255" class=""><em><strong>Job 38:31-32</strong></em></p><p id="cae92430-0b03-4266-8868-d7e59baf6afa" class=""><em><strong>Canst thou bind the sweet influences of Pleiades, or loose the bands of Orion? Canst thou bring forth Mazzaroth in his season? Or canst thou guide Arcturus with his sons?</strong></em></p><ul id="9b0aedbf-885c-4b67-904f-da160a9077cd" class="bulleted-list"><li style="list-style-type:disc"><strong>Pleiades Constellation</strong></li></ul><ul id="c8df2b8b-08b5-4b82-a9e5-8398aa820d9a" class="bulleted-list"><li style="list-style-type:disc">In the first part of the verse, God challenged Job’s ability to “bind the sweet influences of Pleiades. As it turns out, the Pleiades (also known as the Seven Sisters) is an open star cluster in the constellation of Taurus. It is classified as an open cluster because it is a group of hundreds of stars formed from the same cosmic cloud. They are approximately the same age and have roughly the same chemical composition. Most importantly, they are bound to one another by mutual gravitational attraction. Isabel Lewis of the United States Naval Observatory (quoted by Phillip L. Knox in <em>Wonder Worlds</em>) said, “Astronomers have identified 250 stars as actual members of this group, all sharing in a common motion and drifting through space in the same direction.” Lewis said they are “journeying onward together through the immensity of space.” Dr. Robert J. Trumpler (quoted in the same book) said, “Over 25,000 individual measures of the Pleiades stars are now available, and their study led to the important discovery that the whole cluster is moving in a southeasterly direction. The Pleiades stars may thus be compared to a swarm of birds, flying together to a distant goal. This leaves no doubt that the Pleiades are not a temporary or accidental agglomeration of stars, but a system in which the stars are bound together by a close kinship.” From our perspective on Earth, the Pleiades will not change in appearance; these stars are marching together in formation toward the same destination, bound in unison, just as God described them.</li></ul><ul id="7568b9e9-55a2-481e-9a95-f4141d89ef28" class="bulleted-list"><li style="list-style-type:disc"><strong>Orion</strong><strong> Constellation</strong></li></ul><ul id="8a4b8b0c-0e32-4177-b3d3-ad3f57fca96e" class="bulleted-list"><li style="list-style-type:disc">The next section of the verse describes the Orion constellation. God once again challenged Job, this time to “loose the bands of Orion.” God was referencing the “belt” of Orion; the three stars forming the linear “band” at Orion’s waist. God appeared to be challenging Job in just the opposite way he had in the first portion of the verse. Rather than bind the Pleiades, God challenged Job to loosen Orion. Alnitak is actually a triple star system at the eastern edge of Orion’s belt. These stars (along with all the other stars forming Orion) are not gravitationally bound like those in Pleiades. Instead, the stars of Orion’s belt are heading in different directions. Garrett P. Serviss, a noted astronomer, wrote about the bands of Orion in his book, <em>Curiosities of the Sky</em>: “The great figure of Orion appears to be more lasting, not because its stars are physically connected, but because of their great distance, which renders their movements too deliberate to be exactly ascertained. Two of the greatest of its stars, Betelgeuse and Rigel, possess, as far as has been ascertained, no perceptible motion across the line of sight, but there is a little movement perceptible in the ‘Belt.’ At the present time this consists of an almost perfect straight line, a row of second-magnitude stars about equally spaced and of the most striking beauty. In the course of time, however, the two right-hand stars, Mintaka and Alnilam (how fine are these Arabic star names!) will approach each other and form a naked-eye double, but the third, Alnita, will drift away eastward, so that the ‘Belt’ will no longer exist.” Unlike the Pleaides clusters, the stars in the band of Orion do not share a common trajectory. In the course of time, Orion’s belt will be loosened just as God told Job.</li></ul><ul id="e6e375d8-16a1-47c4-894a-6353193d46f4" class="bulleted-list"><li style="list-style-type:disc"><strong>Arcturus Constellation</strong></li></ul><ul id="36eda26b-f786-48d4-8145-39a36d11dd98" class="bulleted-list"><li style="list-style-type:disc">In the last section of the verse, God described Arcturus, one of the brightest stars in the night sky. God challenged Job to “guide Arcturus with his sons. While Arcturus certainly appeared in antiquity to be a single star, in 1971 astronomers discovered there were 52 additional stars connected directionally with Arcturus (known now as the Arcturus stream). Interestingly, God described Arcturus as having “sons” and Charles Burckhalter, of the Chabot Observatory, (again quoted in <em>Wonder Worlds</em>) said “these stars are a law unto themselves.” Serviss added, “Arcturus is one of the greatest suns in the universe, is a runaway whose speed of flight is 257 miles per second. Arcturus, we have every reason to believe, possesses thousands of times the mass of our sun… Our sun is traveling only 12 ½ miles a second, but Arcturus is traveling 257 miles a second…” Burckhalter affirmed this description of Arcturus, saying, “This high velocity places Arcturus in that very small class of stars that apparently are a law unto themselves. He is an outsider, a visitor, a stranger within the gates; to speak plainly, Arcturus is a runaway. Newton gives the velocity of a star under control as not more than 25 miles a second, and Arcturus is going 257 miles a second. Therefore, combined attraction of all the stars we know cannot stop him or even turn him in his path.” Arcturus and “his sons” are on a course all their own. Only God has the power to guide them, just as described in the ancient book of Job.</li></ul><p id="a5299654-ec66-494d-876b-924deddad18b" class=""><strong>Point 5: Roots of the Muntains</strong></p><p id="65e52e39-8e5c-40bb-8dbf-af9a7f24ef36" class="">This too, is found in the book of Job, which is more than twice older than Muhhamed&#x27;s writtings:</p><p id="bcca2546-8deb-4f3d-a0d3-e9d8559b69c5" class=""><em><strong>Job 28:9</strong></em></p><p id="a72f3b60-7871-4341-920d-a8447ad65bd0" class=""><em><strong>People know how to tear apart flinty rocks and overturn the roots of mountains</strong></em></p><p id="40cea029-004d-4eb6-9fc0-484413595beb" class=""><strong>Point 6: The Different Seas</strong></p><p id="95aeaac0-3942-4ce9-b901-b33438623037" class="">The Bible talks about this two seas as well. This is one of Apostol Paul&#x27;s journeys in the mediterranean sea:</p><p id="de2a5faa-0bc8-495a-9efc-6a4689e310c3" class="">And falling into a place where two seas met, they ran the ship aground; and the forepart stuck fast, and remained unmovable, but the hinder part was broken with the violence of the waves.</p><p id="bc33687f-702d-43a3-82c2-1290ebb00948" class="">I am glad that you used scientific facts as a proof of authenticity, because if consider scientific facts to be a reliable proof than I believe you will grant me that same priviledge and list a few of the hundreds of scientific facts in the Bible:</p><ul id="d4f6f72d-8a06-4ba9-b4db-d614b526ef62" class="bulleted-list"><li style="list-style-type:disc">Gravitational Law (Job 26:7)</li></ul><ul id="531897a1-b885-44ff-86f5-fc6ce2d2aedc" class="bulleted-list"><li style="list-style-type:disc">Matter is made of indicernible particles (Hebrews 11:3)</li></ul><ul id="2b4c65af-0b10-4e06-aa58-718334a89908" class="bulleted-list"><li style="list-style-type:disc">Dimmensions of a stable water vessel (Genesis 6:15)</li></ul><ul id="03888b4e-0e19-4fe9-ad6d-f89dfc511079" class="bulleted-list"><li style="list-style-type:disc">Dimmensions of Pi (1 kings 7:23-26) you&#x27;ll have to do the math so here is a link to check it haha https://www.purplemath.com/modules/bibleval.htm</li></ul><ul id="0b8f824e-976f-484c-84f4-c83e61e1792e" class="bulleted-list"><li style="list-style-type:disc">Oceans contain springs (Job 38:16)</li></ul><ul id="1082fc1d-dce1-41a3-9459-645886e3a9a8" class="bulleted-list"><li style="list-style-type:disc">There are mountains in the ocean floor (Jonah 2:5-6)</li></ul><ul id="b06bff97-7e08-4481-9bd4-f7e92c63879e" class="bulleted-list"><li style="list-style-type:disc">Blood is source of life (Leviticus 17:11, 14)</li></ul><ul id="c78413e6-a60c-4ed9-a627-6ab0dd758183" class="bulleted-list"><li style="list-style-type:disc">Genetic Code (Genesis 1:24)</li></ul><ul id="c3db72df-cd6a-4c37-b576-28cbdba928cb" class="bulleted-list"><li style="list-style-type:disc">The first law of thermodinamics (Genesis 2:1-2)</li></ul><ul id="ea87fc50-fcba-4aac-ba38-b4eb492e8742" class="bulleted-list"><li style="list-style-type:disc">Science expresses the universe in terms of: time, space, matter, motion, and energy. In Genesis chapter one we read: “In the beginning (time) God created the heavens (space) and the earth (matter)…Then God said, “Let there be light (energy). and the Spirit of God moved (Motion)....” (Genesis 1:1-2)</li></ul><ul id="181a6345-06c6-4ac1-baca-21f576fc0ca3" class="bulleted-list"><li style="list-style-type:disc">The earth is round (Isaiah 40:22)</li></ul><ul id="7d799b3c-c401-4a45-a1f9-23c351486041" class="bulleted-list"><li style="list-style-type:disc">Light can be divided (Job 38:24)</li></ul><ul id="f02b6713-2d3e-4d5b-864e-5ef2c6444f64" class="bulleted-list"><li style="list-style-type:disc">Ocean currents anticipated (Psalm 8:8)</li></ul><ul id="b3cc5fc7-6017-4112-86f2-52f0870a87ef" class="bulleted-list"><li style="list-style-type:disc">Incalculable number of stars (Jeremiah 33:22).</li></ul><ul id="71099813-9ad6-45cd-880f-79c778590a37" class="bulleted-list"><li style="list-style-type:disc">The number of stars, though vast, are finite (Isaiah 40:26)</li></ul><ul id="c1747d03-2f64-4f45-9d86-1e32b8f57679" class="bulleted-list"><li style="list-style-type:disc">Hydrolic Cycle (Job 36:27-28)</li></ul><ul id="29857f36-22f7-4eb1-beca-87297fc75953" class="bulleted-list"><li style="list-style-type:disc">Principles of anastesia in surgery (Genesis 2:21)</li></ul><ul id="316eb41b-8859-4ef6-8d81-0d6158068b00" class="bulleted-list"><li style="list-style-type:disc">The Pangea, One universal continent (Genesis 1:9-10)</li></ul><ul id="7c73dddc-98bb-48ce-96ad-a35f44818875" class="bulleted-list"><li style="list-style-type:disc">Ice Age inferred (Job 38:29-30)</li></ul><ul id="868fb711-62c8-4dab-8856-c26ca57dff11" class="bulleted-list"><li style="list-style-type:disc">The sun goes in a circuit (Psalm 19:6)</li></ul><ul id="f3a4d1f4-3a22-411b-ae3d-11e1efa790f5" class="bulleted-list"><li style="list-style-type:disc">Incest laws established (Leviticus 18:6)</li></ul><ul id="004057f5-056a-4c4d-b7bd-62c63600de70" class="bulleted-list"><li style="list-style-type:disc">God has given us just the right amount of water to sustain life (Isaiah 40:12)</li></ul><ul id="1528cfcd-dfb3-4aaa-9cc6-9467248c4b47" class="bulleted-list"><li style="list-style-type:disc">Expansion of the universe (Isaiah 42:5)</li></ul><p id="606e5451-e0c9-4dc3-a1fc-c16194f97063" class="">And just as those I could gieve more dozens and dozens of scientific facts dating thousands of years before the Quran and before Science.</p><p id="e1692fa5-5903-477b-8323-874417543666" class="">Now that I have attempte to show you that all the scientific facts you mentioned, plus many more, had already been established by the bible hundreds of years before, I hope that you allow me the same right that you mentioned. That due to the fact that the bible holds a stronger test of science and time then I can beleive the other claims that are not directly testable:</p><ol type="1" id="8bc97f1e-3086-4aad-b9cb-1daa0a7e2bcb" class="numbered-list" start="1"><li>God is one. Omnipotent, omnicient, and omnipresent. He has no beggning and no ending. He is the A and the Z (alpha and omega) Revelations 22:13</li></ol><ol type="1" id="16859c80-dbf4-4511-9ec0-e31a800767df" class="numbered-list" start="2"><li>There is no word of God or revelation given besides the Bible, the only revealed word of God to men, even if an angel comes down and speaks it (Galatians 1:8) and His word never changes (Isaiah 40:8)</li></ol><ol type="1" id="9f37ec62-751c-4146-91f9-df496f42c4eb" class="numbered-list" start="3"><li>Jesus is God in flesh. He is the only way to God (John 14:6) He gave His life and resurrected on the third day (1 Corinthians 15:4) as the payment for our sins (Romans 5:8).</li></ol><p id="50b95ba4-44e6-47c7-b657-4e1c7306adb4" class=""><strong>Why You Are Not A Christian</strong></p><p id="2c299fab-dd5a-4c26-ad5f-6b8e4c59a2ac" class="">I am glad that you accept the injeel as the word of God, it makes me glad you think so. Howver, if we accept it as the word of God we are automatically contrained fro mbelieveing any other writtings as the word of God for Jesu said &quot;Heaven and earth will pass away but my word will never pass away&quot; (Matthew 24:35), therefore we cannot assume His word was only good for a time.</p><p id="cd287f76-8b19-4fe8-b06f-f40d5c84d292" class="">See the problem with adding to the revelation of give by God in the bible is that it cant stop. Every few years a new person raises up saying an angel came down and revealed them a new word of God for our times. As I mentioned before, some of them are the &quot;The Church of Jesus Christ of Latter Day Saints&quot; also known as Mormons. Their prophet, Joseph Smith,  in 1830 claims to have received their writtings from an angel as well, telling him that the Book of Mormon was the new word of God for our present days. Latter on in 1870 another man appeared, Charles Taze Rusell, the founder of the Jehova Witness movement. He, also saying that their writtings were the real word of God.</p><p id="8838ff07-ce9d-4407-8d71-21ddc79d894f" class="">Now lets suppose that the Bible in reality was only good for a certain period of time until God revealed the Qu&#x27;ran. Well, since we have already broken the boundaries of the unchangeability of the word of God by accepting the Qu&#x27;ran as the new word of God, what about the book of Mormon then? What if the Qu&#x27;ran was also good only for a period of time and now God just needed to do a small update to His word and chose to send it through Joseph Smith?</p><p id="2c263c82-798f-4383-995f-11ecce58c148" class="">If we are willing to say the the Word of God does indeed change based on chronoligcal advancement we will have no halt to new doctrines being developed. After all the Mormons make the same claims. They boast on their rapid growth, their huge temples, the prophecies and truths in the book of mormon, etc.</p><p id="9fe88688-053d-42a7-b2aa-70da81a8c6f5" class="">They also accept the Bible as word of God but only as it fits thier doctrine.</p><p id="0ec5eae3-6573-4e36-ae3e-9d0768b55300" class="">But Jesus said about new prophets:</p><p id="64ab904b-cd87-493a-b35a-69784f2250a3" class=""><strong>Matthew 24:11</strong></p><p id="159b1608-3069-4789-8d1a-2b6690bdfc5d" class=""><strong>&quot;and many false prophets will appear and deceive many people.&quot;</strong></p><p id="95ac41aa-9b7d-4ef3-a484-134dac139886" class=""><strong>Errors in the Bible:</strong></p><ol type="1" id="8dab78e1-2282-4ce4-b0f1-f16f1ea91c66" class="numbered-list" start="1"><li>The Creation in six days: I agree with you that the days specified in the Bible, rather than being a long period of time are more probable to be 24-hour periods. However, rather than disprove coherence in the Bible they support scientific claims. Here is how:<ul id="2c0a16e0-fc2c-468c-b9fa-cd4d1502dc2c" class="bulleted-list"><li style="list-style-type:disc">When the Bible talks about creation it actually uses 3 different words: בָּרָא הָיְתָ֥ה and וַיַּעַשׂ (Haya/ Yatzar, Bara, and Asah respectively)</li></ul><ul id="5ec29c14-b1a9-4ce0-b3d4-6228b0cbbbec" class="bulleted-list"><li style="list-style-type:disc">The first word Haya/ Yatzar means to transform matter that has already been created or to put into motion. It means simply to shape or form. A type of creation that both man and God can do.</li></ul><ul id="6ca610bd-f712-4380-b117-a5a92e6ca778" class="bulleted-list"><li style="list-style-type:disc">Bara is the word used to describe something made out of nothing, the creation ONLY God can do.</li></ul><ul id="87c3871f-40ac-46cd-a164-1a1036e44fcf" class="bulleted-list"><li style="list-style-type:disc">And Asah means to put he final touches on something that has already been shaped. To make it a final product. A type of creation that both man and God can also do.</li></ul><ul id="5ee224d6-117b-4ca8-b6b7-ed7d7f9f578b" class="bulleted-list"><li style="list-style-type:disc">Now how does this matter? Well, Genesis 1:1 tells us that in the beginning, that is the beginning of time, God created (Bara ) the heavens and the earth. However, the Bible does not say that He immediately started with living forms of creation after he spoke matter into existence. You will never find that in the Bible. He could’ve created matter millions, billions, or trillions of years before He decided to create living creatures, who knows how long time it passed from verse 1:1 to 1:3 where He starts creating.</li></ul><ul id="4f4e8455-b14c-4585-a79e-0576aea0776f" class="bulleted-list"><li style="list-style-type:disc">Now, in verses 1:3, 1:6, 1:9, 1:14, 1:20, 1:24 (each day of creation) God uses the word Haya which is shaping out of the matter He had already created, therefore it does not mean He created any new matter that day, He was simple shaping creatures out of the matte He already had previously spoken into existence.</li></ul><ul id="5e0c9b51-3906-40db-b061-1c7ea3cd292e" class="bulleted-list"><li style="list-style-type:disc">Now, in verse 1:26 Go uses the word Asah when creating the man, this is a more detailed type of creation but still creation out of existing matter. What God emphasizes here is that out f all His creation, you and I, humans, are the best He created.</li></ul></li></ol><ol type="1" id="31444d0d-a818-4b5c-8556-1bbe8c397049" class="numbered-list" start="2"><li>Light on the first Day: This, in actuality is one of the most scientific facts of the Bible, for science tells us that before the creation of the galaxies, and the sun and very star light already existed. As a matter of fact the bing bang could not had happened without light, for light is the medium of energy to all that exists. We know this thanks to Einstein, who tells us that Energy is equal to its mass multiplied by speed of light squared (E = mc^2). This light is not a light emitted by any star, this light exists as the Cosmic Microwave Background (CMB). Think about it, today, although you are thousands of miles away from me, we can still communicate real time thanks to the Electromagnetic Spectrum used by the every communication device. This the reason why we can have wireless communication. So now that we stablished the fact that light had to exists first before any creation, not in the form that we see, but in the form we do not see (CMB), let us look at the creation of the stars and the sun in verses 14 and 19. The word used for creation here is not Bara (out-of-nothing), but rather Hayah (put-into-motion/ form/ shape). Although the sun and the stars had already been created from the begging (Genesis 1:1), they were not functioning at the time God created the earth, all God did was put them into motion, which holds exactly what science tells us. The energy (light) was before the mass.</li></ol><ol type="1" id="352751d5-1774-489f-965b-012e82ee6d1a" class="numbered-list" start="3"><li>The Earth created on the third day: This once again, if we look at the word used is Haya (put-into-motion/ form/ shape), therefore there is nothing unscientific about it, the earth does not need the sun to be shining in order to rotate upon its own axis, so the earth was already rotating because it had been created in the beginning (Genesis 1:1) all God did was simply shape it with some modifications, thus we can still have a 24-hour period.</li></ol><ol type="1" id="f0c56e83-9a14-47e5-97d6-555d1608f002" class="numbered-list" start="4"><li>The earth created before the sun: The Bible does not tell us that was the way to was formed, we have already stablished that they were both created in the begging and the word Bara is not used in the verse you used.</li></ol><ol type="1" id="5a3adddf-5b0c-43f0-a207-23137279c9ba" class="numbered-list" start="5"><li>Vegetation before the sun: This is totally possible when we speak about light being before the sun, as a matter of fact modern science tells that one of the characteristics of black holes is that they emit light, in other words light comes from empty space as we have already explained. Therefore the plants could still be alive specially since we assume that the days were 24-hour periods and the plants could definitely be alive by the next morning when God set the sun in motion, otherwise how do we explain plants making it through the night on cloudy days when the moon light does not reach them? Vegetation would be impossible.</li></ol><ol type="1" id="9dddac11-bc78-45aa-83ef-7dd6dabded6e" class="numbered-list" start="6"><li>The lamps to rule day and night: It is good that you mentioned the Hebrew language, because I rarely study my Bible without having the original text in Hebrew and Greek side by side next to me as well as other resources helping me understand the context in the time it was written. I agree with you that the word used here means lamp, however it does not mean lamps having light of their own, otherwise how can we explain that the sun was created in the beginning (Genesis 1:1) but it did not start shinning till the fourth day? This lamps were clearly not emitting light of their own, thus, we can still preserve the 24-hour day which means that none of the errors you have pointed out so far hold true or rational.</li></ol><ol type="1" id="cf0ca62d-97e2-4fe6-b306-f0472122163c" class="numbered-list" start="7"><li>Will the earth last forever or be destroyed: this is actually a quite easy to solve question specially in the day we live in. Since you quoted Hebrew manuscripts when talking about the lamps in the sky, I hope you allow me to use original Hebrew manuscripts here as well. The word “Olam” used here has a more limited sense, meaning “Long duration” or “futurity.” We can find this same word in verses (Deuteronomy 15:17) and (2 Chronicles 10:3-4) detailing a long but limited period of time. the word, as it is used by Salomon denotes a relative comparison. When you compare the life of man with the age of the earth, the earth is quite lasting, figuratively forever. Think about it, today we use terms as “Daniel took forever to respond,” (lol), but did I took forever? No, we use that figuratively and relatively.</li></ol><ol type="1" id="401e1931-f848-4505-bdc8-a70305ea8084" class="numbered-list" start="8"><li>The pillars of the earth: Jus a few verses before this verse Job mentions the law of gravity, in verse (Job 26:7), therefore, job knew the Seth had no pillars, he knew the earth was flowering, what he is using here is a poetical term of ancient times to refer to the mountains, which seem to bear up the heavens since they point upwards. That was a poetic way to see them in ancient times, we can prove this by taking into consideration Mount Atlas which was represented as one of the pillars of heaven. Virgil, the Roman poet speaks of “Atlas whose brawny back supports the skies.” And Hesiod, the Greek poet says: ver. 785, advances the same notion: “Atlas, so hard necessity ordains,<p id="8eaab5d7-9d43-4e83-a940-92e82db2d1e9" class="">Great, the ponderous vault of stars sustains</p><p id="0e7eccf0-930c-4c07-8ca3-8e3758d2b5e8" class="">Not far from the Hesperides he stands,</p><p id="523ebd03-73e1-42c6-9c37-70a45eb738e4" class="">Nor from the load retracts his head or hands.”</p></li></ol><p id="dedcf1e4-b8cf-46c7-9600-5407565b6181" class="">The word “reproof” in this verse refers to the language of God, as if spoken in anger to rebuke the mountains or the earth. Perhaps the reference is to thunder, to storms, and to winds, which seem to be the voice of God;</p><p id="e9629cd6-e53b-492d-a506-cace7dab34c3" class="">Similar descriptions of the majesty and glory of God abound in the Scriptures, where he speaks to the earth, the mountains, the hills, and they tremble. Thus, in (Psalms 104:32)</p><p id="7e410b93-c21a-41b6-8338-36e220926327" class="">He looketh on the earth, and it trembleth;</p><p id="e937f6a5-8c36-4c0b-a057-6179a131e9a3" class="">He toucheth the hills, and they smoke.</p><p id="0d68849d-06d6-41a3-b144-eedb49206a64" class="">So in (Habakkuk 3:10)</p><p id="eb5a196d-afda-40a3-a96f-1f3f61fa9946" class="">“The mountains saw thee, and they trembled;</p><p id="959e748b-856c-439d-a0dd-fb6dd2902d28" class="">The overflowing of the water passed by;</p><p id="6ea0cac6-65dd-4205-814d-32e8ffa22c10" class="">The deep uttered his voice, and lift up his hands on high.”</p><p id="b715e750-0455-46f5-97cf-d432fdde4e76" class="">So in<strong> (</strong>Nahum 1:5), “The mountains quake at him, and the hills melt, and the earth is burnt at his presence.”</p><ol type="1" id="8b3382ea-7231-452e-989c-cff522593a22" class="numbered-list" start="1"><li>We have already stablished that this was an allegorical way to refer to the mountains not only in the Bible but also in ancient manuscripts. We have seen that Job had a clear knowledge that the earth was floating in space and still made the statement just a few verses later.</li></ol><ol type="1" id="ad2f5821-7694-408a-b848-111e3bb356d8" class="numbered-list" start="2"><li>There could be many arguments that I could post late against your theory about this, but I will limit to just a few:<ol type="a" id="5a8df09a-dff1-4837-aca9-71a553de6777" class="numbered-list" start="1"><li>It is believed that before Adam and Eve sinned they were created immortal, it was sin that introduced death, both physically and spiritually to the human race. We see God pronouncing death to Adam in Genesis 3:19 as what it seems to be a result of the fall, so this means that their biological nature was different to the one we have now. Their bodies were able to process toxins.</li></ol><ol type="a" id="2fde80b6-cf29-4a08-acf7-1eb58b72f610" class="numbered-list" start="2"><li>Nowhere in the Bible is stated that there was poisonous plants and trees in the Garden, for it was not until the fall that God pronounced a change in nature, we see Him declaring that plants would now produce thorns in Genesis 3:18 which means they did not have them before. We see He also changed the anatomy of the serpent in Genesis 3:14, hence, if the curse brought by sin changed the biological aspect of the human body, the composition of nature, and the anatomy of serpents, how do we know it did not change the chemical properties of some plants and made them poisonous too?</li></ol><ol type="a" id="6625e686-0172-4a55-981b-ebc0e7d86da0" class="numbered-list" start="3"><li>You are forgetting that there were not only plants in the garden, bu also poisonous animals as snakes. Therefore, how could God let them live with poisonous animals too if He knew it would only take a bite of a black mamba to kill more of a dozen of them? Clearly this tells us that either poison did not exist or the biology of animals and humans was different.</li></ol></li></ol><ol type="1" id="4204423f-112d-4689-80c3-a4fdbdaeb250" class="numbered-list" start="3"><li>I am very glad you touched this point because I would love to explain this to you since i have experienced many of these, others i have seen friends experiencing them :<ol type="a" id="cb08453b-d9bb-44df-8227-fd5db4c8f4a1" class="numbered-list" start="1"><li>“In my name you shall cast out demons” I dont know if you have seen this, but I have. I have seen with my own eyes a demon being casted out of my own cousin. I have seen people being possessed by evil spirits and do the supernatural. I have seen their eyes go white and their voice change into a deep animal-like voice. And I have prayed for people in this situation and see the demons come out not in my name but in the name of Jesus Christ. When we prayed for my cousin, I and other believers, we said “In the name of Jesus Christ evil spirit come out” and I saw my cousin fall in the floor and start throwing up as the demons left. I have seen this happen MANY times in people. I would like to ask a Muslim to try this in the name of Allah or in the name of Muhammed and see what happens.</li></ol><ol type="a" id="86a7354f-5166-480b-af4f-c0225f0b9ba9" class="numbered-list" start="2"><li>“They shall speak foreign languages” This was actually fulfilled in acts chapter 2. Believers actually spoke different languages, this is called gifts of the spirit and does not happen by human knowledge, notice how in acts chapter 2 it says they spoke “as the Spirit gave them utterance” that is the Holy Spirit talk through them as a sing that they had receive Him into their hearts. You will see this happen all through the New Testament over and over again. This does not meant that God is planning to make everyone a polyglot, this is a special gift that God gives to some people as He chooses. An experience that ti myself have experienced actually. I remember praying one time years ago as I was going thorough some difficulties in life and a power I could not explain took over my tongue and started speaking through me in a language I had no idea what it was but it sounded like an African tongue. This went on for 10 minutes the first time and about 1 the second time. From time to time, this still happens to me and it is something I cannot explain. An american friend of mine actually invited a muslim friend to church some years ago, and He was converted to Christianity because he heard my American friend speak farsi, a language that she had no clue what it was and she was glorifying Jesus Christ in farsi. This happened to an Italian lady as well who heard my friend speak Italian. I can go on and on of hundreds of times I have seen this take please.</li></ol><ol type="a" id="f6bc2ae8-da58-41ef-8b30-7f16a46e20a6" class="numbered-list" start="3"><li>“They shall take up serpents” this refers to the dangers of life not only serpents, we have stablished that the serpent in the Bible represents satan, I can also tell you innumerable stories personal and of friends that others have attempted to murder because they preached the gospel and when they were shot the bullets did not touch them although they were shot from less than 5 feet of distance.</li></ol><ol type="a" id="3f59b3cf-7943-478e-9808-cf125cb8de00" class="numbered-list" start="4"><li>“They shall drink poison and not be harmed” The scripture is nowhere suggesting that they should drink poison, it just simply stating a fact. If I say to someone, “you will know so and so because they have an internal tumor in their head and every time she or he touches his/ her head, it hurts to them” that doesn’t mean I am telling you “go touch their head” I am just stating the facts, I am explaining the products yielded by an action. One of my friends was poisoned by a lady and her husband because he was a Christian. They invited him to eat to her house and put poison on the food, my friend, as every true Christian prayed for the meal and nothing happened to him. I have seen people also come to Christ because they have done this to a Christian and they have seen that nothing has happened to them. When you have health insurance you dont go out and try to get sick, right? You have insurance just in case a certain circumstance arises. This is the context Jesus is using.</li></ol><ol type="a" id="93c3bc68-2ee2-41ba-a983-f12ba597d9a8" class="numbered-list" start="5"><li>“They shall pray for the sick and see them be cured” You should give a try to watch my church one Sunday, because this is incredibly common. We see people being healed by cancer and all kinds of deceased very often. I have seen paralytics get up their wheel chairs, people with a shorter arm being stretched, people given 4 days to live live for another 30 years. My own father is a miracle, according to doctors he should have died 25 years ago and he is as healthy as never even now in his late 50’s.</li></ol></li></ol><p id="06c2d3b7-10a9-4ce5-be03-f7e9669c6762" class="">————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————</p><p id="c3505442-3382-4d04-9c60-1a4972ffdd92" class="">I know this email is getting quite lengthy and there are still many points that need to be explained, but this email is getting is lengthy, but I want you to know that those are points, that just as all the ones above have an explanation and I WOULD LOVE to explain them to you if you wish me to because they actually symbolism that point to Jesus Christ.</p><p id="fefb1e59-dacd-40df-a28b-80be77dddb66" class="">I know that anything you mentioned comes from a sincere heart wanting the best for me Rizwan, and believe me, I want the best for you that is why I spent many hours of research and prayer and fasting while typing this post. Although I could send many contradictions that I find in the Quran, I will only ask you a few very honest, sincere, questions:</p><p id="6edf1d34-a8bd-4023-b141-27b4a3b3654d" class=""><strong>WHY I AM NOT A MUSLIM</strong></p><ol type="1" id="7d28cb8b-6755-418b-acf7-b1b10d988875" class="numbered-list" start="1"><li>Have you ever wondered why the islamic religious symbol is a moon? Have you ever read the story of the islamic flag?</li></ol><ol type="1" id="0eb0b93e-02c2-48d7-a996-e67822f32a5f" class="numbered-list" start="2"><li>Have you ever made an unbaisased research about the life of Muhammaed? Have you read that even him was confused about God speaking to him and died unsure wether he would make it to heaven?</li></ol><ol type="1" id="337d7003-2b4f-410d-b05f-e578fe8e0e0a" class="numbered-list" start="3"><li>Let us suppose I was a practicing Christian living in your country and did the same thing I am doing now, preaching about my faith and converted many muslims to Christ, what would be my destiny?</li></ol><p id="cc8503dc-ff1e-4ef7-afac-17e8b62f226d" class="">I am not a muslim first because I have known the truth, Jesus Christ, but secondly because I don’t think that morally speaking I could serve God who tells me to kill those who think different, thank I do. I dont think I could serve a dictatorial god that at the end of the day might not even accept me although I gave him my all.</p><p id="860bdfd3-449e-455e-9ca6-7f19fad14f63" class="">I hope that you have seen that I have proved that there is not a single scientific point that it is in the Quran that was in the Bible first. And that all the points that you pointed out as contradictions have an explanation when going to the context and the original language.</p><p id="4ab3b211-222d-46cd-88c6-9376a4c257cd" class="">I hope to hear from you Rizwan, and I also hope that you do an unbiased research not about religion, but about Jesus Christ Himself. Al you have ever thought since you have been a kid has been the Quran, but have you ever been given the freedom to explore truth as I have and research other believe without fear of consequences like I have?</p><p id="128da74f-d864-4b03-a46f-909673464344" class="">Jesus Christ loves you Rizwan! He loves you and He is going soon. I am praying for you and your parents and all your family, that you are well blessed, and you come to know Jesus.</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

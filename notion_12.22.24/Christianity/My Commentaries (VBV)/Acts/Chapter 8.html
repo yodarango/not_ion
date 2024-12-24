@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Chapter 8</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="f26bec3b-6958-415f-8af2-fb616e712044" class="page sans"><header><h1 class="page-title"><strong>Chapter 8</strong></h1><p class="page-description"></p></header><div class="page-body"><ul id="ee5717d4-d311-472c-aac4-4e4d4bf77a29" class="bulleted-list"><li style="list-style-type:disc">4: God had to move the church because He needed it to spread. The church is like a wild fire that spreads on whatever piece of real state it touches. To produce fire you need what is called the fire triangle: oxygen, fuel, and fire. In analogous manner you need these three things in the spiritual realm to be alive. To stay “on fire” for God as we often call it:<ul id="71eb4866-f5d7-448e-b3b5-0b164bb188eb" class="bulleted-list"><li style="list-style-type:circle">You need oxygen, which is the Spirit of God [John 3:8]</li></ul><ul id="d4631123-f53c-4350-b0b5-c930db21f962" class="bulleted-list"><li style="list-style-type:circle">You need heat, that is the love, passion, or zeal for God and ad people. [Revelations 3:15]</li></ul><ul id="631bad0a-cd23-4627-9ae6-e5cd6a2456cf" class="bulleted-list"><li style="list-style-type:circle">And finally you need the fuel which is your own self. Your body, your min, your soul. All of you. You are the element that needs to be burned up [Romans 12:1]</li></ul></li></ul><ul id="944f738a-306d-4453-8e63-7d38c79d9126" class="bulleted-list"><li style="list-style-type:disc">Once you have all these three factors you will produce fire, and here is how to have successful ever expanding fire. Here is how to have a spiritual wildfire if i may say.<ul id="afdb8a4f-bd07-415b-9e24-2ff7e768b418" class="bulleted-list"><li style="list-style-type:circle">1. The more wind/ oxygen you add the greater reach and extension you will have. When you are full of the Holy Spirit God will start asking you to do greater things, He will commence to ask you to move in certain ways and take you to higher levels so that you can impact more people than you currently are.</li></ul><ul id="ccb1cc57-711d-47b6-b8d2-3b59f39fd2aa" class="bulleted-list"><li style="list-style-type:circle">2. The more heat you add the faster the ignition will take place. Sometimes we see so slow or almost never moving progress in what we do for God. That is because we have let the love and passion of living for God grow cold. We have turned our relationship into a religion. A custom. If you are not seeing success of grow i your spiritual life perhaps you have let the heat go cold.</li></ul><ul id="6a71ba8b-440a-4b87-a16a-bcd0b7e07bb3" class="bulleted-list"><li style="list-style-type:circle">3. The more fuel we add the longer the fire will last. In order to be a fuel you can burn you have to be holy sacrifice. Good does not burn unholy things. He does not drink out of dirty glasses nor burns blemished lambs. If you are living in sin you can’t expect for God to burn you up. If you are not giving your full mind, heart, and body to God you cannot expect the fire to last. The fire will last only as long you are willing to be a fuel, that is a HOLY sacrifice. However, just know that if you are not being burned up by yGd you are being burned down by the devil. There is no middle ground. But dont worry the devil will burn you just as you are. He doesn’t matter what kind of sacrifice you are, he will burn goats, children, virgin girls, and about anything that you can bring Him. But not sow with God. Oxygen, Heat, and Fuel are the three elements needed for a fire, reach, speed, and duration are the three qualities of an uncontrollable fire. If God is not taking you to go to places, to different levels, if He is not asking you to move out of your comfort zone, if you no longer have a desire for His word, to pray., evangelize or to fast, perhaps is because He does not have any fuel to to work with. How is your relationship with your creator ad Saviour my friend? #GR #DR</li></ul></li></ul><ul id="a0a52643-e4ee-4916-a742-a8d821fb7a9a" class="bulleted-list"><li style="list-style-type:disc">6: The crawds paid attention to Phillip when they saw his works. People will not listen to you unless your actions back up your works. If you are not living a holy and honorable life before others do not ever say the name Jesus. You are only going to hurt the movement. Even Jesus told the crowds to listen to His actions even if they didnt want to listen to His words. St. Francis of Assisi said it well when he stated, &quot;Preach at all times, and if necessary use words.&quot; #GR #DR</li></ul><ul id="83e95d42-f3dc-40f9-90d5-2e2f6dc3ef8d" class="bulleted-list"><li style="list-style-type:disc">10: Kenneth Coopeland, Cash Luna, Chris Oyakhama, Benny Jin, Guillermo Maldonando, and the list goes on. These are perfect examples of what Simon was perhaps, performing and which people considered a &quot;miracle of God&quot; We would be surprised If we only knew the amount of dark spiritual hosts that hide behind so called Christian leaders and perform what many would call acts from God but are nothing but actions from satan. #BR #DR</li></ul><ul id="f26bb0df-f869-450b-aa2f-ad584b790253" class="bulleted-list"><li style="list-style-type:disc">10-12: the crowds believed both of these men, Phillip and Simon based on their works. However, Simon preached hinself, he believed himself to be a great Man, whereas Phillip preached Jesus Christ. It is very Important that we do not card away by actions alone when stablishing a decision on whether a ministry is from God or not. This is the importance of studying the bible and being filled with the Holy Spirit, lest we fall for anything. The witchcraft of simon operated under the batch of a godly movement, but it was nothing More than a campaign of the foil one. Listen to closely to the doctrine, analyze the talk and filter it through the Scriptures. Only that way and with the dicernment of the Holy Spirit we will be kept from lies and movements of heresy. If the movement is not preaching truth and exhalting Christ run from there I don&#x27;t care how many people they are &quot;healing&quot; and how many devils they are &quot;casting out&quot; #GR #DR</li></ul><ul id="a807eefd-7270-4065-85db-357f35a00400" class="bulleted-list"><li style="list-style-type:disc">16: Because everything must be proved on the account of two witnesses. #PPL #AM</li></ul><ul id="415e33f5-7d1f-43b4-85e1-602cc58675bb" class="bulleted-list"><li style="list-style-type:disc">24: Simon is not asking them to pray for God to forgive Him, rather he is only worried tha his money is perishing along with him. This is a major proof that thse man never rreally believed, He was never genuine. We see this from the get go in verse [Acts 8:13]. He is not really attonished by the message and the words of phillip been spoken, he is attonished by what he saw, the lust of his eyes. He never saw the mirales with the lenses of hlping people and gllorifying God but rather as the means of financial gain and glorifying himslef.</li></ul><ul id="b7934419-4c11-4865-a4f2-4b2c373d5576" class="bulleted-list"><li style="list-style-type:disc">Oh what a tragedy that we see ministry as a means of gaining reputation and displaying our talents and abilities instead of seeing it as a way of furthering the Kingdom of God and helping poeple. Sahme on you if you want to be a preacehr just so you can let other people know how good of a public speaker you are and how smart you are. Shame on you if you see ministring in the praise team as a means of showing other people what a beautiful voice you got and the notes you can hit istead of seeing it as a way of leading a group of believerbs into worship to God! #BR #DR</li></ul><ul id="d05599e0-ec74-4c52-b9cd-1e5675dc5fe6" class="bulleted-list"><li style="list-style-type:disc">26: God pull Philip from reaching crowds to go reach a single man, an Ethipian Eunoc. Howevver, not befo letting him walk through a desert road. The aerial distance, or bird’s fly distance from Gaza to Jerusalem was 50 miles. after Phillipo baptizes this Ethipian Eunoc the Holy Spirit gives him a ride to Azotus which was actually a closer journey (about 34 miles). My question is, why did the Holy Spirit not take Phillip to his way to Gaze wherever He needed him to be and save him the walk in teh desert road? Perhaps because before Phillip ministered to the Eunoc he had to be ministered by the Hly Spirit. Perhaos there was some things that Phillip needed to understand, some prejudgements tat e needed to get rid of. The Ethiopin Eunoc was traveling the desert road himself and Phllip had to understand it himself before he could minister to this man. Do you want to reach people? Do you want to be effective in God&#x27;s kingdom? Do you want to Sympathize with people? Then there will be some lonely roads that you will have walk, there is going to be some desert paths that you will he to travel, because in order for you to find people in desert places you need to be in desert places yourself first. That is why precious are the feet of those who bring the Gospel [Romans 10:15] . Because they are feet that have walked the some ugly roads. If you find Yourself broken-hearted, dispaired, lonely, forgutter, and tired, keep walking, God is simply preparing you to help someone in the same spot down the road. #BR #DR</li></ul><ul id="697ba778-f771-4bd1-9e22-84aed62f44ce" class="bulleted-list"><li style="list-style-type:disc">27-28: The man had already been to the place of worship, but apparently he was not satisfied, for he was still seeking God in the Scriptures. A man without knowledge of God, yet with a crear mourn in his heart to know God, which God Himself saw and answer his earnest cry for revelation. This proves that God is willing to reveal Himself to all who sincerely seeks Him. #LB #DR</li></ul><ul id="b0025833-13fb-4a1a-bf13-413b93c14c2a" class="bulleted-list"><li style="list-style-type:disc">35: This is a great strategy for evangelism. When introducing people to our Sweet Lord Jesus Christ, start where they already are. Do not begin with profound thoughts and extravagantly addorned speech, unless they are at that level and it eases communication with the individual of course. For most individuals simple words will do, however, therefore please do not use it as an opoprtunity to make yourself shine. It is all about Christ and other&#x27;s salvation. Put the cookies in the bottom shelf where the kiddies can get them. Just share the simplicity of the gospel #GR #DR</li></ul><ul id="a48bd0d2-32a1-4d54-bcd6-385418dd046f" class="bulleted-list"><li style="list-style-type:disc">39: I know that you are tired of the desert road my friend, but if you just hold on just a little longer. If you can hold on just a little longer. If you can just wait till you fulfill God&#x27;s mission. [Isahia 40:31] Says that those who wait in the Lord shall raise up wings like eagles. You cannot rise unless you descend first. The Spirit came and rose up Phillip after Philllip had completed his misssion and walked down south, in other words he had gone down south, into the dessert road. When was the last time you were carried away by the Spirit? When was the last time you trusted God&#x27;s plan for your life and obeyed it and it resulted on a weary, dry, and desolate morinng, but you held on, you stibbornly held onto God&#x27;s plan and the end result was of great gain and thus you git carried away by the Spirit. You got elevated to antoher level you didnt knew by the Holy Spirit? You cannot complain that you have not felt the Holy Spirit in you in a long time if everytime God asks you to go on a mission on fry road you refuse. You cannot complain that others are getting elevated in he Kingdom fo the Lord but you are yet in the same place thn 5 years ago. Every time God asks you to move you refuse, how do you expect to suddenly be in another place #PPL #DR</li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
