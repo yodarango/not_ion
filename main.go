@@ -39,6 +39,8 @@ func main(){
 	if err != nil {
 		fmt.Println("********", err)
 	}
+
+	// bkp.Bkp()
 }
 
 // limpia i nomi di tutti i file trovati al'interno di path
@@ -237,6 +239,22 @@ func getAllDirectoriesToRename(path string) ([]string, error) {
 }
 
 
+func getAllHTMLFiles(path string) []string{
+
+	var htmlFiles = make([]string, 0)
+
+	filepath.Walk(path, func (path string, info os.FileInfo, err error) error {
+		if filepath.Ext(info.Name()) == ".html"{
+			htmlFiles = append(htmlFiles, path)
+		}
+
+		return nil
+	})
+
+
+	return htmlFiles
+}
+
 func cleanNotionLinks(path string) error {
     // Regular expression to match Notion's unique ID pattern
     // This matches strings that look like " 1234abcd" at the end of text
@@ -280,10 +298,9 @@ func cleanNotionLinks(path string) error {
 	  // this file so we can rewrite it
         modified := processHtmlNode(doc, idDirPattern, idFilePattern)
 	  fmt.Println(modified)
-	  return nil
 
         // If modifications were made, write the changes back to the file
-        if modified {
+        if false {
             // Create a temporary file
             tempFile, err := os.CreateTemp(filepath.Dir(path), "temp-*.html")
             if err != nil {
@@ -315,8 +332,7 @@ func cleanNotionLinks(path string) error {
     })
 
     if err != nil { 
-	fmt.Println("****** ERR: ", err)
-	return nil
+	return fmt.Errorf("****** ERR: %v", err)
     }
 
 	// how many links were found?
@@ -400,13 +416,20 @@ func processHtmlNode(n *html.Node, idDirPattern *regexp.Regexp, idFilePattern *r
 				fmt.Printf("📝 New name will be:  %s \n", ogName)
 			}
 
-			// Now change the displayable text to match the href
+			// Now change the displayable text to match the href. 
 			for c := n.FirstChild; c != nil; c = c.NextSibling {
-				fmt.Println("----", c.Data)
-				c.Data = ogName
+				if c.Type == html.TextNode{
+					fmt.Println("----", c.Data)
+					c.Data = ogName
+				}
 			}
 			}
 		}
+	}
+
+	// Get into each node of the html
+	for c := n.FirstChild; c != nil; c = c.NextSibling {
+		processHtmlNode(c, idDirPattern, idFilePattern)
 	}
 
 	return modified
