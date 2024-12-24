@@ -344,13 +344,13 @@ func processHtmlNode(n *html.Node, idDirPattern *regexp.Regexp, idFilePattern *r
 	modified := false
 
 	if n.Type == html.ElementNode {
-		// Process href attributes in anchor tags
-		if n.Data == "a" {
+		// Process anchor tags
+		if n.Data == "a" || n.Data == "img" {
 			for i, attr := range n.Attr {
 			// Original href value 
 			ogName := n.Attr[i].Val
 
-			if attr.Key == "href" {
+			if attr.Key == "href" || attr.Key == "src" {
 
 				// if the href is a link to a file and not a dir will have .html extension
 				isHTMLFile := false
